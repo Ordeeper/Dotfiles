@@ -36,4 +36,8 @@ bar {
         status_command i3status
 }
 
+# Add Gaps
+gaps inner 10
+gaps outer 30
+
 exec --no-startup-id nitrogen --restore
