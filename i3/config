@@ -34,5 +34,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 gaps inner 10
 gaps outer 30
 
+# Enable Floating Mode
+for_window [class="Yad" title="yad-calendar"] floating enable
+
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
