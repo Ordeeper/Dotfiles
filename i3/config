@@ -34,6 +34,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 gaps inner 10
 gaps outer 30
 
+# Hide Window Title Bar
+default_border pixel 1
+default_floating_border pixel 1
+
 # Enable Floating Mode
 for_window [class="Yad" title="yad-calendar"] floating enable
 
