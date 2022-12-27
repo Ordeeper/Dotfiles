@@ -12,7 +12,7 @@ configuration {
     display-run: "";
 
     drun, window, run {
-        fallback-icon: "application-xml";
+        fallback-icon: "application-x-addon";
         close-on-delete: false;
     }
 
