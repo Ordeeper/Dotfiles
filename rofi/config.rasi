@@ -25,4 +25,6 @@ configuration {
 
 }
 
+@theme "NightSky"
+
 /* vim: ft=css

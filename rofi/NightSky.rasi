@@ -1,0 +1,103 @@
+* {
+    /*--------- Properties for All Widgets ---------*/
+    font: "Hack Nerd Font Mono Regular 11.6";
+    background-color: transparent;
+    border-color: @fg-active;
+    vertical-align: 0.5;
+    spacing: 0;
+
+    /*--------- Color Pallete ---------*/
+    bg: #141E26;
+    fg-normal: #BAE0FF;
+    fg-active: #87C9FF;
+    fg-unfocused: #446580;
+    bg-selected: @fg-active;
+    fg-selected: @bg;
+    fg-urgent: #6FD2E8;
+}
+
+window {
+    transparency: "real";
+    background-color: @bg;
+    width: 43%;
+    height: 57.17%;
+    border-radius: 9;
+}
+
+mainbox {
+    padding: 20;
+    children: [inputbar,listview,mode-switcher];
+}
+
+prompt {
+    enabled: false;
+}
+
+entry {
+    text-color: @fg-active;
+    placeholder: "Type to Filter";
+    horizontal-align: 0.5;
+    font: "Hack Nerd Font Mono Regular 12";
+    padding: 13 13 13 19;
+    cursor: text;
+}
+
+listview {
+    margin: 13 0 0 0;
+    spacing: 3;
+    border: 2 2 0 2;
+    border-radius: 9 9 0 0;
+    padding: 11;
+}
+
+mode-switcher {
+    margin: 0;
+    border-radius: 0 0 9 9;
+}
+
+button {
+    text-color: @fg-unfocused;
+    padding: 9;
+    font: "Feather Regular 16";
+    cursor: pointer;
+    border: 2 0 0 0;
+}
+
+button.selected {
+    text-color: @fg-active;
+    border: 0 2 2 2;
+    border-radius: 0 0 9 9;
+}
+
+element {
+    children: [element-icon,element-text];
+    text-color: @fg-normal;
+    cursor: pointer;
+    border-radius: 9;
+}
+
+element-icon {
+    size: 39;
+    padding: 6 9;
+    cursor: inherit;
+}
+
+element-text {
+    text-color: inherit;
+    cursor: inherit;
+}
+
+element.selected {
+    text-color: @fg-selected;
+    background-color: @bg-selected;
+}
+
+element.active {
+    text-color: @fg-active;
+}
+
+element.urgent {
+    text-color: @fg-urgent;
+}
+
+/* vim: ft=css
