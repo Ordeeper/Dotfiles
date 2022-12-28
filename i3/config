@@ -32,7 +32,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Add Gaps
 gaps inner 10
-gaps outer 30
+gaps outer 20
 
 # Hide Window Title Bar
 default_border pixel 1
