@@ -12,7 +12,7 @@ window {
     transparency: "real";
     background-color: @bg;
     width: 43%;
-    height: 57.17%;
+    height: 58.6%;
     border-radius: 9;
 }
 
@@ -30,21 +30,19 @@ entry {
     placeholder: "Type to Filter";
     horizontal-align: 0.5;
     font: "Hack Nerd Font Mono Regular 12";
-    padding: 13 13 13 25;
+    padding: 13 13 13 26;
     cursor: text;
 }
 
 listview {
-    margin: 13 0 0 0;
+    margin: 13 0 13 0;
     spacing: 3;
-    border: 2 2 0 2;
     border-radius: 9 9 0 0;
-    padding: 11;
+    padding: 12;
 }
 
 mode-switcher {
-    margin: 0;
-    border-radius: 0 0 9 9;
+    padding: 0 12;
 }
 
 button {
@@ -52,13 +50,12 @@ button {
     padding: 9;
     font: "Feather Regular 16";
     cursor: pointer;
-    border: 2 0 0 0;
+    border-radius: 9;
 }
 
 button.selected {
     text-color: @primary;
-    border: 0 2 2 2;
-    border-radius: 0 0 9 9;
+    background-color: @selected-bg;
 }
 
 element {
