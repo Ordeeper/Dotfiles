@@ -35,8 +35,8 @@ gaps inner 10
 gaps outer 20
 
 # Hide Window Title Bar
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 0
+default_floating_border pixel 0
 
 # Enable Floating Mode
 for_window [class="Yad" title="yad-calendar"] floating enable
