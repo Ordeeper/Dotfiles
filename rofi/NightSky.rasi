@@ -1,19 +1,11 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
 * {
     /*--------- Properties for All Widgets ---------*/
     font: "Hack Nerd Font Mono Regular 11.6";
     background-color: transparent;
-    border-color: @fg-active;
     vertical-align: 0.5;
     spacing: 0;
-
-    /*--------- Color Pallete ---------*/
-    bg: #141E26;
-    fg-normal: #BAE0FF;
-    fg-active: #87C9FF;
-    fg-unfocused: #446580;
-    bg-selected: @fg-active;
-    fg-selected: @bg;
-    fg-urgent: #6FD2E8;
 }
 
 window {
@@ -34,11 +26,11 @@ prompt {
 }
 
 entry {
-    text-color: @fg-active;
+    text-color: @primary;
     placeholder: "Type to Filter";
     horizontal-align: 0.5;
     font: "Hack Nerd Font Mono Regular 12";
-    padding: 13 13 13 19;
+    padding: 13 13 13 25;
     cursor: text;
 }
 
@@ -56,7 +48,7 @@ mode-switcher {
 }
 
 button {
-    text-color: @fg-unfocused;
+    text-color: @secondary;
     padding: 9;
     font: "Feather Regular 16";
     cursor: pointer;
@@ -64,14 +56,14 @@ button {
 }
 
 button.selected {
-    text-color: @fg-active;
+    text-color: @primary;
     border: 0 2 2 2;
     border-radius: 0 0 9 9;
 }
 
 element {
     children: [element-icon,element-text];
-    text-color: @fg-normal;
+    text-color: @fg;
     cursor: pointer;
     border-radius: 9;
 }
@@ -88,16 +80,16 @@ element-text {
 }
 
 element.selected {
-    text-color: @fg-selected;
-    background-color: @bg-selected;
+    text-color: @selected-fg;
+    background-color: @selected-bg;
 }
 
 element.active {
-    text-color: @fg-active;
+    text-color: @selected-fg;
 }
 
 element.urgent {
-    text-color: @fg-urgent;
+    text-color: @urgent-fg;
 }
 
 /* vim: ft=css

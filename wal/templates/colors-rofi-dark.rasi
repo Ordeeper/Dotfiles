@@ -1,0 +1,11 @@
+* {{
+    bg: {color6};
+    fg: {color0};
+    primary: {color0};
+    secondary: {color2}; 
+    selected-fg: {color0};
+    selected-bg: {color4};
+    urgent-fg: {color3};
+    border-color: transparent;
+}}
+
