@@ -7,9 +7,9 @@ configuration {
     show-icons: true;
     icon-theme: "Tela-circle-black-dark";
     terminal: "i3-sensible-terminal";
-    display-drun: "";
-    display-window: "";
-    display-run: "";
+    display-drun: "";
+    display-window: "";
+    display-run: "";
 
     drun, window, run {
         fallback-icon: "application-x-addon";
