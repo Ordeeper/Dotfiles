@@ -2,7 +2,7 @@
 
 * {
     /*--------- Properties for All Widgets ---------*/
-    font: "Hack Nerd Font Mono Regular 11.6";
+    font: "Hack regular 11.6";
     background-color: transparent;
     vertical-align: 0.5;
     spacing: 0;
@@ -29,7 +29,7 @@ entry {
     text-color: @primary;
     placeholder: "Type to Filter";
     horizontal-align: 0.5;
-    font: "Hack Nerd Font Mono Regular 12";
+    font: "Hack Regular 12";
     padding: 13 13 13 26;
     cursor: text;
 }
@@ -47,8 +47,8 @@ mode-switcher {
 
 button {
     text-color: @secondary;
-    padding: 9;
-    font: "Feather Regular 16";
+    padding: 7;
+    font: "icomoon\-feather Regular 18";
     cursor: pointer;
     border-radius: 9;
 }
