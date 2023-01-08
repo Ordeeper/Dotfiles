@@ -9,11 +9,10 @@
 }
 
 window {
-    transparency: "real";
+    transparency: "background";
     background-color: @bg;
     width: 43%;
-    height: 58.6%;
-    border-radius: 9;
+    height: 58.5%;
 }
 
 mainbox {
@@ -30,15 +29,16 @@ entry {
     placeholder: "Type to Filter";
     horizontal-align: 0.5;
     font: "Hack Regular 12";
-    padding: 13 13 13 26;
+    padding: 15 15 15 27;
     cursor: text;
+    text-color: @primary;
 }
 
 listview {
     margin: 13 0 13 0;
     spacing: 3;
     border-radius: 9 9 0 0;
-    padding: 12;
+    padding: 11;
 }
 
 mode-switcher {
@@ -47,7 +47,7 @@ mode-switcher {
 
 button {
     text-color: @secondary;
-    padding: 7;
+    padding: 9;
     font: "icomoon\-feather Regular 18";
     cursor: pointer;
     border-radius: 9;
@@ -82,7 +82,7 @@ element.selected {
 }
 
 element.active {
-    text-color: @selected-fg;
+    text-color: @active-fg;
 }
 
 element.urgent {
