@@ -12,7 +12,7 @@ window {
     transparency: "background";
     background-color: @bg;
     width: 43%;
-    height: 58.5%;
+    height: 58.73%;
 }
 
 mainbox {
