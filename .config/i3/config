@@ -42,6 +42,6 @@ default_floating_border pixel 0
 for_window [class="Yad" title="yad-calendar"] floating enable
 
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id dwall -p -s forest
-exec_always --no-startup-id picom
+exec --no-startup-id dwall -p -s forest &
+exec_always --no-startup-id picom &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
