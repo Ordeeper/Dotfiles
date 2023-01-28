@@ -12,16 +12,26 @@ window {
     transparency: "background";
     background-color: @bg;
     width: 43%;
-    height: 58.73%;
+    height: 57%;
 }
 
 mainbox {
-    padding: 20;
+    padding: 0 20 20 20;
     children: [inputbar,listview,mode-switcher];
+}
+
+/*****----- Spacing -----*****/
+inputbar, listview, mode-switcher {
+    padding: 0 11;
 }
 
 prompt {
     enabled: false;
+}
+
+inputbar {
+    children: [entry];
+    margin: 33 0;
 }
 
 entry {
@@ -29,33 +39,31 @@ entry {
     placeholder: "Type to Filter";
     horizontal-align: 0.5;
     font: "Hack Regular 12";
-    padding: 15 15 15 27;
+    padding: 0 15 0 27;
     cursor: text;
-    text-color: @primary;
+    text-color: @entry-fg;
 }
 
 listview {
-    margin: 13 0 13 0;
     spacing: 3;
     border-radius: 9 9 0 0;
-    padding: 11;
 }
 
 mode-switcher {
-    padding: 0 12;
+    margin: 20 0 0 0;
 }
 
 button {
     text-color: @secondary;
-    padding: 9;
+    padding: 10;
     font: "icomoon\-feather Regular 18";
     cursor: pointer;
     border-radius: 9;
 }
 
 button.selected {
-    text-color: @primary;
-    background-color: @selected-bg;
+    text-color: @btn-fg;
+    background-color: @btn-bg;
 }
 
 element {
@@ -77,8 +85,8 @@ element-text {
 }
 
 element.selected {
-    text-color: @selected-fg;
-    background-color: @selected-bg;
+    text-color: @element-fg;
+    background-color: @element-bg;
 }
 
 element.active {
