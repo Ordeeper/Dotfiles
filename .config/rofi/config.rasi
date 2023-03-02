@@ -10,6 +10,7 @@ configuration {
     display-drun: "";
     display-window: "";
     display-run: "";
+    run-list-command: "";
 
     drun, window, run {
         fallback-icon: "application-x-addon";
