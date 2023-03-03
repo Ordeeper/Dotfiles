@@ -31,8 +31,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Add Gaps
-gaps inner 10
-gaps outer 20
+gaps inner 30
 
 # Hide Window Title Bar
 default_border pixel 0
