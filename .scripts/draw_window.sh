@@ -15,11 +15,11 @@ if [ $? -eq 0 ]; then
 	       sleep 0.06;
             done
 
-        # Toggles active window to floating mode
-        i3-msg floating enable;
+        # Toggles window to floating mode
+        id=$(xdotool search --pid $id);
+        i3-msg "[id=$id]" floating enable;
 
         # Takes the kitty id then reposition and resize
-        id=$(xdotool search --pid $id);
         wmctrl -i -r "$id" -e "$geometry";
 	exit 0
     else
