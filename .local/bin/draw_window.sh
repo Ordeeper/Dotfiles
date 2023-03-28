@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dependencies slop, wmctrl, and xdotool
+# Dependencies slop, xdotool, xwininfo and wmctrl
 
 # Takes the area geometry and position
 geometry=$(slop -f '0, %x, %y, %w, %h');
@@ -10,10 +10,20 @@ then
     # Opens kitty
     /usr/bin/kitty &
 
-    # Checks if kitty is opened and takes the window id
-    until id=$(xdotool search --pid $!)
+    # Stores the pid
+    pid=$!;
+
+    # Takes the window id
+    until id=$(xdotool search --pid "$pid") 1>/dev/null
+	do
+	    sleep 0.1;
+	done
+
+    # Checks if the window id is the same and if it is visible
+    until xwininfo -id "$id" | grep -q "IsViewable" 1>/dev/null
         do
-	    sleep 0.06;
+            id=$(xdotool search --pid "$pid");
+            sleep 0.1;
         done
 
     # Toggles window to floating mode
@@ -21,7 +31,7 @@ then
 
     # Takes the kitty id then reposition and resize
     wmctrl -i -r "$id" -e "$geometry";
-    exit 0
+    exit 0;
 else
-    exit 1
+    exit 1;
 fi
