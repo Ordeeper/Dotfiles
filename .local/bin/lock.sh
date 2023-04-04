@@ -13,8 +13,8 @@ scrot "$tmpbg"; corrupter "$tmpbg" "$tmpbg";
 # Color Variables
 BLANK="$background";
 CLEAR="$background";
-DEFAULT="$color6";
-TEXT="$color6";
+DEFAULT="$color5";
+TEXT="$color5";
 WRONG="$background";
 VERIFYING="$background";
 
