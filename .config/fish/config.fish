@@ -13,6 +13,10 @@ if status is-interactive
     # Enable vi mode
     fish_vi_key_bindings
 
+    # Custom bindings
+    bind -M insert \cF accept-autosuggestion
+
     # Abbreviations
     abbr -a tb taskbook
+
 end
