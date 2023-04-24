@@ -8,10 +8,13 @@ if status is-interactive
     fish_add_path -g $HOME/.local/bin
 
     # Hide the fish greeting
-    set -gx fish_greeting
+    set -g fish_greeting
 
     # Enable vi mode
     fish_vi_key_bindings
+
+    # Default editor
+    set -gx EDITOR nvim
 
     # Custom bindings
     bind -M insert \cF accept-autosuggestion
