@@ -43,5 +43,6 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id dwall -p -s lakeside &
 exec --no-startup-id redshift &
+exec_always --no-startup-id $HOME/.local/bin/launch_dunst.sh &
 exec_always --no-startup-id picom &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
