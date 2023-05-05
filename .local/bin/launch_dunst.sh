@@ -1,4 +1,5 @@
 #!/bin/bash
+# Dependencies dunst and inotify-tools
 
 # Start dunst
 if pgrep -x dunst > /dev/null; then
