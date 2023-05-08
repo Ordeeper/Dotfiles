@@ -45,7 +45,7 @@ client.placeholder       $secondary     $secondary     $fg     $secondary     $s
 client.background        $secondary
 
 # Add Gaps
-gaps inner 30
+gaps inner 18
 
 # Hide Window Title Bar
 default_border pixel 1
