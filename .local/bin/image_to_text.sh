@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Dependencies flameshot, tesseract, tesseract-data-eng, tesseract-data-por and xclip
 
-# Takes the Screenshot
+# Take the Screenshot
 flameshot gui -p /tmp/tesseract_screenshot.png
 
 # Copy Text from Image

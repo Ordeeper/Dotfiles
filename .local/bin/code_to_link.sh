@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Dependencies flameshot, zbar and xclip
 
-# Takes the Screenshot
+# Take the Screenshot
 flameshot gui -p /tmp/zbar_screenshot.png;
 
 # Copy link from Image
