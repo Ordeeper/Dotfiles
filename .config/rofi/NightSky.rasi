@@ -9,73 +9,59 @@
 }
 
 window {
-    transparency: "background";
+    width: 600px;
+    location: center;
+    anchor: center;
     background-color: @bg;
-    width: 43%;
-    height: 57%;
+    border: 1px;
 }
 
 mainbox {
-    padding: 0 20 20 20;
+    margin: 27px;
+    spacing: 27px;
     children: [inputbar,listview,mode-switcher];
-}
-
-/*****----- Spacing -----*****/
-inputbar, listview, mode-switcher {
-    padding: 0 11;
 }
 
 prompt {
     enabled: false;
 }
 
-inputbar {
-    children: [entry];
-    margin: 33 0;
-}
-
 entry {
-    text-color: @primary;
-    placeholder: "Type to Filter";
+    text-color: @fg;
+    placeholder: "Type to Filter...";
     horizontal-align: 0.5;
     font: "Hack Regular 12";
-    padding: 0 15 0 27;
+    padding: 0px 15px 0px 27px;
     cursor: text;
-    text-color: @entry-fg;
 }
 
 listview {
+    lines: 5;
     spacing: 3;
-    border-radius: 9 9 0 0;
-}
-
-mode-switcher {
-    margin: 20 0 0 0;
 }
 
 button {
-    text-color: @secondary;
-    padding: 10;
+    text-color: @fg-secondary;
+    padding: 9px;
     font: "icomoon\-feather Regular 18";
     cursor: pointer;
-    border-radius: 9;
+    border-radius: 9px;
 }
 
 button.selected {
-    text-color: @btn-fg;
-    background-color: @btn-bg;
+    text-color: @fg-primary;
+    border: 1px;
 }
 
 element {
     children: [element-icon,element-text];
-    text-color: @fg;
+    text-color: @fg-secondary;
     cursor: pointer;
-    border-radius: 9;
 }
 
 element-icon {
-    size: 39;
-    padding: 6 9;
+    size: 30;
+    padding: 9px;
     cursor: inherit;
 }
 
@@ -85,16 +71,17 @@ element-text {
 }
 
 element.selected {
-    text-color: @element-fg;
-    background-color: @element-bg;
+    text-color: @fg;
+    border-radius: 9px;
+    border: 1px;
 }
 
 element.active {
-    text-color: @active-fg;
+    text-color: @fg-primary;
 }
 
 element.urgent {
-    text-color: @urgent-fg;
+    text-color: @fg-urgent;
 }
 
 /* vim: ft=css

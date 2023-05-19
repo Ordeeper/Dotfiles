@@ -2,10 +2,10 @@ configuration {
 
     /*--------- Configuration ---------*/
     modes: "drun,window,run";
-    window-format: "{c:14}       {w}";
+    window-format: "{c:14}         {w}";
     drun-display-format: "{name}";
     show-icons: true;
-    icon-theme: "Tela-circle-black-dark";
+    icon-theme: "candy-icons"; 
     terminal: "i3-sensible-terminal";
     display-drun: "";
     display-window: "";

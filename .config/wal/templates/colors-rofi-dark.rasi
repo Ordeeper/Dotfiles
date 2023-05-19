@@ -1,13 +1,8 @@
 * {{
-    bg: #{color0.strip}A3;
-    fg: {color3};
-    entry-fg: {foreground};
-    secondary: {color3};
-    element-fg: {foreground};
-    element-bg: #{color3.strip}A6;
-    btn-fg: {foreground};
-    btn-bg: #{color3.strip}A6;
-    active-fg: {color5};
-    urgent-fg: {color6};
-    border-color: {color3};
+    bg: {background};
+    fg: {color4};
+    fg-primary: {color4};
+    fg-secondary: {color1};
+    fg-urgent: {color5};
+    border-color: {color4};
 }}
