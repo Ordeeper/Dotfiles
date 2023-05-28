@@ -315,14 +315,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "{background}"
     foreground = "{foreground}"
-    timeout = 9
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
     background = "{background}"
     foreground = "{foreground}"
-    timeout = 9
+    timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -330,7 +330,7 @@
     background = "{background}"
     foreground = "{foreground}"
     frame_color = "{color5}"
-    timeout = 9
+    timeout = 3
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
