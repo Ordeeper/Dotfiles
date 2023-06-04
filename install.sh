@@ -34,8 +34,7 @@ case $distro in
     "arch")
         echo "You are on Arch!"
 
-        which yay &> /dev/null
-        if [ $? -eq 1 ]; then
+        if ! command -v yay &> /dev/null; then
             echo "Installing Yay..."
             rm -rf /tmp/yay &> /dev/null
             git clone https://aur.archlinux.org/yay.git /tmp/yay
