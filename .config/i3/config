@@ -50,6 +50,19 @@ for_window [all] title_window_icon padding 3px
 # Enable Floating Mode
 for_window [class="Yad" title="yad-calendar"] floating enable
 
+# Move Applications
+# Workspace 1
+for_window [class="(?i)Spotify"] move container to workspace "1 "
+for_window [title="(?i)Reverso"] move container to workspace "1 "
+# Workspace 2
+for_window [title="(?i)WhatsApp"] Move container to workspace "2 "
+for_window [class="(?i)TelegramDesktop"] Move container to workspace "2 "
+for_window [class="(?i)Discord"] Move container to workspace "2 "
+# Workspace 3
+for_window [class="(?i)Obsidian"] move container to workspace "3 "
+# Workspace 4
+for_window [class="(?i)VSCodium"] move container to workspace "4 "
+
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal -R
 exec --no-startup-id redshift &
