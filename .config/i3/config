@@ -63,6 +63,10 @@ for_window [class="(?i)Obsidian"] move container to workspace "3 "
 # Workspace 4
 for_window [class="(?i)VSCodium"] move container to workspace "4 "
 
+# Variables
+# Default browser
+set $BROWSER $(xdg-settings get default-web-browser | awk -F '-' '{print $1}')
+
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id wal -R
 exec --no-startup-id redshift &
