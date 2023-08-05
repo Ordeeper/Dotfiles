@@ -30,7 +30,7 @@ function M.insert()
 end
 
 function M.normal()
-    vim.keymap.set("n", "<ESC>", ":noh <CR>") -- Clear Highlights
+    vim.keymap.set("n", "<ESC>", ":noh <CR>", {silent = true}) -- Clear Highlights
 
     --------- Switch Between Windows ---------
     vim.keymap.set("n", "<C-h>", "<C-w>h") -- Window Left
@@ -57,7 +57,7 @@ function M.plugins()
 
     --------- NvimTree ---------
     function plugins.nvimtree()
-        vim.keymap.set("n", "<leader>h", ":NvimTreeToggle <CR>") -- Toggle NvimTree
+        vim.keymap.set("n", "<leader>h", ":NvimTreeToggle <CR>", {silent = true}) -- Toggle NvimTree
     end
 
     --------- Lspconfig ---------
@@ -88,7 +88,7 @@ function M.plugins()
                     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
                 end, opts)
                 vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-                vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+                vim.keymap.set("n", "<space>rx", vim.lsp.buf.rename, opts)
                 vim.keymap.set({"n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
                 vim.keymap.set("n", "<space>f", function()
