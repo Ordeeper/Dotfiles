@@ -4,7 +4,21 @@ local default_plugins = {
 
     "nvim-lua/plenary.nvim",
 
-    -- Colorscheme
+    -- Colorschemes
+    -- Fallback Colorschemes
+    --[[{
+        "tiagovla/tokyodark.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = function()
+            return require "plugins.configs.tokyodark"
+        end,
+        config = function(_, opts)
+            require("tokyodark").setup(opts) -- Calling setup is optional
+            vim.cmd [\[colorscheme tokyodark]\]
+        end,
+    },]]
+
     {
         "AlphaTechnolog/pywal.nvim",
         lazy = false,
