@@ -26,4 +26,9 @@ if status is-interactive
 
     # Abbreviations
     abbr -a tb taskbook
+
+    # Startup
+    if not set -q TMUX
+        exec tmux
+    end
 end
