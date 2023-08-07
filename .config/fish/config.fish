@@ -18,6 +18,10 @@ if status is-interactive
     set fish_cursor_visual block
     set -g fish_vi_force_cursor 1
 
+    # Keybinds
+    bind yy fish_clipboard_copy
+    bind p fish_clipboard_paste
+
     # Default editor
     set -gx EDITOR nvim
 
