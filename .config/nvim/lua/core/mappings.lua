@@ -39,6 +39,8 @@ function M.normal()
     vim.keymap.set("n", "<C-j>", "<C-w>j") -- Window Down
 
     vim.keymap.set("n", "<C-s>", "<cmd> w <CR>") -- Save File
+    vim.keymap.set("n", "<C-x>", "<cmd> x <CR>") -- Save and Exit
+    vim.keymap.set("n", "<C-q>", "<cmd> q! <CR>") -- Don't Save and Exit
     vim.keymap.set("n", "<C-c>", "<cmd> %y+ <CR>") -- Copy Whole File
     vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle Line Number
     vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle Relative Number
@@ -49,7 +51,7 @@ function M.visual()
 end
 
 function M.terminal()
-    vim.keymap.set("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)) -- Escape Terminal Mode
+    vim.keymap.set("t", "ESC", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)) -- Escape Terminal Mode
 end
 
 function M.plugins()
