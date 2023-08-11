@@ -12,7 +12,6 @@ end
 
 --------- lazy.nvim ---------
 M.lazy = function(install_path)
-    local lazy_path = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
     M.echo "  Installing lazy.nvim & plugins ..."
     local repo = "https://github.com/folke/lazy.nvim.git"
     shell_call { "git", "clone", "--filter=blob:none", "--branch=stable", repo, install_path }

@@ -17,7 +17,7 @@ opt.softtabstop = 4
 opt.tabstop = 4
 opt.shiftwidth = 4
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
+vim.opt.listchars = { space = "⋅" }
 
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
@@ -29,7 +29,6 @@ opt.number = true
 opt.numberwidth = 3
 opt.ruler = true
 
--- opt.signcolumn = "no"
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
