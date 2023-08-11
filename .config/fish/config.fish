@@ -30,6 +30,7 @@ if status is-interactive
 
     # Abbreviations
     abbr -a tb taskbook
+    abbr -a cava TERM=xterm-kitty cava
 
     # Startup
     if not set -q TMUX
