@@ -1,4 +1,4 @@
-bufferline = require("bufferline")
+local bufferline = require("bufferline")
 return {
     options = {
         mode = "buffers",

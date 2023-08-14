@@ -6,9 +6,8 @@ local opt = vim.opt
 -------------------------------------- Options ------------------------------------------
 opt.laststatus = 3 -- Global Statusline
 opt.showmode = false
-
 opt.clipboard = "unnamedplus"
--- opt.cursorline = true
+opt.cursorline = true
 
 ------ Indenting ------
 opt.expandtab = true
