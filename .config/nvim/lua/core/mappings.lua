@@ -25,7 +25,7 @@ function M.insert()
     --------- Navigate Within Insert Mode ---------
     vim.keymap.set("i", "<C-h>", "<Left>") -- Move Left
     vim.keymap.set("i", "<C-l>", "<Right>") -- Move Right
-    vim.keymap.set("i", "<C-k>", "<Up") -- Move Up
+    vim.keymap.set("i", "<C-k>", "<Up>") -- Move Up
     vim.keymap.set("i", "<C-j>", "<Down>") -- Move Down
 end
 
