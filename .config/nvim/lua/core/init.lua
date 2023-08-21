@@ -15,8 +15,8 @@ opt.smarttab = true
 opt.softtabstop = 4
 opt.tabstop = 4
 opt.shiftwidth = 4
-vim.opt.list = true
-vim.opt.listchars = { space = "⋅" }
+opt.list = true
+opt.listchars = { space = "⋅" }
 
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
