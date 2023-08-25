@@ -62,6 +62,21 @@ function M.plugins()
         vim.keymap.set("n", "<leader>h", ":NvimTreeToggle <CR>", {silent = true}) -- Toggle NvimTree
     end
 
+    --------- Cmp ---------
+    function plugins.cmp()
+        local cmp = require("cmp")
+        cmp.setup ({
+            mapping = cmp.mapping.preset.insert({
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+                ["<C-e>"] = cmp.mapping.abort(),
+                ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            })
+        })
+    end
+
     --------- Lspconfig ---------
     function plugins.lspconfig()
         vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -99,7 +114,6 @@ function M.plugins()
             end
         })
     end
-
     return plugins
 end
 
