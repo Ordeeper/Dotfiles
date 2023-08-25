@@ -28,11 +28,8 @@ if grep -q "hypervisor" /proc/cpuinfo; then
     packages_arch=$(echo "$packages_arch" | sed 's/picom//g')
 fi
 
-distro=$(cat /etc/os-release | awk -F '=' '/^ID=/ {print $2}')
-
-case $distro in
-    "arch")
-        echo "You are on Arch!"
+if command -v pacman &> /dev/null; then
+        echo "You are in a base system Arch!"
 
         if ! command -v yay &> /dev/null; then
             echo "Installing Yay..."
@@ -52,10 +49,12 @@ case $distro in
         echo "Organizing Dotfiles and Configurations..."
         xdg-user-dirs-update
         stow -d .. -t $HOME Dotfiles --ignore=install.sh
+        git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
         touch $HOME/.xinitrc
         if ! grep -wq "exec i3" $HOME/.xinitrc; then
             echo "exec i3" >> $HOME/.xinitrc
         fi
+
         if ! echo $SHELL | grep -q fish; then
             chsh -s /usr/bin/fish
         fi
@@ -80,17 +79,14 @@ case $distro in
                 echo "Invalid Answer, skipping..."
                 ;;
         esac
-        ;;
-    "void")
-        echo "You are on Void!"
-        # TODO: Add support to Void
-        exit 1
-        ;;
-    *)
-        echo "Operating system unsupported for this script."
-        exit 1
-        ;;
-esac
+elif command -v xbps &> /dev/null; then
+    echo "You are in a base system Void!"
+    # TODO)) Add support to Void
+    exit 1
+else
+    echo "Operating system unsupported for this script."
+    exit 1
+fi
 
 sleep 1 && clear
 
