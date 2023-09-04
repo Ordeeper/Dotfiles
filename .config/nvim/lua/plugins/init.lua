@@ -15,7 +15,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("tokyodark").setup(opts) -- Calling setup is optional
-            vim.cmd [\[colorscheme tokyodark]\]
+            vim.cmd.colorscheme("tokyodark")
         end,
     },]]
 
@@ -25,7 +25,7 @@ local default_plugins = {
         priority = 1000,
         config = function()
             -- Load the Colorscheme
-            require("pywal").setup()
+            vim.cmd.colorscheme("pywal")
         end,
     },
 

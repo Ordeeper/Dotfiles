@@ -67,7 +67,7 @@ if command -v pacman &> /dev/null; then
             "y"|"Y")
                 echo "Installing Display Manager..."
                 yay -S lightdm lightdm-webkit2-greeter lightdm-webkit2-theme-glorious --needed --noconfirm
-                sudo sed -i 's/^#\{0,1\}greeter-session\s*=\s*\(.*\)/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+                sudo sed -i 's/^#\{0,1\}greeter-session\s*=\s*\(.*\)/greeter-session=lightdm-webkit2-greeter #\1/g' /etc/lightdm/lightdm.conf
                 sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
                 sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
                 systemctl enable lightdm.service
