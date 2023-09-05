@@ -22,14 +22,14 @@ echo ""
 echo "Detecting Operating System..."
 sleep 1 && clear
 
-packages_arch="stow alsa-utils brave-bin firefox htop cava clipmenu xsel xclip clipnotify cmatrix corrupter-bin cowsay cpulimit dbus-python discord dmidecode docker dunst exfatprogs feh fish flameshot scrot gnu-netcat i3-wm i3lock-color i3-gnome-pomodoro-git imagemagick inotify-tools kitty ksshaskpass libva-intel-driver lxappearance mesa mpv dropbox nemo nemo-dropbox neofetch obsidian picom pipewire-alsa pipewire-pulse polybar python-gobject python-pip npm python-pywal python-pywalfox wal-telegram-git telegram-desktop ranger redshift rofi simplescreenrecorder slop sweet-gtk-theme-dark candy-icons-git tesseract tesseract-data-osd tesseract-data-eng tesseract-data-por tldr tmux ttf-maple ttf-hack-nerd ttf-icomoon-feather noto-fonts-emoji unzip vulkan-icd-loader vulkan-intel wireplumber wmctrl xdotool yad xorg-xwininfo xdg-user-dirs xorg-server xorg-xinit xorg-xev zbar lm_sensors man-db man-pages neovim"
-
-if grep -q "hypervisor" /proc/cpuinfo; then
-    packages_arch=$(echo "$packages_arch" | sed 's/picom//g')
-fi
-
 if command -v pacman &> /dev/null; then
         echo "You are in a base system Arch!"
+
+        packages_arch="stow alsa-utils brave-bin firefox htop cava clipmenu xsel xclip clipnotify cmatrix corrupter-bin cowsay cpulimit dbus-python discord dmidecode docker dunst exfatprogs feh fish flameshot scrot gnu-netcat i3-wm i3lock-color i3-gnome-pomodoro-git imagemagick inotify-tools kitty ksshaskpass libva-intel-driver lxappearance mesa mpv dropbox nemo nemo-dropbox neofetch obsidian picom pipewire-alsa pipewire-pulse polybar python-gobject python-pip npm python-pywal python-pywalfox wal-telegram-git telegram-desktop ranger redshift rofi simplescreenrecorder slop sweet-gtk-theme-dark candy-icons-git tesseract tesseract-data-osd tesseract-data-eng tesseract-data-por tldr tmux ttf-maple ttf-hack-nerd ttf-icomoon-feather noto-fonts-emoji unzip vulkan-icd-loader vulkan-intel wireplumber wmctrl xdotool yad xorg-xwininfo xdg-user-dirs xorg-server xorg-xinit xorg-xev zbar lm_sensors man-db man-pages neovim ripgrep"
+
+        if grep -q "hypervisor" /proc/cpuinfo; then
+            packages_arch=$(echo "$packages_arch" | sed 's/picom//g')
+        fi
 
         if ! command -v yay &> /dev/null; then
             echo "Installing Yay..."

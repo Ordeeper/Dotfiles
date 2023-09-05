@@ -130,7 +130,7 @@ local default_plugins = {
     },
 
     -- File Managing, Picker etc
-    {
+    --[[{
         "nvim-tree/nvim-tree.lua",
         dependencies = "nvim-tree/nvim-web-devicons",
         lazy = false,
@@ -143,7 +143,7 @@ local default_plugins = {
             require("nvim-tree").setup(opts)
             require("core.mappings").plugins.nvimtree()
         end,
-    },
+    },]]
 
     {
         "nvim-treesitter/nvim-treesitter",
@@ -178,6 +178,26 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("indent_blankline").setup(opts)
+        end,
+    },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.2",
+        dependencies = {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+        },
+        init = function()
+            require("core.utils").lazy_load "telescope.nvim"
+        end,
+        opts = function()
+            return require "plugins.configs.telescope_conf"
+        end,
+        config = function(_, opts)
+            local telescope = require("telescope")
+            require("telescope").setup(opts)
+            telescope.load_extension("fzf")
         end,
     },
 }

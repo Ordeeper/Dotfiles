@@ -23,7 +23,7 @@ return {
         lualine_c = {},
         lualine_x = {},
         lualine_y = { { "filetype", colored = false }, "progress" },
-        lualine_z = {"location"}
+        lualine_z = { "location" }
     },
     inactive_sections = {
         lualine_a = {},

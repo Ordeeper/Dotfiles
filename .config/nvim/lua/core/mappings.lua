@@ -3,6 +3,7 @@
 --------- Local Variables ---------
 local M = {}
 local g = vim.g
+local keymap = vim.keymap.set
 
 function M.setup()
     M.global()
@@ -19,70 +20,101 @@ end
 
 function M.insert()
     --------- Go to Beginning and End ---------
-    vim.keymap.set("i", "<C-b>", "<ESC>^i") -- Beginning of Line
-    vim.keymap.set("i", "<C-e>", "<END>") -- End of Line
+    keymap("i", "<C-b>", "<ESC>^i") -- Beginning of Line
+    keymap("i", "<C-e>", "<END>")   -- End of Line
 
     --------- Navigate Within Insert Mode ---------
-    vim.keymap.set("i", "<C-h>", "<Left>") -- Move Left
-    vim.keymap.set("i", "<C-l>", "<Right>") -- Move Right
-    vim.keymap.set("i", "<C-k>", "<Up>") -- Move Up
-    vim.keymap.set("i", "<C-j>", "<Down>") -- Move Down
+    keymap("i", "<C-h>", "<Left>")  -- Move Left
+    keymap("i", "<C-l>", "<Right>") -- Move Right
+    keymap("i", "<C-k>", "<Up>")    -- Move Up
+    keymap("i", "<C-j>", "<Down>")  -- Move Down
 end
 
 function M.normal()
-    vim.keymap.set("n", "<ESC>", ":noh <CR>", {silent = true}) -- Clear Highlights
+    keymap("n", "<ESC>", "<cmd> noh <CR>", { silent = true }) -- Clear Highlights
+
+    --------- Miscellaneous ---------
+    keymap("n", "<C-s>", "<cmd> w <CR>")             -- Save File
+    keymap("n", "<C-x>", "<cmd> x <CR>")             -- Save and Exit
+    keymap("n", "<C-q>", "<cmd> q! <CR>")            -- Don't Save and Exit
+    keymap("n", "<leader>n", "<cmd> set nu! <CR>")   -- Toggle Line Number
+    keymap("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle Relative Number
 
     --------- Switch Between Windows ---------
-    vim.keymap.set("n", "<C-h>", "<C-w>h") -- Window Left
-    vim.keymap.set("n", "<C-l>", "<C-w>l") -- Window Right
-    vim.keymap.set("n", "<C-k>", "<C-w>k") -- Window Up
-    vim.keymap.set("n", "<C-j>", "<C-w>j") -- Window Down
+    keymap("n", "<C-h>", "<C-w>h") -- Window Left
+    keymap("n", "<C-l>", "<C-w>l") -- Window Right
+    keymap("n", "<C-k>", "<C-w>k") -- Window Up
+    keymap("n", "<C-j>", "<C-w>j") -- Window Down
 
-    vim.keymap.set("n", "<C-s>", "<cmd> w <CR>") -- Save File
-    vim.keymap.set("n", "<C-x>", "<cmd> x <CR>") -- Save and Exit
-    vim.keymap.set("n", "<C-q>", "<cmd> q! <CR>") -- Don't Save and Exit
-    vim.keymap.set("n", "<C-c>", "<cmd> %y+ <CR>") -- Copy Whole File
-    vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle Line Number
-    vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle Relative Number
-    vim.keymap.set("n", "<leader>ch", "<cmd> enew <CR>") -- New Buffer
+    --------- Buffers  ---------
+    keymap("n", "<tab>", "<cmd> bn <CR>")        -- Next Buffer
+    keymap("n", "<S-tab>", "<cmd> bp <CR>")      -- Preview Buffer
+    keymap("n", "<leader>ch", "<cmd> enew <CR>") -- New Buffer
+    keymap("n", "<C-d>", "<cmd> bd! <CR>")       -- Kill Buffer
+    keymap("n", "<C-c>", "<cmd> w | bd <CR>")    -- Save and Kill Buffer
 end
 
 function M.visual()
 end
 
 function M.terminal()
-    vim.keymap.set("t", "ESC", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)) -- Escape Terminal Mode
+    keymap("t", "ESC", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)) -- Escape Terminal Mode
 end
 
 function M.plugins()
     local plugins = {}
 
-    --------- NvimTree ---------
+    --------- Telescope ---------
+    function plugins.telescope()
+        local builtin = require "telescope.builtin"
+        local action = require "telescope.actions"
+
+        keymap("n", "<leader>h", builtin.find_files)
+        keymap("n", "<leader>f", builtin.live_grep)
+        return {
+            i = {
+                ["<C-t>"] = action.select_default,
+                ["<C-k>"] = action.move_selection_previous,
+                ["<C-j>"] = action.move_selection_next,
+                ["<C-y>"] = action.preview_scrolling_up,
+                ["<C-e>"] = action.preview_scrolling_down,
+                ["<C-q>"] = action.close,
+                ["<C-d>"] = action.close,
+            },
+            n = {
+                ["<C-t>"] = action.select_default,
+                ["<C-y>"] = action.preview_scrolling_up,
+                ["<C-e>"] = action.preview_scrolling_down,
+                ["<C-q>"] = action.close,
+                ["<C-d>"] = action.close,
+            }
+        }
+    end
+
+    --------- NvimTree (Disabled) ---------
     function plugins.nvimtree()
-        vim.keymap.set("n", "<leader>h", ":NvimTreeToggle <CR>", {silent = true}) -- Toggle NvimTree
+        keymap("n", "<leader>h", "<cmd> NvimTreeToggle <CR>", { silent = true }) -- Toggle NvimTree
     end
 
     --------- Cmp ---------
     function plugins.cmp()
         local cmp = require("cmp")
-        cmp.setup ({
-            mapping = cmp.mapping.preset.insert({
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<C-e>"] = cmp.mapping.abort(),
-                ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-            })
-        })
+        return {
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+            ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+            ["<C-e>"] = cmp.mapping.abort(),
+            ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        }
     end
 
     --------- Lspconfig ---------
     function plugins.lspconfig()
-        vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-        vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+        keymap("n", "<leader>u", vim.diagnostic.open_float)
+        keymap("n", "[d", vim.diagnostic.goto_prev)
+        keymap("n", "]d", vim.diagnostic.goto_next)
+        keymap("n", "<leader>q", vim.diagnostic.setloclist)
 
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
@@ -94,26 +126,27 @@ function M.plugins()
 
                 -- Buffer local mappings.
                 local opts = { buffer = ev.buf }
-                vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-                vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-                vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
-                vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
-                vim.keymap.set("n", "<space>wl", function()
+                keymap("n", "gD", vim.lsp.buf.declaration, opts)
+                keymap("n", "gd", vim.lsp.buf.definition, opts)
+                keymap("n", "K", vim.lsp.buf.hover, opts)
+                keymap("n", "gi", vim.lsp.buf.implementation, opts)
+                keymap("n", "<C-ç>", vim.lsp.buf.signature_help, opts)
+                keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+                keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+                keymap("n", "<leader>wl", function()
                     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
                 end, opts)
-                vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
-                vim.keymap.set("n", "<space>rx", vim.lsp.buf.rename, opts)
-                vim.keymap.set({"n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-                vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-                vim.keymap.set("n", "<space>f", function()
+                keymap("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+                keymap("n", "<leader>rx", vim.lsp.buf.rename, opts)
+                keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+                keymap("n", "gr", vim.lsp.buf.references, opts)
+                keymap("n", "<leader>t", function()
                     vim.lsp.buf.format { async = true }
                 end, opts)
             end
         })
     end
+
     return plugins
 end
 
