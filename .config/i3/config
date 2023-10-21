@@ -55,9 +55,10 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="(?i)Spotify"] move container to workspace "1 "
 for_window [title="(?i)Reverso"] move container to workspace "1 "
 # Workspace 2
-for_window [title="(?i)WhatsApp"] Move container to workspace "2 "
+for_window [class="(?i)Beeper"] Move container to workspace "2 "
 for_window [class="(?i)TelegramDesktop"] Move container to workspace "2 "
 for_window [class="(?i)Discord"] Move container to workspace "2 "
+for_window [title="(?i)WhatsApp"] Move container to workspace "2 "
 # Workspace 3
 for_window [class="(?i)Obsidian"] move container to workspace "3 "
 # Workspace 4
