@@ -2,7 +2,7 @@
 
 * {
     /*--------- Properties for All Widgets ---------*/
-    font: "Hack regular 12";
+    font: "Maple Mono 12";
     background-color: transparent;
     vertical-align: 0.5;
     spacing: 0;
@@ -28,9 +28,9 @@ prompt {
 
 entry {
     text-color: @fg;
-    placeholder: "Type to Filter. . .";
+    placeholder: "Type to Filter...";
     horizontal-align: 0.5;
-    font: "Hack Regular 13";
+    font: "Maple Mono 13";
     padding: 0px 15px 0px 27px;
     cursor: text;
 }
