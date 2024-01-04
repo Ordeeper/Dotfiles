@@ -25,7 +25,7 @@ sleep 1 && clear
 if command -v pacman &> /dev/null; then
         echo "You are in a base system Arch!"
 
-        packages_arch="stow alsa-utils brave-bin firefox htop cava clipmenu xsel xclip clipnotify cmatrix corrupter-bin cowsay cpulimit dbus-python discord dmidecode docker dunst exfatprogs feh fish flameshot scrot gnu-netcat i3-wm i3lock-color i3-gnome-pomodoro-git imagemagick inotify-tools kitty ksshaskpass libva-intel-driver lxappearance mesa mpv appimagelauncher dropbox nemo nemo-dropbox neofetch picom pipewire-alsa pipewire-pulse polybar python-gobject python-pip npm python-pywal python-pywalfox beeper-latest-bin wal-telegram-git telegram-desktop ranger redshift rofi simplescreenrecorder slop sweet-gtk-theme-dark candy-icons-git tesseract tesseract-data-osd tesseract-data-eng tesseract-data-por tldr tmux ttf-maple ttf-hack-nerd ttf-icomoon-feather noto-fonts-emoji unzip vulkan-icd-loader vulkan-intel wireplumber wmctrl xdotool yad xorg-xwininfo xdg-user-dirs xorg-server xorg-xinit xorg-xev zbar lm_sensors man-db man-pages neovim ripgrep"
+        packages_arch="stow alsa-utils firefox htop btop cava clipmenu xsel xclip clipnotify cmatrix corrupter-bin cowsay cpulimit dbus-python discord dmidecode docker dunst feh fish flameshot scrot gnu-netcat i3-wm i3lock-color imagemagick inotify-tools kitty ksshaskpass libva-intel-driver lxappearance mesa mpv appimagelauncher dropbox nemo nemo-dropbox neofetch picom pipewire-alsa pipewire-pulse polybar python-gobject python-pip npm python-pywal python-pywalfox beeper-latest-bin wal-telegram-git telegram-desktop ranger redshift rofi slop sweet-gtk-theme-dark candy-icons-git tesseract tesseract-data-osd tesseract-data-eng tesseract-data-por tldr tmux ttf-maple ttf-hack-nerd ttf-icomoon-feather noto-fonts-emoji unzip vulkan-icd-loader vulkan-intel wireplumber wmctrl xdotool yad xorg-xwininfo xdg-user-dirs xorg-server xorg-xinit xorg-xev zbar lm_sensors man-db man-pages neovim ripgrep"
 
         if grep -q "hypervisor" /proc/cpuinfo; then
             packages_arch=$(echo "$packages_arch" | sed 's/picom//g')
@@ -67,7 +67,7 @@ if command -v pacman &> /dev/null; then
             "y"|"Y")
                 echo "Installing Display Manager..."
                 yay -S lightdm lightdm-webkit2-greeter lightdm-webkit2-theme-glorious --needed --noconfirm
-                sudo sed -i 's/^#\{0,1\}greeter-session\s*=\s*\(.*\)/greeter-session=lightdm-webkit2-greeter #\1/g' /etc/lightdm/lightdm.conf
+                sudo sed -i 's/^#\{0,1\}greeter-session\s*=\s*.*/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
                 sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
                 sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
                 systemctl enable lightdm.service
