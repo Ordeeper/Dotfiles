@@ -201,6 +201,16 @@ local default_plugins = {
             telescope.load_extension("fzf")
         end,
     },
+
+    {
+        "norcalli/nvim-colorizer.lua",
+        init = function()
+            require("core.utils").lazy_load "nvim-colorizer.lua"
+        end,
+        config = function()
+            require("colorizer").setup()
+        end,
+    },
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
