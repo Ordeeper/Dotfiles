@@ -5,7 +5,7 @@ if status is-interactive
     cat ~/.cache/wal/sequences &
 
     # Add components to $fish_user_paths
-    fish_add_path -g $HOME/.local/bin
+    fish_add_path -g $HOME/.local/bin $HOME/.cargo/bin
 
     # Hide the fish greeting
     set -g fish_greeting

@@ -111,10 +111,10 @@ function M.plugins()
 
     --------- Lspconfig ---------
     function plugins.lspconfig()
-        keymap("n", "<leader>~", vim.diagnostic.open_float)
+        keymap("n", "<leader>ç", vim.diagnostic.open_float)
         keymap("n", "<leader>[", vim.diagnostic.goto_prev)
         keymap("n", "<leader>]", vim.diagnostic.goto_next)
-        keymap("n", "<leader>ç", vim.diagnostic.setloclist)
+        keymap("n", "<leader>~", vim.diagnostic.setloclist)
 
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
