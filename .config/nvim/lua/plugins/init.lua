@@ -211,6 +211,23 @@ local default_plugins = {
             require("colorizer").setup()
         end,
     },
+
+    {
+        "nvim-neorg/neorg",
+        init = function()
+            require("core.utils").lazy_load "neorg"
+        end,
+        ft = "norg",
+        cmd = "Neorg",
+        build = ":Neorg sync-parsers",
+        dependencies = "nvim-lua/plenary.nvim",
+        opts = function()
+            return require "plugins.configs.neorg"
+        end,
+        config = function(_, opts)
+            require("neorg").setup(opts)
+        end
+    }
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
