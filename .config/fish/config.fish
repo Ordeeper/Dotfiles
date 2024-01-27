@@ -12,7 +12,6 @@ if status is-interactive
 
     # Misc
     set -gx EDITOR nvim
-    set -gx TERM xterm-kitty
 
     # Enable vi mode
     fish_vi_key_bindings
@@ -30,10 +29,14 @@ if status is-interactive
     bind -M insert ' ' self-insert
 
     # Abbreviations
-    #abbr -a cava TERM=xterm-kitty cava
+    # abbr -a cava TERM=xterm-kitty cava
 
     # Startup
     if not set -q TMUX
         exec tmux
+        printf '\ec'
+    else
+        printf '\ec'
     end
+
 end
