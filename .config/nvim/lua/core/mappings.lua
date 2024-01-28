@@ -71,8 +71,9 @@ function M.plugins()
         local get_status = require "telescope.state".get_status
         local select_one_or_multi = require("core.utils").select_one_or_multi
 
-        keymap("n", "<leader>f", "<cmd> Telescope find_files <CR>", { noremap = true })
+        keymap("n", "<leader>f", "<cmd> Telescope find_files <CR>", {noremap = true})
         keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
+
         return {
                 -- Mapping Telescope
                 i = {

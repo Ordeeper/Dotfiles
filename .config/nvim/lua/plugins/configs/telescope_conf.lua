@@ -22,11 +22,7 @@ return {
     },
     pickers = {
         find_files = {
-            cwd = buffer_dir(),
             hidden = true,
-        },
-        live_grep = {
-            cwd = buffer_dir(),
         },
     },
     extensions = {
