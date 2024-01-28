@@ -66,40 +66,87 @@ function M.plugins()
 
     --------- Telescope ---------
     function plugins.telescope()
-        local builtin = require "telescope.builtin"
-        local action = require "telescope.actions"
+        local actions = require "telescope.actions"
+        local fb_actions = require "telescope".extensions.file_browser.actions
+        local get_status = require "telescope.state".get_status
         local select_one_or_multi = require("core.utils").select_one_or_multi
 
-        keymap("n", "<leader>h", "<cmd> Telescope file_browser<CR>", { noremap = true })
-        keymap("n", "<leader>f", builtin.live_grep)
+        keymap("n", "<leader>f", "<cmd> Telescope find_files <CR>", { noremap = true })
+        keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
         return {
                 -- Mapping Telescope
                 i = {
-                    ["<C-t>"] = action.select_default,
-                    ["<C-k>"] = action.move_selection_previous,
-                    ["<C-j>"] = action.move_selection_next,
-                    ["<C-y>"] = action.preview_scrolling_up,
-                    ["<C-e>"] = action.preview_scrolling_down,
-                    ["<C-q>"] = action.close,
-                    ["<C-d>"] = action.close,
+                    ["<C-k>"] = actions.move_selection_previous,
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-b>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_up(bufnr)
+                    end,
+                    ["<C-f>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_down(bufnr)
+                    end,
+                    ["<ScrollWheelUp>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_up(bufnr)
+                    end,
+                    ["<ScrollWheelDown>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_down(bufnr)
+                    end,
+                    ["<C-q>"] = actions.close,
+                    ["<C-d>"] = actions.close,
                     ["<CR>"] = select_one_or_multi,
                 },
                 n = {
-                    ["<C-t>"] = action.select_default,
-                    ["<C-y>"] = action.preview_scrolling_up,
-                    ["<C-e>"] = action.preview_scrolling_down,
-                    ["<C-q>"] = action.close,
-                    ["<C-d>"] = action.close,
+                    ["<C-b>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_up(bufnr)
+                    end,
+                    ["<C-f>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_down(bufnr)
+                    end,
+                    ["<ScrollWheelUp>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_up(bufnr)
+                    end,
+                    ["<ScrollWheelDown>"] = function(bufnr)
+                        get_status(bufnr).picker.layout_config.scroll_speed = 1
+                        return actions.preview_scrolling_down(bufnr)
+                    end,
+                    ["<C-q>"] = actions.close,
+                    ["<C-d>"] = actions.close,
                     ["<CR>"] = select_one_or_multi,
                 }
             },
             {
                 -- Mapping Telescope File Browser
                 i = {
-
+                    ["<C-c>"] = fb_actions.create,
+                    ["<C-x>"] = fb_actions.remove,
+                    ["<C-r>"] = fb_actions.rename,
+                    ["<C-m>"] = fb_actions.move,
+                    ["<C-y>"] = fb_actions.copy,
+                    ["<C-s>"] = fb_actions.toggle_all,
+                    ["<C-g>"] = fb_actions.goto_parent_dir,
+                    ["<C-e>"] = fb_actions.goto_home_dir,
+                    ["<C-w>"] = fb_actions.goto_cwd,
+                    ["<C-t>"] = fb_actions.change_cwd,
+                    ["<C-h>"] = fb_actions.toggle_hidden,
                 },
                 n = {
-
+                    ["c"] = fb_actions.create,
+                    ["x"] = fb_actions.remove,
+                    ["r"] = fb_actions.rename,
+                    ["m"] = fb_actions.move,
+                    ["y"] = fb_actions.copy,
+                    ["s"] = fb_actions.toggle_all,
+                    ["g"] = fb_actions.goto_parent_dir,
+                    ["e"] = fb_actions.goto_home_dir,
+                    ["w"] = fb_actions.goto_cwd,
+                    ["t"] = fb_actions.change_cwd,
+                    ["h"] = fb_actions.toggle_hidden,
                 }
             }
     end
