@@ -68,27 +68,40 @@ function M.plugins()
     function plugins.telescope()
         local builtin = require "telescope.builtin"
         local action = require "telescope.actions"
+        local select_one_or_multi = require("core.utils").select_one_or_multi
 
-        keymap("n", "<leader>h", builtin.find_files)
+        keymap("n", "<leader>h", "<cmd> Telescope file_browser<CR>", { noremap = true })
         keymap("n", "<leader>f", builtin.live_grep)
         return {
-            i = {
-                ["<C-t>"] = action.select_default,
-                ["<C-k>"] = action.move_selection_previous,
-                ["<C-j>"] = action.move_selection_next,
-                ["<C-y>"] = action.preview_scrolling_up,
-                ["<C-e>"] = action.preview_scrolling_down,
-                ["<C-q>"] = action.close,
-                ["<C-d>"] = action.close,
+                -- Mapping Telescope
+                i = {
+                    ["<C-t>"] = action.select_default,
+                    ["<C-k>"] = action.move_selection_previous,
+                    ["<C-j>"] = action.move_selection_next,
+                    ["<C-y>"] = action.preview_scrolling_up,
+                    ["<C-e>"] = action.preview_scrolling_down,
+                    ["<C-q>"] = action.close,
+                    ["<C-d>"] = action.close,
+                    ["<CR>"] = select_one_or_multi,
+                },
+                n = {
+                    ["<C-t>"] = action.select_default,
+                    ["<C-y>"] = action.preview_scrolling_up,
+                    ["<C-e>"] = action.preview_scrolling_down,
+                    ["<C-q>"] = action.close,
+                    ["<C-d>"] = action.close,
+                    ["<CR>"] = select_one_or_multi,
+                }
             },
-            n = {
-                ["<C-t>"] = action.select_default,
-                ["<C-y>"] = action.preview_scrolling_up,
-                ["<C-e>"] = action.preview_scrolling_down,
-                ["<C-q>"] = action.close,
-                ["<C-d>"] = action.close,
+            {
+                -- Mapping Telescope File Browser
+                i = {
+
+                },
+                n = {
+
+                }
             }
-        }
     end
 
     --------- NvimTree (Disabled) ---------
