@@ -1,5 +1,4 @@
 local mapping_telescope, mapping_file_browser = require("core.mappings").plugins.telescope()
-local buffer_dir = require("telescope.utils").buffer_dir
 
 return {
     defaults = {
