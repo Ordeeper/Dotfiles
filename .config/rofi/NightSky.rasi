@@ -6,6 +6,7 @@
     background-color: transparent;
     vertical-align: 0.5;
     spacing: 0;
+    border-color: @accent-active;
 }
 
 window {
@@ -27,7 +28,7 @@ prompt {
 }
 
 entry {
-    text-color: @fg;
+    text-color: @text-focus;
     placeholder: "Type to Filter...";
     horizontal-align: 0.5;
     font: "Maple Mono 13";
@@ -41,7 +42,7 @@ listview {
 }
 
 button {
-    text-color: @fg-secondary;
+    text-color: @accent-primary;
     padding: 9px;
     font: "icomoon\-feather Regular 18";
     cursor: pointer;
@@ -49,13 +50,13 @@ button {
 }
 
 button.selected {
-    text-color: @fg-primary;
+    text-color: @accent-active;
     border: 1px;
 }
 
 element {
     children: [element-icon,element-text];
-    text-color: @fg-secondary;
+    text-color: @text;
     cursor: pointer;
 }
 
@@ -71,17 +72,17 @@ element-text {
 }
 
 element.selected {
-    text-color: @fg;
+    text-color: @text-focus;
     border-radius: 9px;
     border: 1px;
 }
 
 element.active {
-    text-color: @fg-primary;
+    text-color: @accent-active;
 }
 
 element.urgent {
-    text-color: @fg-urgent;
+    text-color: @accent-active;
 }
 
 /* vim: ft=css

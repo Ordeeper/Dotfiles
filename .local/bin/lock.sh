@@ -2,7 +2,7 @@
 # Dependencies scrot, corrupter and i3lock-color
 
 # Import Pywal theme file
-. "${HOME}/.cache/wal/colors.sh";
+. "${HOME}/.cache/wal/colors-lock.sh";
 
 # Path and name to temporary background
 tmpbg="/tmp/corrupter_screen.png";
@@ -11,12 +11,12 @@ tmpbg="/tmp/corrupter_screen.png";
 scrot "$tmpbg"; corrupter "$tmpbg" "$tmpbg";
 
 # Color Variables
-BLANK="$background";
-CLEAR="$background";
-DEFAULT="$color5";
-TEXT="$color5";
-WRONG="$background";
-VERIFYING="$background";
+BLANK="$bg";
+CLEAR="$bg";
+DEFAULT="$accent_active";
+TEXT="$text_focus";
+WRONG="$bg";
+VERIFYING="$bg";
 
 i3lock -i "$tmpbg" \
 --ring-width=3.9 \

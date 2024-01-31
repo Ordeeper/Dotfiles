@@ -34,7 +34,7 @@ opt.numberwidth = 3
 opt.ruler = true
 
 ------ Style ------
-opt.termguicolors = true
+-- opt.termguicolors = true
 opt.fillchars = { eob = " " }
 opt.cursorline = true
 opt.laststatus = 3 -- Global Statusline

@@ -23,19 +23,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-set_from_resource $fg i3wm.foreground #f0f0f0
-set_from_resource $primary i3wm.color4 #f0f0f0
-set_from_resource $secondary i3wm.background #f0f0f0
-set_from_resource $urgent i3wm.color5 #f0f0f0
+set_from_resource $text-focus i3wm.foreground #f0f0f0
+set_from_resource $accent-active i3wm.color13 #f0f0f0
+set_from_resource $bg i3wm.background #f0f0f0
 
-# class                  border         backgr.        text    indicator      child_border
-client.focused           $primary       $secondary     $fg     $primary       $primary
-client.focused_inactive  $secondary     $secondary     $fg     $secondary     $secondary
-client.unfocused         $secondary     $secondary     $fg     $secondary     $secondary
-client.urgent            $urgent        $secondary     $fg     $urgent        $urgent
-client.placeholder       $secondary     $secondary     $fg     $secondary     $secondary
+# class                  border                 backgr.     text                indicator              child_border
+client.focused           $accent-active         $bg         $text-focus         $accent-active         $accent-active
+client.focused_inactive  $bg                    $bg         $text-focus         $bg                    $bg
+client.unfocused         $bg                    $bg         $text-focus         $bg                    $bg
+client.urgent            $accent-active         $bg         $text-focus         $accent-active         $accent-active
+client.placeholder       $bg                    $bg         $text-focus         $bg                    $bg
 
-client.background        $secondary
+client.background        $bg
 
 # Add Gaps
 gaps inner 18
