@@ -107,6 +107,9 @@ local default_plugins = {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
+        init = function()
+            require("core.utils").lazy_load "nvim-lspconfig"
+        end,
         lazy = false,
         opts = function()
             return require "plugins.configs.lualine"
@@ -232,6 +235,17 @@ local default_plugins = {
             require("neorg").setup(opts)
         end
     },
+
+    {
+        "lewis6991/gitsigns.nvim",
+        init = function()
+            require("core.utils").lazy_load "gitsigns.nvim"
+        end,
+        config = function()
+            require("gitsigns").setup()
+        end,
+    },
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
