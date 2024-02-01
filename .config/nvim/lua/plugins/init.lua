@@ -246,6 +246,17 @@ local default_plugins = {
         end,
     },
 
+    {
+        "folke/zen-mode.nvim",
+        dependencies = "folke/twilight.nvim",
+        init = function()
+            require("core.utils").lazy_load "zen-mode.nvim"
+        end,
+        opts = function()
+            return require "plugins.configs.zen_mode"
+        end,
+    },
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
