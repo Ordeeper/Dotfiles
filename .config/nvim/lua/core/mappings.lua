@@ -71,12 +71,14 @@ function M.plugins()
         local get_status = require "telescope.state".get_status
         local select_one_or_multi = require("core.utils").select_one_or_multi
 
-        keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", {noremap = true})
+        keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
         keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
 
         return {
                 -- Mapping Telescope
                 i = {
+                    ["<CR>"] = actions.select_default,
+                    ["<C-t>"] = select_one_or_multi,
                     ["<C-k>"] = actions.move_selection_previous,
                     ["<C-j>"] = actions.move_selection_next,
                     ["<C-b>"] = function(bufnr)
@@ -95,11 +97,11 @@ function M.plugins()
                         get_status(bufnr).picker.layout_config.scroll_speed = 1
                         return actions.preview_scrolling_down(bufnr)
                     end,
-                    ["<C-q>"] = actions.close,
                     ["<C-d>"] = actions.close,
-                    ["<CR>"] = select_one_or_multi,
                 },
                 n = {
+                    ["<CR>"] = actions.select_default,
+                    ["<C-t>"] = select_one_or_multi,
                     ["<C-b>"] = function(bufnr)
                         get_status(bufnr).picker.layout_config.scroll_speed = 1
                         return actions.preview_scrolling_up(bufnr)
@@ -116,9 +118,7 @@ function M.plugins()
                         get_status(bufnr).picker.layout_config.scroll_speed = 1
                         return actions.preview_scrolling_down(bufnr)
                     end,
-                    ["<C-q>"] = actions.close,
                     ["<C-d>"] = actions.close,
-                    ["<CR>"] = select_one_or_multi,
                 }
             },
             {
@@ -127,34 +127,36 @@ function M.plugins()
                     ["<C-c>"] = fb_actions.create,
                     ["<C-x>"] = fb_actions.remove,
                     ["<C-r>"] = fb_actions.rename,
-                    ["<C-m>"] = fb_actions.move,
+                    ["<C-p>"] = fb_actions.move,
                     ["<C-y>"] = fb_actions.copy,
                     ["<C-s>"] = fb_actions.toggle_all,
                     ["<C-g>"] = fb_actions.goto_parent_dir,
                     ["<C-e>"] = fb_actions.goto_home_dir,
                     ["<C-w>"] = fb_actions.goto_cwd,
-                    ["<C-t>"] = fb_actions.change_cwd,
+                    ["<C-q>"] = fb_actions.change_cwd,
                     ["<C-h>"] = fb_actions.toggle_hidden,
+                    ["<C-o>"] = fb_actions.open,
                 },
                 n = {
                     ["c"] = fb_actions.create,
                     ["x"] = fb_actions.remove,
                     ["r"] = fb_actions.rename,
-                    ["m"] = fb_actions.move,
+                    ["p"] = fb_actions.move,
                     ["y"] = fb_actions.copy,
                     ["s"] = fb_actions.toggle_all,
                     ["g"] = fb_actions.goto_parent_dir,
                     ["e"] = fb_actions.goto_home_dir,
                     ["w"] = fb_actions.goto_cwd,
-                    ["t"] = fb_actions.change_cwd,
+                    ["q"] = fb_actions.change_cwd,
                     ["h"] = fb_actions.toggle_hidden,
+                    ["o"] = fb_actions.open,
                 }
             }
     end
 
     --------- Zen-Mode ---------
     function plugins.zen_mode()
-        keymap("n", "<leader>z", "<cmd> ZenMode <CR>", { silent = true }) -- Toggle ZenMode
+        keymap("n", "<leader>z", "<cmd> ZenMode <CR>", { silent = true })  -- Toggle ZenMode
         keymap("n", "<leader>a", "<cmd> Twilight <CR>", { silent = true }) -- Toggle NvimTree
     end
 
