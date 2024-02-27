@@ -192,10 +192,8 @@ local default_plugins = {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.2",
         dependencies = {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build =
-            "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-            "nvim-telescope/telescope-file-browser.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim",  build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" },
+            { "nvim-telescope/telescope-file-browser.nvim" },
         },
         event = "VimEnter",
         init = function()
@@ -206,10 +204,10 @@ local default_plugins = {
         end,
         config = function(_, opts)
             local telescope = require("telescope")
-            require("telescope").setup(opts)
+            telescope.setup(opts)
             telescope.load_extension("fzf")
             telescope.load_extension("file_browser")
-        end,
+        end
     },
 
     {
