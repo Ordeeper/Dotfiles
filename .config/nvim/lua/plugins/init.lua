@@ -135,22 +135,6 @@ local default_plugins = {
         end,
     },
 
-    -- File Managing, Picker etc
-    --[[{
-        "nvim-tree/nvim-tree.lua",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        lazy = false,
-        version = "*",
-        cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-        opts = function()
-            return require "plugins.configs.nvimtree"
-        end,
-        config = function(_, opts)
-            require("nvim-tree").setup(opts)
-            require("core.mappings").plugins.nvimtree()
-        end,
-    },]]
-
     {
         "nvim-treesitter/nvim-treesitter",
         init = function()
@@ -256,6 +240,18 @@ local default_plugins = {
         opts = function()
             return require "plugins.configs.zen_mode"
         end,
+    },
+
+    {
+        "barrett-ruth/live-server.nvim",
+        init = function()
+            require("core.utils").lazy_load "live-server.nvim"
+        end,
+        opts = function()
+            return require "plugins.configs.live_server"
+        end,
+        cmd = { "LiveServerStart", "LiveServerStop" },
+        config = true
     },
 
 }

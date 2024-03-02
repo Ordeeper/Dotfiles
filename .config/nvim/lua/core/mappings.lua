@@ -154,15 +154,16 @@ function M.plugins()
             }
     end
 
-    --------- Zen-Mode ---------
+    --------- Zen Mode ---------
     function plugins.zen_mode()
         keymap("n", "<leader>z", "<cmd> ZenMode <CR>", { silent = true })  -- Toggle ZenMode
         keymap("n", "<leader>a", "<cmd> Twilight <CR>", { silent = true }) -- Toggle NvimTree
     end
 
-    --------- NvimTree (Disabled) ---------
-    function plugins.nvimtree()
-        keymap("n", "<leader>h", "<cmd> NvimTreeToggle <CR>", { silent = true }) -- Toggle NvimTree
+    --------- Live Server ---------
+    function plugins.live_server()
+        keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true })  -- Toggle ZenMode
+        keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true })  -- Toggle ZenMode
     end
 
     --------- Cmp ---------
