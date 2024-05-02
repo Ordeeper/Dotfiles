@@ -28,7 +28,7 @@ require("mason").setup({
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
     "lua_ls", "rust_analyzer", "pylsp", "bashls", "tsserver", "html", "cssls",
-    "tailwindcss", "clangd",
+    "tailwindcss", "clangd", "intelephense",
 }
 require("mason-lspconfig").setup {
     -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
@@ -82,5 +82,6 @@ lspconfig.html.setup {}
 lspconfig.cssls.setup {}
 lspconfig.tailwindcss.setup {}
 lspconfig.clangd.setup {}
+lspconfig.intelephense.setup {}
 
 return M
