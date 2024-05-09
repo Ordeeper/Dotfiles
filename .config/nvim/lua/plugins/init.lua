@@ -204,7 +204,7 @@ local default_plugins = {
         end,
     },
 
-    {
+    --[[{
         "nvim-neorg/neorg",
         init = function()
             require("core.utils").lazy_load "neorg"
@@ -219,7 +219,7 @@ local default_plugins = {
         config = function(_, opts)
             require("neorg").setup(opts)
         end
-    },
+    },]]
 
     {
         "lewis6991/gitsigns.nvim",
