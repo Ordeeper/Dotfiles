@@ -6,20 +6,16 @@ local default_plugins = {
 
     -- Colorschemes
     -- Fallback Colorschemes
-    --[[{
-        "tiagovla/tokyodark.nvim",
+    {
+        "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = function()
-            return require "plugins.configs.tokyodark"
+        config = function()
+            vim.cmd.colorscheme("tokyonight-night")
         end,
-        config = function(_, opts)
-            require("tokyodark").setup(opts) -- Calling setup is optional
-            vim.cmd.colorscheme("tokyodark")
-        end,
-    },]]
+    },
 
-    {
+    --[[{
         "AlphaTechnolog/pywal.nvim",
         lazy = false,
         priority = 1000,
@@ -27,7 +23,7 @@ local default_plugins = {
             -- Load the Colorscheme
             vim.cmd.colorscheme("pywal")
         end,
-    },
+    },]]
 
     -- Lsp stuff
     {
