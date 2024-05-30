@@ -6,16 +6,16 @@ local default_plugins = {
 
     -- Colorschemes
     -- Fallback Colorschemes
-    {
+    --[[{
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
             vim.cmd.colorscheme("tokyonight-night")
         end,
-    },
+    },]]
 
-    --[[{
+    {
         "AlphaTechnolog/pywal.nvim",
         lazy = false,
         priority = 1000,
@@ -23,7 +23,7 @@ local default_plugins = {
             -- Load the Colorscheme
             vim.cmd.colorscheme("pywal")
         end,
-    },]]
+    },
 
     -- Lsp stuff
     {
@@ -104,6 +104,23 @@ local default_plugins = {
     },
 
     {
+        "sontungexpt/sttusline",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        init = function()
+            require("core.utils").lazy_load "sttusline"
+        end,
+        event = { "BufEnter" },
+        opts = function()
+            return require "plugins.configs.sttusline"
+        end,
+        config = function(_, opts)
+            require("sttusline").setup(opts)
+        end,
+    },
+
+    --[[{
         "nvim-lualine/lualine.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
         init = function()
@@ -116,7 +133,7 @@ local default_plugins = {
         config = function(_, opts)
             require("lualine").setup(opts)
         end,
-    },
+    },]]
 
     {
         "akinsho/bufferline.nvim",
