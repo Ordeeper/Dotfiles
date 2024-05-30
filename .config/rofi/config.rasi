@@ -22,7 +22,7 @@ configuration {
     kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Alt+h";
     kb-row-up: "Up,Control+p,Alt+k";
     kb-row-down: "Down,Control+n,Alt+j";
-    kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+d";
+    kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+d,Alt+x,Alt+c";
 
 }
 
