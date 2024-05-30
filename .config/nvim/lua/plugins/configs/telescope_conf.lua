@@ -36,6 +36,7 @@ return {
             hijack_netrw = true,
             mappings = mapping_file_browser,
             depth = 3,
+            respect_gitignore = true,
         },
     }
 }
