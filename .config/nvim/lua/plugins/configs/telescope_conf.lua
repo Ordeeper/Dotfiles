@@ -15,7 +15,7 @@ return {
         mappings = mapping_telescope,
         sorting_strategy = "ascending",
         file_ignore_patterns = { "^.git/" },
-        prompt_prefix = "   ",
+        prompt_prefix = "   ",
         selection_caret = "  ",
         entry_prefix = "  ",
     },
