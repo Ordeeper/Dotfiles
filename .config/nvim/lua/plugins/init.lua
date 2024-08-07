@@ -274,6 +274,18 @@ local default_plugins = {
         config = true
     },
 
+    {
+        "Exafunction/codeium.nvim",
+        event = "InsertEnter",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            require("codeium").setup({})
+        end
+    },
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"

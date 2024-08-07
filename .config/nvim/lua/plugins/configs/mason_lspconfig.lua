@@ -84,5 +84,6 @@ lspconfig.tailwindcss.setup {}
 lspconfig.clangd.setup {}
 lspconfig.intelephense.setup {}
 lspconfig.volar.setup {}
+lspconfig.astro.setup {}
 
 return M
