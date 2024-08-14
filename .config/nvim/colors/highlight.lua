@@ -1,4 +1,4 @@
-local opt = vim.opt
+--[[local opt = vim.opt
 local api = vim.api
 
 local success, pywal_core = pcall(require, "pywal.core")
@@ -14,3 +14,4 @@ opt.cursorline = true
 
 ------ Colors ------
 api.nvim_set_hl(0, "StatusLine", { bold = true })
+]]
