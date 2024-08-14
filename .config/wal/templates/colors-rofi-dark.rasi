@@ -1,5 +1,5 @@
 * {{
-bg: {background}; // Main background color
+bg: #{background.strip}d4; // Main background color
 bg-light: {color1}; // Secondary background color
 bg-extra: {color2}; // Additional contrasting background color
 text: {color6}; // Main text color
