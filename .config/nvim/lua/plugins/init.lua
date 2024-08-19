@@ -12,7 +12,7 @@ local default_plugins = {
         priority = 1000,
         config = function()
             vim.cmd.colorscheme("tokyonight-night")
-        end,
+        end
     },]]
 
     {
@@ -22,7 +22,7 @@ local default_plugins = {
         config = function()
             -- Load the Colorscheme
             vim.cmd.colorscheme("pywal")
-        end,
+        end
     },
 
     -- Lsp stuff
@@ -31,7 +31,7 @@ local default_plugins = {
         cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require("mason").setup()
-        end,
+        end
     },
 
     {
@@ -46,7 +46,7 @@ local default_plugins = {
             vim.api.nvim_create_user_command("LspUninstallAll", function()
                 vim.cmd("LspUninstall " .. table.concat(opts.ensure_installed, " "))
             end, {})
-        end,
+        end
     },
 
     {
@@ -56,7 +56,7 @@ local default_plugins = {
         end,
         config = function()
             require("core.mappings").plugins.lspconfig()
-        end,
+        end
     },
 
     -- Load luasnips + Cmp related in insert mode only
@@ -83,7 +83,7 @@ local default_plugins = {
                 "L3MON4D3/LuaSnip",
                 config = function()
                     require("luasnip.loaders.from_vscode").lazy_load()
-                end,
+                end
             },
 
             -- Autopairing of (){}[] etc
@@ -98,7 +98,7 @@ local default_plugins = {
                     -- Setup cmp for autopairs
                     local cmp_autopairs = require "nvim-autopairs.completion.cmp"
                     require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-                end,
+                end
             },
         },
     },
@@ -107,7 +107,7 @@ local default_plugins = {
         "nvim-tree/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup()
-        end,
+        end
     },
 
     {
@@ -124,7 +124,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("sttusline").setup(opts)
-        end,
+        end
     },
 
     --[[{
@@ -139,7 +139,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("lualine").setup(opts)
-        end,
+        end
     },]]
 
     {
@@ -152,7 +152,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("bufferline").setup(opts)
-        end,
+        end
     },
 
     {
@@ -167,7 +167,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("nvim-treesitter.configs").setup(opts)
-        end,
+        end
     },
 
     {
@@ -175,7 +175,7 @@ local default_plugins = {
         lazy = false,
         config = function()
             require("nvim-ts-autotag").setup()
-        end,
+        end
     },
 
     {
@@ -189,7 +189,7 @@ local default_plugins = {
         end,
         config = function(_, opts)
             require("ibl").setup(opts)
-        end,
+        end
     },
 
     {
@@ -221,7 +221,7 @@ local default_plugins = {
         end,
         config = function()
             require("colorizer").setup()
-        end,
+        end
     },
 
     --[[{
@@ -248,7 +248,7 @@ local default_plugins = {
         end,
         config = function()
             require("gitsigns").setup()
-        end,
+        end
     },
 
     {
@@ -259,7 +259,7 @@ local default_plugins = {
         end,
         opts = function()
             return require "plugins.configs.zen_mode"
-        end,
+        end
     },
 
     {
@@ -272,6 +272,17 @@ local default_plugins = {
         end,
         cmd = { "LiveServerStart", "LiveServerStop" },
         config = true
+    },
+
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        init = function()
+            require("core.utils").lazy_load "render-markdown.nvim"
+        end,
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("render-markdown").enable()
+        end
     },
 
     {
