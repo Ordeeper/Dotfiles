@@ -27,7 +27,7 @@ require("mason").setup({
 
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
-    "lua_ls", "rust_analyzer", "pylsp", "bashls", "tsserver", "html", "cssls",
+    "lua_ls", "rust_analyzer", "pylsp", "bashls", "ts_ls", "html", "cssls",
     "tailwindcss", "clangd", "intelephense", "volar",
 }
 require("mason-lspconfig").setup {
@@ -77,7 +77,7 @@ lspconfig.pylsp.setup {
     }
 }
 lspconfig.bashls.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
 lspconfig.tailwindcss.setup {}
