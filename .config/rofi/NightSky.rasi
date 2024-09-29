@@ -31,7 +31,7 @@ entry {
     text-color: @text-focus;
     placeholder: "Type to Filter...";
     horizontal-align: 0.5;
-    font: "Maple Mono 13";
+    font: "Maple Mono 17";
     padding: 0px 15px 0px 27px;
     cursor: text;
 }
