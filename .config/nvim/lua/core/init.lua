@@ -6,7 +6,7 @@ local api = vim.api
 
 ------ Load Custom Highlights ------
 api.nvim_create_autocmd("VimEnter", {
-    command = "colorscheme highlight"
+	command = "colorscheme highlight"
 })
 
 ------ Miscellaneous ------
@@ -20,13 +20,16 @@ opt.timeoutlen = 600
 opt.undofile = true
 
 ------ Indenting ------
-opt.expandtab = true
+opt.expandtab = false
 opt.smarttab = true
 opt.softtabstop = 4
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.list = true
-opt.listchars = { space = "⋅" }
+opt.listchars = {
+	space = "⋅",
+	tab = "│⋅",
+}
 
 ------ Numbers ------
 opt.number = true
