@@ -70,6 +70,7 @@ function M.plugins()
         local fb_actions = require "telescope".extensions.file_browser.actions
         local get_status = require "telescope.state".get_status
         local select_one_or_multi = require("core.utils").select_one_or_multi
+        local focus_preview = require("core.utils").focus_preview
 
         keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
         keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
@@ -81,6 +82,9 @@ function M.plugins()
                     ["<C-t>"] = select_one_or_multi,
                     ["<C-k>"] = actions.move_selection_previous,
                     ["<C-j>"] = actions.move_selection_next,
+                    ["<C-u>"] = function(bufnr)
+                        return focus_preview(bufnr, "<C-u>")
+                    end,
                     ["<C-b>"] = function(bufnr)
                         get_status(bufnr).picker.layout_config.scroll_speed = 1
                         return actions.preview_scrolling_up(bufnr)
@@ -102,6 +106,9 @@ function M.plugins()
                 n = {
                     ["<CR>"] = actions.select_default,
                     ["<C-t>"] = select_one_or_multi,
+                    ["<C-u>"] = function(bufnr)
+                        return focus_preview(bufnr, "<C-u>")
+                    end,
                     ["<C-b>"] = function(bufnr)
                         get_status(bufnr).picker.layout_config.scroll_speed = 1
                         return actions.preview_scrolling_up(bufnr)
