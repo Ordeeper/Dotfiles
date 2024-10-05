@@ -35,7 +35,7 @@ return {
             -- Disables netrw and use telescope-file-browser in its place
             hijack_netrw = true,
             mappings = mapping_file_browser,
-            depth = 3,
+            depth = 7,
             respect_gitignore = true,
         },
     }
