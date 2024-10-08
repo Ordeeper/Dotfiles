@@ -194,7 +194,7 @@ local default_plugins = {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "*",
+		version = false,
 		dependencies = {
 			{ "nvim-telescope/telescope-fzf-native.nvim",  build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" },
 			{ "nvim-telescope/telescope-file-browser.nvim" },
