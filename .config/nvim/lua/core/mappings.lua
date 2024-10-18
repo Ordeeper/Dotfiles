@@ -179,6 +179,12 @@ function M.plugins()
 		keymap("n", "<leader>a", "<cmd> Twilight <CR>", { silent = true }) -- Toggle NvimTree
 	end
 
+	--------- Ufo ---------
+	function plugins.ufo()
+        keymap("n", "zR", require('ufo').openAllFolds, { silent = true })
+        keymap("n", "zM", require('ufo').closeAllFolds, { silent = true })
+    end
+
 	--------- Live Server ---------
 	function plugins.live_server()
 		keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true }) -- Toggle ZenMode

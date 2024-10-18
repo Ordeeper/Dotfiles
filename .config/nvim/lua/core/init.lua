@@ -20,6 +20,10 @@ opt.timeoutlen = 600
 opt.undofile = true
 
 ------ Indenting ------
+opt.foldcolumn = "0"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
 opt.expandtab = false
 opt.smarttab = true
 opt.softtabstop = 4

@@ -298,6 +298,19 @@ local default_plugins = {
 		end
 	},
 
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
+		event = "VimEnter",
+		config = function()
+			require("ufo").setup({
+				provider_selector = function(bufnr, filetype, buftype)
+					return { "treesitter", "indent" }
+				end
+			})
+		end
+	},
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
