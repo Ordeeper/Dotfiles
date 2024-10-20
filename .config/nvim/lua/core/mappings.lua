@@ -74,6 +74,7 @@ function M.plugins()
 
 		keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
 		keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
+		keymap("n", "<leader>j", "<cmd> Telescope buffers <CR>", { noremap = true })
 
 		return {
 				-- Mapping Telescope
@@ -170,6 +171,15 @@ function M.plugins()
 					["h"] = fb_actions.toggle_hidden,
 					["o"] = fb_actions.open,
 				}
+			},
+			{
+				-- Mapping Buffers
+				i = {
+					["<C-x>"] = actions.delete_buffer,
+				},
+				n = {
+					["x"] = actions.delete_buffer,
+				}
 			}
 	end
 
@@ -181,9 +191,9 @@ function M.plugins()
 
 	--------- Ufo ---------
 	function plugins.ufo()
-        keymap("n", "zR", require('ufo').openAllFolds, { silent = true })
-        keymap("n", "zM", require('ufo').closeAllFolds, { silent = true })
-    end
+		keymap("n", "zR", require('ufo').openAllFolds, { silent = true })
+		keymap("n", "zM", require('ufo').closeAllFolds, { silent = true })
+	end
 
 	--------- Live Server ---------
 	function plugins.live_server()
