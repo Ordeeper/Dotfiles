@@ -58,7 +58,7 @@ function M.visual()
 end
 
 function M.terminal()
-	keymap("t", "ESC", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)) -- Escape Terminal Mode
+	keymap("t", "<C-d>", "<cmd> q! <CR>", { silent = true })
 end
 
 function M.plugins()
@@ -191,14 +191,21 @@ function M.plugins()
 
 	--------- Ufo ---------
 	function plugins.ufo()
-		keymap("n", "zR", require('ufo').openAllFolds, { silent = true })
-		keymap("n", "zM", require('ufo').closeAllFolds, { silent = true })
+		keymap("n", "zR", require("ufo").openAllFolds, { silent = true })
+		keymap("n", "zM", require("ufo").closeAllFolds, { silent = true })
 	end
 
 	--------- Live Server ---------
 	function plugins.live_server()
 		keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true }) -- Toggle ZenMode
 		keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true }) -- Toggle ZenMode
+	end
+
+	--------- Toggleterm ---------
+	function plugins.toggleterm()
+		keymap("n", "<C-g>", "<cmd> ToggleTerm <CR>", { silent = true }) -- Toggle Toggleterm
+		keymap("i", "<C-g>", "<cmd> ToggleTerm <CR>", { silent = true }) -- Toggle Toggleterm
+		keymap("t", "<C-g>", "<cmd> ToggleTerm <CR>", { silent = true }) -- Toggle Toggleterm
 	end
 
 	--------- Cmp ---------

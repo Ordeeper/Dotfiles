@@ -300,6 +300,9 @@ local default_plugins = {
 
 	{
 		"kevinhwang91/nvim-ufo",
+		init = function()
+			require("core.utils").lazy_load "nvim-ufo"
+		end,
 		dependencies = "kevinhwang91/promise-async",
 		event = "VimEnter",
 		config = function()
@@ -308,6 +311,21 @@ local default_plugins = {
 					return { "treesitter", "indent" }
 				end
 			})
+		end
+	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		init = function()
+			require("core.utils").lazy_load "toggleterm.nvim"
+		end,
+		version = "*",
+		event = "VimEnter",
+		opts = function()
+			return require "plugins.configs.toggleterm"
+		end,
+		config = function(_, opts)
+			require("toggleterm").setup(opts)
 		end
 	},
 
