@@ -1,7 +1,23 @@
+local custom_theme = require("lualine.themes.auto")
+
+custom_theme.normal.b.bg = "None"
+custom_theme.insert.b.bg = "None"
+custom_theme.visual.b.bg = "None"
+custom_theme.replace.b.bg = "None"
+custom_theme.command.b.bg = "None"
+custom_theme.inactive.b.bg = "None"
+
+custom_theme.normal.c.bg = "None"
+custom_theme.insert.c.bg = "None"
+custom_theme.visual.c.bg = "None"
+custom_theme.replace.c.bg = "None"
+custom_theme.command.c.bg = "None"
+custom_theme.inactive.c.bg = "None"
+
 return {
     options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = custom_theme,
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {

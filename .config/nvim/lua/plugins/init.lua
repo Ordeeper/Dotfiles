@@ -111,41 +111,24 @@ local default_plugins = {
 	},
 
 	{
-		"sontungexpt/sttusline",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
+		"nvim-lualine/lualine.nvim",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		event = "VimEnter",
 		init = function()
-			require("core.utils").lazy_load "sttusline"
+			require("core.utils").lazy_load "lualine.nvim"
 		end,
-		event = { "BufEnter" },
 		opts = function()
-			return require "plugins.configs.sttusline"
+			return require "plugins.configs.lualine"
 		end,
 		config = function(_, opts)
-			require("sttusline").setup(opts)
+			require("lualine").setup(opts)
 		end
 	},
 
-	--[[{
-        "nvim-lualine/lualine.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        init = function()
-            require("core.utils").lazy_load "nvim-lspconfig"
-        end,
-        lazy = false,
-        opts = function()
-            return require "plugins.configs.lualine"
-        end,
-        config = function(_, opts)
-            require("lualine").setup(opts)
-        end
-    },]]
-
 	{
 		"akinsho/bufferline.nvim",
-		lazy = false,
 		dependencies = "nvim-tree/nvim-web-devicons",
+		event = "VimEnter",
 		version = "*",
 		opts = function()
 			return require "plugins.configs.bufferline"
@@ -172,7 +155,7 @@ local default_plugins = {
 
 	{
 		"windwp/nvim-ts-autotag",
-		lazy = false,
+		event = "InsertEnter",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end
