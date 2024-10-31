@@ -312,6 +312,26 @@ local default_plugins = {
 		end
 	},
 
+	{
+		"coffebar/neovim-project",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			"nvim-lua/plenary.nvim",
+			"Shatur/neovim-session-manager"
+		},
+		event = "VimEnter",
+		init = function()
+			require("core.utils").lazy_load "neovim-project"
+			vim.opt.sessionoptions:append("globals")
+		end,
+		opts = function()
+			return require "plugins.configs.neovim_project"
+		end,
+		config = function(_, opts)
+			require("neovim-project").setup(opts)
+		end,
+	},
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"

@@ -208,6 +208,13 @@ function M.plugins()
 		keymap("t", "<C-g>", "<cmd> ToggleTerm <CR>", { silent = true }) -- Toggle Toggleterm
 	end
 
+	--------- Neovim Project ---------
+	function plugins.neovim_project()
+		keymap("n", "<leader>l", "<cmd> NeovimProjectHistory <CR>", { silent = true })
+		keymap("n", "<leader>k", "<cmd> NeovimProjectDiscover <CR>", { silent = true })
+		keymap("n", "<leader>R", "<cmd> NeovimProjectLoadRecent <CR>", { silent = true })
+	end
+
 	--------- Cmp ---------
 	function plugins.cmp()
 		local cmp = require("cmp")
