@@ -215,6 +215,12 @@ function M.plugins()
 		keymap("n", "<leader>R", "<cmd> NeovimProjectLoadRecent <CR>", { silent = true })
 	end
 
+	--------- Codesnap ---------
+	function plugins.codesnap()
+		keymap("x", "<leader>c", "<cmd> CodeSnap <CR>")
+		keymap("x", "<leader>s", "<cmd> CodeSnapSave <CR>")
+	end
+
 	--------- Cmp ---------
 	function plugins.cmp()
 		local cmp = require("cmp")

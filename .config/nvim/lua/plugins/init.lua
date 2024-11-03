@@ -332,6 +332,20 @@ local default_plugins = {
 		end,
 	},
 
+	{
+		"mistricky/codesnap.nvim",
+		build = "make",
+		init = function()
+			require("core.utils").lazy_load "codesnap.nvim"
+		end,
+		keys = {
+			require("core.mappings").plugins.codesnap()
+		},
+		config = function(_, opts)
+			require("codesnap").setup(opts)
+		end,
+	},
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
