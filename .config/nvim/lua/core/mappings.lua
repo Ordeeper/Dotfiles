@@ -221,8 +221,8 @@ function M.plugins()
 
 	--------- Codesnap ---------
 	function plugins.codesnap()
-		keymap("x", "<leader>c", "<cmd> CodeSnap <CR>")
-		keymap("x", "<leader>s", "<cmd> CodeSnapSave <CR>")
+		keymap("x", "<leader>C", "<cmd> CodeSnap <CR>")
+		keymap("x", "<leader>S", "<cmd> CodeSnapSave <CR>")
 	end
 
 	--------- Cmp ---------
