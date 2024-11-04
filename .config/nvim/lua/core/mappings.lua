@@ -213,6 +213,10 @@ function M.plugins()
 		keymap("n", "<leader>l", "<cmd> NeovimProjectHistory <CR>", { silent = true })
 		keymap("n", "<leader>k", "<cmd> NeovimProjectDiscover <CR>", { silent = true })
 		keymap("n", "<leader>R", "<cmd> NeovimProjectLoadRecent <CR>", { silent = true })
+		return {
+			i = "<C-x>",
+			n = "x"
+		}
 	end
 
 	--------- Codesnap ---------

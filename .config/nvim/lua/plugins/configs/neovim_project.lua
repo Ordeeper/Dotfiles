@@ -1,7 +1,6 @@
-local mapping_neovim_project = require("core.mappings").plugins.neovim_project
+local mapping_neovim_project = require("core.mappings").plugins.neovim_project()
 
 return {
-	mapping_neovim_project(),
 	projects = {
 		"~/Documents/projects/*",
 		"~/Documents/works/*",
@@ -12,4 +11,5 @@ return {
 		type = "telescope",
 	},
 	last_session_on_startup = false,
+	forget_project_keys = mapping_neovim_project,
 }
