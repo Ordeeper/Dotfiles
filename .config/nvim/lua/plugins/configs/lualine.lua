@@ -34,7 +34,7 @@ return {
         },
     },
     sections = {
-        lualine_a = { "mode" },
+        lualine_a = { "mode", "vim.fn.fnamemodify(vim.fn.getcwd(), ':t')" },
         lualine_b = { "branch", "diff", "diagnostics" },
         lualine_c = {},
         lualine_x = {},
