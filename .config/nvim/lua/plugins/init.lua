@@ -271,6 +271,9 @@ local default_plugins = {
 
 	{
 		"Exafunction/codeium.nvim",
+		init = function()
+			require("core.utils").lazy_load "codeium.nvim"
+		end,
 		event = "InsertEnter",
 		dependencies = {
 			"nvim-lua/plenary.nvim",

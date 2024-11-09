@@ -26,8 +26,7 @@ require("mason").setup({
 
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
-	"lua_ls", "rust_analyzer", "pylsp", "bashls", "ts_ls", "html", "cssls",
-	"tailwindcss", "clangd", "intelephense", "volar",
+	"lua_ls", "pylsp", "bashls", "volar", "ts_ls", "cssls", "phpactor", "yamlls", "html"
 }
 require("mason-lspconfig").setup {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
@@ -62,6 +61,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+--------- LSP ---------
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {
@@ -84,11 +84,6 @@ lspconfig.lua_ls.setup {
 		},
 	},
 }
-lspconfig.rust_analyzer.setup {
-	settings = {
-		["rust-analyzer"] = {},
-	},
-}
 lspconfig.pylsp.setup {
 	settings = {
 		pylsp = {
@@ -102,13 +97,11 @@ lspconfig.pylsp.setup {
 	}
 }
 lspconfig.bashls.setup {}
-lspconfig.ts_ls.setup {}
-lspconfig.html.setup {}
-lspconfig.cssls.setup {}
-lspconfig.tailwindcss.setup {}
-lspconfig.clangd.setup {}
-lspconfig.intelephense.setup {}
 lspconfig.volar.setup {}
-lspconfig.astro.setup {}
+lspconfig.ts_ls.setup {}
+lspconfig.cssls.setup {}
+lspconfig.phpactor.setup {}
+lspconfig.yamlls.setup {}
+lspconfig.html.setup {}
 
 return M
