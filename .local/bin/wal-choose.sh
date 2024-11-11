@@ -1,25 +1,4 @@
 #!/usr/bin/env bash
-# This is just an example how ueberzug can be used with fzf.
-# Copyright (C) 2019  Nico Bäurer
-# Copyright (C) 2022  Tomasz Kapias
-#     - Updated:
-#         - optional PATH as only option
-#         - internal FDfind query for images
-#         - display SVGs after caching a converted png
-#         - Imagemagick's identify infos as header with margin
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 readonly BASH_BINARY="$(which bash)"
 readonly REDRAW_COMMAND="toggle-preview+toggle-preview"
 readonly REDRAW_KEY="µ"
@@ -240,7 +219,6 @@ backend_fast_colorthief=""
 backend_haishoku=""
 backend_list='wal'
 
-
 which schemer2 >/dev/null
 backend_schemer=$?
 [ "$backend_schemer" = 0 ] && backend_list="${backend_list}"' schemer2'
@@ -347,4 +325,5 @@ if [ -z "$selection" ]; then
 else
     prettyp "$myname" "selected image" "${selection}"
     $wal_img_cmd "${selection}"
+    ~/.local/bin/./wall.sh
 fi
