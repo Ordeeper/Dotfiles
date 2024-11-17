@@ -26,7 +26,7 @@ require("mason").setup({
 
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
-	"lua_ls", "pylsp", "bashls", "volar", "ts_ls", "cssls", "phpactor", "yamlls", "html"
+	"lua_ls", "pylsp", "bashls", "volar", "ts_ls", "cssls", "phpactor", "yamlls", "html", "tailwindcss"
 }
 require("mason-lspconfig").setup {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
@@ -103,5 +103,6 @@ lspconfig.cssls.setup {}
 lspconfig.phpactor.setup {}
 lspconfig.yamlls.setup {}
 lspconfig.html.setup {}
+lspconfig.tailwindcss.setup {}
 
 return M
