@@ -2,12 +2,6 @@ require "core.mappings"
 
 ------ Local Variables ------
 local opt = vim.opt
-local api = vim.api
-
------- Load Custom Highlights ------
-api.nvim_create_autocmd("VimEnter", {
-	command = "colorscheme highlight"
-})
 
 ------ Miscellaneous ------
 opt.ignorecase = true

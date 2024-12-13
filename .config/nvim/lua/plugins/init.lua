@@ -5,24 +5,18 @@ local default_plugins = {
 	"nvim-lua/plenary.nvim",
 
 	-- Colorschemes
-	-- Fallback Colorschemes
-	--[[{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("tokyonight-night")
-		end
-	},]]
-
 	{
-		"AlphaTechnolog/pywal.nvim",
+		"folke/tokyonight.nvim",
+		dependencies = "AlphaTechnolog/pywal.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			-- Load the Colorscheme
-			vim.cmd.colorscheme("pywal")
-		end
+		opts = function()
+			return require "plugins.configs.tokyonight"
+		end,
+		config = function(_, opts)
+			require("tokyonight").setup(opts)
+			vim.cmd.colorscheme("tokyonight")
+		end,
 	},
 
 	-- Lsp stuff

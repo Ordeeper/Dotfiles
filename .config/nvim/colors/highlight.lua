@@ -9,16 +9,12 @@ if success then
 	--api.nvim_set_hl(0, "CursorLine", { bg = "#0E1117" })
 	api.nvim_set_hl(0, "CursorLineNr", { fg = colors.color5 })
 	api.nvim_set_hl(0, "NormalFloat", {
-		bg = colors.color0,
+		bg = colors.background,
 	})
 	api.nvim_set_hl(0, "FloatBorder", {
 		fg = colors.color1,
-		bg = colors.color0,
+		bg = colors.background,
 	})
+
+	api.nvim_set_hl(0, "StatusLine", { bold = true })
 end
-
------- Options ------
-opt.cursorline = true
-
------- Colors ------
-api.nvim_set_hl(0, "StatusLine", { bold = true })
