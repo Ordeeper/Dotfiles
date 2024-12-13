@@ -39,6 +39,8 @@ function M.normal()
 	keymap("n", "<C-q>", "<cmd> q! <CR>")         -- Don't Save and Exit
 	keymap("n", "<leader>n", "<cmd> set nu! <CR>") -- Toggle Line Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle Relative Number
+	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>") -- Toggle Relative Number
+
 
 	--------- Switch Between Windows ---------
 	keymap("n", "<C-h>", "<C-w>h") -- Window Left
@@ -55,6 +57,7 @@ function M.normal()
 end
 
 function M.visual()
+	keymap("v", "gp", [[:s/\%V\w\+/\L\u&/g<CR>:noh<CR>]], { noremap = true, silent = true })
 end
 
 function M.terminal()
