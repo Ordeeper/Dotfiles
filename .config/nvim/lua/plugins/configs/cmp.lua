@@ -63,10 +63,13 @@ cmp.setup.cmdline(":", {
 })
 
 local servers = require("plugins.configs.mason_lspconfig").ensure_installed
+local servers_exclude = require("plugins.configs.mason_lspconfig").exclude_installed
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Set up lspconfig.
 for _, server in ipairs(servers) do
-	require("lspconfig")[server].setup {
-		capabilities = capabilities,
-	}
+	if not vim.tbl_contains(servers_exclude, server) then
+		require("lspconfig")[server].setup {
+			capabilities = capabilities,
+		}
+	end
 end

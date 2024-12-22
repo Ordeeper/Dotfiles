@@ -26,7 +26,10 @@ require("mason").setup({
 
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
-	"lua_ls", "pylsp", "bashls", "volar", "ts_ls", "cssls", "phpactor", "yamlls", "html", "tailwindcss"
+	"lua_ls", "pylsp", "bashls", "cssls", "phpactor", "yamlls", "html", "tailwindcss"
+}
+M.exclude_installed = {
+
 }
 require("mason-lspconfig").setup {
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
@@ -37,19 +40,19 @@ require("mason-lspconfig").setup {
 local lspconfig = require "lspconfig"
 
 local border = {
-	{ '┌', 'FloatBorder' },
-	{ '─', 'FloatBorder' },
-	{ '┐', 'FloatBorder' },
-	{ '│', 'FloatBorder' },
-	{ '┘', 'FloatBorder' },
-	{ '─', 'FloatBorder' },
-	{ '└', 'FloatBorder' },
-	{ '│', 'FloatBorder' },
+	{ "┌", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "┐", "FloatBorder" },
+	{ "│", "FloatBorder" },
+	{ "┘", "FloatBorder" },
+	{ "─", "FloatBorder" },
+	{ "└", "FloatBorder" },
+	{ "│", "FloatBorder" },
 }
 
 vim.diagnostic.config({
 	virtual_text = {
-		prefix = '●',
+		prefix = "●",
 	},
 	float = { border = border },
 })
@@ -97,12 +100,12 @@ lspconfig.pylsp.setup {
 	}
 }
 lspconfig.bashls.setup {}
-lspconfig.volar.setup {}
-lspconfig.ts_ls.setup {}
-lspconfig.cssls.setup {}
 lspconfig.phpactor.setup {}
 lspconfig.yamlls.setup {}
-lspconfig.html.setup {}
 lspconfig.tailwindcss.setup {}
+lspconfig.cssls.setup {}
+lspconfig.html.setup {}
+
+-- vim.lsp.set_log_level("DEBUG")
 
 return M

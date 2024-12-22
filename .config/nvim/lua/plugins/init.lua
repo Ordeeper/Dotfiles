@@ -342,6 +342,26 @@ local default_plugins = {
 		end,
 	},
 
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		ft = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+		opts = {
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"vue",
+			},
+			settings = {
+				tsserver_plugins = {
+					"@vue/typescript-plugin",
+				},
+			},
+		},
+	},
+
 }
 
 local lazy_nvim = require "plugins.configs.lazy_nvim"
