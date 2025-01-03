@@ -46,7 +46,7 @@ if command -v pacman &> /dev/null; then
 
 	echo "Installing Programs..."
 	yay -Syu ${packages_arch} --needed --noconfirm
-	npm -g i ${packages_npm}
+	sudo npm -g i ${packages_npm}
 	sleep 1 && clear
 
 	echo "Organizing Dotfiles and Configurations..."
@@ -63,6 +63,23 @@ if command -v pacman &> /dev/null; then
 		chsh -s /usr/bin/fish
 	fi
 	sleep 1 && clear
+
+	read -p "Do you want to use auto-cpufreq? (y/n) " answer
+	sleep 1 && clear
+
+	case $answer in
+		"y"|"Y")
+			echo "Installing auto-cpufreq..."
+			yay -S auto-cpufreq --needed --noconfirm
+			systemctl enable --now auto-cpufreq
+			;;
+		"n"|"N")
+			echo "Skipping..."
+			;;
+		*)
+			echo "Invalid Answer, skipping..."
+			;;
+	esac
 
 	read -p "Do you want to use a display manager? (y/n) " answer
 	sleep 1 && clear
