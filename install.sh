@@ -51,7 +51,8 @@ if command -v pacman &> /dev/null; then
 
 	echo "Organizing Dotfiles and Configurations..."
 	xdg-user-dirs-update
-	stow -d .. -t $HOME Dotfiles --ignore=install.sh
+	stow -d .. -t $HOME Dotfiles --ignore='install.sh|root/'
+	sudo stow -t / root/
 	wpg-install.sh -ig
 	git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
 	touch $HOME/.xinitrc
