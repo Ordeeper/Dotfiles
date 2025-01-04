@@ -53,6 +53,7 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 exec --no-startup-id wal -R
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id redshift &
+exec --no-startup-id libinput-gestures-setup start
 exec_always --no-startup-id clipcatd
 exec_always --no-startup-id $HOME/.local/bin/launch_dunst.sh &
 exec_always --no-startup-id picom &
