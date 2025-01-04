@@ -28,7 +28,7 @@ if command -v pacman &> /dev/null; then
     packages_arch="fzf asdf-vm stow alsa-utils firefox-nightly-bin htop btop cava clipmenu xsel xclip clipnotify cmatrix corrupter-bin cowsay cpulimit dbus-python vesktop-bin dmidecode docker dunst feh fish flameshot scrot gnu-netcat i3-wm i3lock-color imagemagick inotify-tools kitty ksshaskpass libva-intel-driver lxappearance mesa mpv appimagelauncher dropbox nemo nemo-dropbox neofetch picom-git pipewire-alsa pipewire-pulse polybar python-gobject python-pip npm python-pywal python-pywalfox rust hoppscotch-bin wal-telegram-git telegram-desktop ranger redshift rofi slop wpgtk tesseract tesseract-data-osd tesseract-data-eng tesseract-data-por tldr tmux ttf-maple ttf-hack-nerd noto-fonts-emoji unzip vulkan-icd-loader vulkan-intel wireplumber wmctrl xdotool yad xorg-xwininfo xdg-user-dirs xorg-server xorg-xinit xorg-xev zbar lm_sensors man-db man-pages lazygit neovim ripgrep waydroid weston android-tools python-pyclip clipcat ueberzug zotero-bin"
 
     packages_npm="@vue/typescript-plugin live-server"
-    packages_notebook="auto-cpufreq brightnessctl"
+    packages_notebook="auto-cpufreq brightnessctl libinput-gestures"
 
     if grep -q "hypervisor" /proc/cpuinfo; then
         packages_arch=$(echo "$packages_arch" | sed 's/picom-git//g')
@@ -53,6 +53,7 @@ if command -v pacman &> /dev/null; then
         sleep 1 && clear
         yay -Syu ${packages_notebook} --needed --noconfirm
         systemctl enable --now auto-cpufreq
+        libinput-gestures-setup autostart
     fi
     sleep 1 && clear
 
@@ -60,7 +61,7 @@ if command -v pacman &> /dev/null; then
     xdg-user-dirs-update
     stow -d .. -t $HOME Dotfiles --ignore='install.sh|root/'
     sudo stow -t / root/
-    sudo usermod -aG video $USER
+    sudo usermod -aG video,input $USER
     wpg-install.sh -ig
     git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
     touch $HOME/.xinitrc
