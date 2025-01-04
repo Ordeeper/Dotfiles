@@ -1,6 +1,7 @@
 return {
 	formatters_by_ft = {
 		lua = { "stylua" },
+		sh = { "beautysh" },
 		["_"] = { "prettierd" },
 	},
 	default_format_opts = {
