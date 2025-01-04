@@ -1,88 +1,92 @@
 @import "~/.cache/wal/colors-rofi-dark"
 
 * {
-    /*--------- Properties for All Widgets ---------*/
-    font: "Maple Mono 12";
-    background-color: transparent;
-    vertical-align: 0.5;
-    spacing: 0;
-    border-color: @accent-active;
+	/*--------- Properties for All Widgets ---------*/
+	font: "Maple Mono 12";
+	background-color: transparent;
+	vertical-align: 0.5;
+	spacing: 0;
+	border-color: @accent-active;
 }
 
 window {
-    width: 600px;
-    location: center;
-    anchor: center;
-    background-color: @bg;
-    border: 1px;
+	width: 600px;
+	location: center;
+	anchor: center;
+	background-color: @bg;
+	border: 1px;
 }
 
 mainbox {
-    margin: 27px;
-    spacing: 27px;
-    children: [inputbar,listview,mode-switcher];
+	margin: 27px;
+	spacing: 27px;
+	children: [inputbar, listview, mode-switcher];
 }
 
 prompt {
-    enabled: false;
+	enabled: false;
 }
 
 entry {
-    text-color: @text-focus;
-    placeholder: "Type to Filter...";
-    horizontal-align: 0.5;
-    font: "Maple Mono 17";
-    padding: 0px 15px 0px 27px;
-    cursor: text;
+	text-color: @text-focus;
+	placeholder: "Type to Filter...";
+	horizontal-align: 0.5;
+	font: "Maple Mono 17";
+	padding: 0px 15px 0px 27px;
+	cursor: text;
 }
 
 listview {
-    lines: 5;
-    spacing: 3;
+	lines: 5;
+	spacing: 3;
+}
+
+mode-switcher {
+	padding: 4px 0;
 }
 
 button {
-    text-color: @accent-primary;
-    padding: 9px;
-    font: "icomoon\-feather Regular 18";
-    cursor: pointer;
-    border-radius: 9px;
+	text-color: @accent-primary;
+	padding: 3px;
+	font: "Hack Nerd Propo Regular 23";
+	cursor: pointer;
+	border-radius: 9px;
 }
 
 button.selected {
-    text-color: @accent-active;
-    border: 1px;
+	text-color: @accent-active;
+	border: 1px;
 }
 
 element {
-    children: [element-icon,element-text];
-    text-color: @text;
-    cursor: pointer;
+	children: [element-icon, element-text];
+	text-color: @text;
+	cursor: pointer;
 }
 
 element-icon {
-    size: 30;
-    padding: 9px;
-    cursor: inherit;
+	size: 30;
+	padding: 9px;
+	cursor: inherit;
 }
 
 element-text {
-    text-color: inherit;
-    cursor: inherit;
+	text-color: inherit;
+	cursor: inherit;
 }
 
 element.selected {
-    text-color: @text-focus;
-    border-radius: 9px;
-    border: 1px;
+	text-color: @text-focus;
+	border-radius: 9px;
+	border: 1px;
 }
 
 element.active {
-    text-color: @accent-active;
+	text-color: @accent-active;
 }
 
 element.urgent {
-    text-color: @accent-active;
+	text-color: @accent-active;
 }
 
 /* vim: ft=css

@@ -1,28 +1,30 @@
 configuration {
 
-    /*--------- Configuration ---------*/
-    modes: "drun,window,run";
-    window-format: "{c:14}         {w}";
-    drun-display-format: "{name}";
-    show-icons: true;
-    icon-theme: "candy-icons"; 
-    terminal: "i3-sensible-terminal";
-    display-drun: "";
-    display-window: "";
-    display-run: "";
-    run-list-command: "";
+	/*--------- Configuration ---------*/
+	modes: "drun,window,run";
+	window-format: "{c:14}         {w}";
+	drun-display-format: "{name}";
+	show-icons: true;
+	icon-theme: "candy-icons";
+	terminal: "i3-sensible-terminal";
+	display-drun: "";
+	display-window: "";
+	display-run: "";
+	run-list-command: "";
 
-    drun, window, run {
-        fallback-icon: "application-x-addon";
-        close-on-delete: false;
-    }
+	drun,
+	window,
+	run {
+		fallback-icon: "application-x-addon";
+		close-on-delete: false;
+	}
 
-    /*--------- Keybinds ---------*/
-    kb-mode-next: "Shift+Right,Control+Tab,Alt+l";
-    kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Alt+h";
-    kb-row-up: "Up,Control+p,Alt+k";
-    kb-row-down: "Down,Control+n,Alt+j";
-    kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+d,Alt+x,Alt+c";
+	/*--------- Keybinds ---------*/
+	kb-mode-next: "Shift+Right,Control+Tab,Alt+l";
+	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Alt+h";
+	kb-row-up: "Up,Control+p,Alt+k";
+	kb-row-down: "Down,Control+n,Alt+j";
+	kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+d,Alt+x,Alt+c";
 
 }
 
