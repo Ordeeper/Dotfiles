@@ -61,6 +61,7 @@ if command -v pacman &> /dev/null; then
     echo "Organizing Dotfiles and Configurations..."
     xdg-user-dirs-update
     stow -d .. -t $HOME Dotfiles --ignore='install.sh|root/'
+    sudo rm -f /etc/X11/xorg.conf.d/00-keyboard.conf
     sudo stow -t / root/
     sudo usermod -aG video,input $USER
     wpg-install.sh -ig
