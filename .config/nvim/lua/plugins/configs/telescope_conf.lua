@@ -33,6 +33,8 @@ return {
 		},
 		buffers = {
 			mappings = mapping_buffers,
+			ignore_current_buffer = true,
+			sort_mru = true,
 		},
 	},
 	extensions = {
