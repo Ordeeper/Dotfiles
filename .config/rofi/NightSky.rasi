@@ -48,7 +48,7 @@ mode-switcher {
 button {
 	text-color: @accent-primary;
 	padding: 3px;
-	font: "Hack Nerd Propo Regular 23";
+	font: "Hack Nerd Propo Regular 21";
 	cursor: pointer;
 	border-radius: 9px;
 }
