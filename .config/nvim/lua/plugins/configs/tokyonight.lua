@@ -6,4 +6,9 @@ return {
 		colors.bg_float = colors_pywal.background
 		colors.bg_statusline = colors_pywal.background
 	end,
+	styles = {
+		keywords = { italic = true },
+		comments = { italic = true },
+		functions = { italic = true },
+	},
 }
