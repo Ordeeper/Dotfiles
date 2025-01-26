@@ -60,10 +60,10 @@ if command -v pacman &> /dev/null; then
 
     echo "Organizing Dotfiles and Configurations..."
     xdg-user-dirs-update
-    stow -d .. -t $HOME Dotfiles --ignore='install.sh|root/'
+    stow -d .. -t $HOME Dotfiles --ignore='install.sh|root'
     sudo rm -f /etc/X11/xorg.conf.d/00-keyboard.conf
-    sudo rm -f /etc/systemd/logind.conf
-    sudo stow -t / root/
+    sudo cp root/etc/systemd/logind.conf /etc/systemd/ -f --remove-destination
+    sudo stow -t / root/ --ignore='logind.conf'
     sudo usermod -aG video,input $USER
     wpg-install.sh -ig
     git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
