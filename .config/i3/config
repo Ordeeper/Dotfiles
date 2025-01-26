@@ -53,6 +53,7 @@ for_window [class="Yad" title="yad-calendar"] floating enable
 exec --no-startup-id wal -R
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id redshift &
+exec --no-startup-id dropbox &
 exec --no-startup-id nm-applet &
 exec --no-startup-id bash -c 'if [ -d /sys/class/power_supply/BAT0 ]; then libinput-gestures-setup start & blueman-applet & fi'
 exec_always --no-startup-id clipcatd
