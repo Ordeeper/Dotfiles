@@ -195,12 +195,15 @@ local default_plugins = {
 	},
 
 	{
-		"norcalli/nvim-colorizer.lua",
+		"brenoprata10/nvim-highlight-colors",
 		init = function()
-			require("core.utils").lazy_load("nvim-colorizer.lua")
+			require("core.utils").lazy_load("nvim-highlight-colors")
 		end,
-		config = function()
-			require("colorizer").setup()
+		opts = function()
+			return require("plugins.configs.highlight_colors")
+		end,
+		config = function(_, opts)
+			require("nvim-highlight-colors").setup(opts)
 		end,
 	},
 
