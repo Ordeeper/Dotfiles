@@ -1,4 +1,4 @@
-require "core.mappings"
+require("core.mappings")
 
 ------ Local Variables ------
 local opt = vim.opt
@@ -12,6 +12,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.timeoutlen = 600
 opt.undofile = true
+opt.scrolloff = 7
 
 ------ Indenting ------
 opt.foldcolumn = "0"
@@ -46,4 +47,4 @@ opt.updatetime = 250
 
 -- Go to previous/next line with h,l,left arrow and right arrow
 -- When cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
