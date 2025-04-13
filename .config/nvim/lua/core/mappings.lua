@@ -149,6 +149,7 @@ function M.plugins()
 				["<C-b>"] = actions.select_vertical,
 				["<C-n>"] = actions.select_horizontal,
 				["e"] = false,
+				["w"] = false,
 			},
 		}, {
 			-- Mapping Telescope File Browser
