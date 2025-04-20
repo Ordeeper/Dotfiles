@@ -26,18 +26,23 @@ require("mason").setup({
 
 -- Setup Mason-Lspconfig
 M.ensure_installed = {
-	"lua_ls", "pylsp", "bashls", "cssls", "phpactor", "yamlls", "html", "tailwindcss"
+	"lua_ls",
+	"pylsp",
+	"bashls",
+	"cssls",
+	"phpactor",
+	"yamlls",
+	"html",
+	"tailwindcss",
 }
-M.exclude_installed = {
-
-}
-require("mason-lspconfig").setup {
+M.exclude_installed = {}
+require("mason-lspconfig").setup({
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
 	ensure_installed = M.ensure_installed,
-}
+})
 
 -- Setup Lsp
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 
 local border = {
 	{ "┌", "FloatBorder" },
@@ -65,7 +70,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 --------- LSP ---------
-lspconfig.lua_ls.setup {
+lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
 			runtime = {
@@ -86,25 +91,25 @@ lspconfig.lua_ls.setup {
 			},
 		},
 	},
-}
-lspconfig.pylsp.setup {
+})
+lspconfig.pylsp.setup({
 	settings = {
 		pylsp = {
 			plugins = {
 				pycodestyle = {
 					ignore = { "W391" },
 					maxLineLength = 100,
-				}
-			}
-		}
-	}
-}
-lspconfig.bashls.setup {}
-lspconfig.phpactor.setup {}
-lspconfig.yamlls.setup {}
-lspconfig.tailwindcss.setup {}
-lspconfig.cssls.setup {}
-lspconfig.html.setup {}
+				},
+			},
+		},
+	},
+})
+lspconfig.bashls.setup({})
+lspconfig.phpactor.setup({})
+lspconfig.yamlls.setup({})
+lspconfig.tailwindcss.setup({})
+lspconfig.cssls.setup({})
+lspconfig.html.setup({})
 
 -- vim.lsp.set_log_level("DEBUG")
 

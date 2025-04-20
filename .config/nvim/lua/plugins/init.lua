@@ -383,15 +383,15 @@ local default_plugins = {
 		end,
 	},
 
-	{
-		"sunjon/shade.nvim",
-		init = function()
-			require("core.utils").lazy_load("shade.nvim")
-		end,
-		config = function()
-			require("shade").setup()
-		end,
-	},
+	-- {
+	-- 	"sunjon/shade.nvim",
+	-- 	init = function()
+	-- 		require("core.utils").lazy_load("shade.nvim")
+	-- 	end,
+	-- 	config = function()
+	-- 		require("shade").setup()
+	-- 	end,
+	-- },
 }
 
 local lazy_nvim = require("plugins.configs.lazy_nvim")
