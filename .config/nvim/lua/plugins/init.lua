@@ -246,18 +246,6 @@ local default_plugins = {
 	},
 
 	{
-		"barrett-ruth/live-server.nvim",
-		init = function()
-			require("core.utils").lazy_load("live-server.nvim")
-		end,
-		opts = function()
-			return require("plugins.configs.live_server")
-		end,
-		cmd = { "LiveServerStart", "LiveServerStop" },
-		config = true,
-	},
-
-	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		init = function()
 			require("core.utils").lazy_load("render-markdown.nvim")

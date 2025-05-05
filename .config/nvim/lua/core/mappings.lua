@@ -204,12 +204,6 @@ function M.plugins()
 		keymap("n", "zM", require("ufo").closeAllFolds, { silent = true })
 	end
 
-	--------- Live Server ---------
-	function plugins.live_server()
-		keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true }) -- Toggle ZenMode
-		keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true }) -- Toggle ZenMode
-	end
-
 	--------- Toggleterm ---------
 	function plugins.toggleterm()
 		keymap("n", "<C-g>", "<cmd> ToggleTerm <CR>", { silent = true }) -- Toggle Toggleterm
