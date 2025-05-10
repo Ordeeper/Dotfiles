@@ -13,7 +13,7 @@
 | Terminal       | Kitty                 |
 | App Launcher   | Rofi                  |
 | Theme          | Pywal                 |
-| Font           | Maple Mono / Hac      |
+| Font           | Maple Mono / Hack     |
 
 ## Installation
 
