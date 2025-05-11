@@ -78,6 +78,7 @@ function M.plugins()
 		keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
 		keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
 		keymap("n", "<leader>j", "<cmd> Telescope buffers <CR>", { noremap = true })
+		keymap("n", "gd", "<cmd> Telescope lsp_definitions <CR>", { noremap = true })
 
 		return {
 			-- Mapping Telescope
@@ -232,7 +233,7 @@ function M.plugins()
 	function plugins.blink()
 		return {
 			preset = "none",
-			["<C-e>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+			["<C-t>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
 			["<Tab>"] = {
 				function(cmp)
 					if cmp.snippet_active() then
@@ -271,10 +272,10 @@ function M.plugins()
 				-- Buffer local mappings.
 				local opts = { buffer = ev.buf }
 				keymap("n", "gD", vim.lsp.buf.declaration, opts)
-				keymap("n", "gd", vim.lsp.buf.definition, opts)
-				keymap("n", "K", vim.lsp.buf.hover, opts)
+				-- keymap("n", "gd", vim.lsp.buf.definition, opts)
+				keymap("n", "gt", vim.lsp.buf.hover, opts)
 				keymap("n", "gi", vim.lsp.buf.implementation, opts)
-				keymap("n", "<C-ç>", vim.lsp.buf.signature_help, opts)
+				keymap("n", "ga", vim.lsp.buf.signature_help, opts)
 				keymap("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
 				keymap("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
 				keymap("n", "<leader>wl", function()
