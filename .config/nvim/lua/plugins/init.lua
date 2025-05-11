@@ -1,7 +1,6 @@
 -- All plugins have lazy=true by default,to load a plugin on startup just lazy=false
 -- List of all default plugins & their definitions
 local default_plugins = {
-
 	"nvim-lua/plenary.nvim",
 
 	-- Colorschemes
@@ -53,48 +52,30 @@ local default_plugins = {
 		end,
 	},
 
-	-- Load luasnips + Cmp related in insert mode only
 	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		config = function()
-			require("plugins.configs.cmp")
+		"saghen/blink.cmp",
+		init = function()
+			require("core.utils").lazy_load("blink.cmp")
 		end,
 		dependencies = {
-			-- Cmp sources plugins
-			{
-				"neovim/nvim-lspconfig",
-				"saadparwaiz1/cmp_luasnip",
-				"hrsh7th/cmp-nvim-lsp",
-				"hrsh7th/cmp-buffer",
-				"hrsh7th/cmp-path",
-				"hrsh7th/cmp-cmdline",
-				"hrsh7th/cmp-calc",
-				"rafamadriz/friendly-snippets",
-			},
+			"rafamadriz/friendly-snippets",
 
 			{
-				"L3MON4D3/LuaSnip",
-				config = function()
-					require("luasnip.loaders.from_vscode").lazy_load()
-				end,
-			},
-
-			-- Autopairing of (){}[] etc
-			{
-				"windwp/nvim-autopairs",
-				opts = {
-					fast_wrap = {},
-					disable_filetype = { "TelescopePrompt", "vim" },
+				"Exafunction/windsurf.nvim",
+				dependencies = {
+					"nvim-lua/plenary.nvim",
+					"hrsh7th/nvim-cmp",
 				},
-				config = function(_, opts)
-					require("nvim-autopairs").setup(opts)
-					-- Setup cmp for autopairs
-					local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-					require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+				config = function()
+					require("codeium").setup({})
 				end,
 			},
 		},
+		version = "*",
+		opts = function()
+			return require("plugins.configs.blink")
+		end,
+		opts_extend = { "sources.default" },
 	},
 
 	{
@@ -254,20 +235,6 @@ local default_plugins = {
 		ft = { "markdown", "Avante" },
 		config = function()
 			require("render-markdown").enable()
-		end,
-	},
-
-	{
-		"Exafunction/codeium.nvim",
-		init = function()
-			require("core.utils").lazy_load("codeium.nvim")
-		end,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
 		end,
 	},
 

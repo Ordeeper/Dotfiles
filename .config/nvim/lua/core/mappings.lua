@@ -228,17 +228,28 @@ function M.plugins()
 		keymap("x", "<leader>S", "<cmd> CodeSnapSave <CR>")
 	end
 
-	--------- Cmp ---------
-	function plugins.cmp()
-		local cmp = require("cmp")
+	--------- Blink ---------
+	function plugins.blink()
 		return {
-			["<C-p>"] = cmp.mapping.scroll_docs(-4),
-			["<C-f>"] = cmp.mapping.scroll_docs(4),
-			["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-			["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-			["<C-e>"] = cmp.mapping.abort(),
-			["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-			["<C-n>"] = cmp.config.disable,
+			preset = "none",
+			["<C-e>"] = { "show", "show_documentation", "hide_documentation", "fallback" },
+			["<Tab>"] = {
+				function(cmp)
+					if cmp.snippet_active() then
+						return cmp.accept()
+					else
+						return cmp.select_and_accept()
+					end
+				end,
+				"snippet_forward",
+				"fallback",
+			},
+			["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+			["<Up>"] = { "select_prev", "fallback" },
+			["<Down>"] = { "select_next", "fallback" },
+			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+			["<C-f>"] = { "scroll_documentation_down", "fallback" },
 		}
 	end
 
