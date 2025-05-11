@@ -38,7 +38,7 @@ function M.normal()
 	keymap("n", "<leader>n", "<cmd> set nu! <CR>", { noremap = true, silent = true }) -- Toggle Line Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
-	keymap("n", "<C-p>", "<C-b>", { noremap = true, silent = true })
+	keymap("n", "<C-v>", "<C-b>", { noremap = true, silent = true })
 
 	--------- Switch Between Windows ---------
 	keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true }) -- Window Left
@@ -248,7 +248,7 @@ function M.plugins()
 
 			["<Up>"] = { "select_prev", "fallback" },
 			["<Down>"] = { "select_next", "fallback" },
-			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+			["<C-v>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
 		}
 	end
