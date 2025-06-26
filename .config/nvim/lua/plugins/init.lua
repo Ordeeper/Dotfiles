@@ -324,6 +324,7 @@ local default_plugins = {
 		end,
 		config = function(_, opts)
 			require("conform").setup(opts)
+			require("core.mappings").plugins.conform()
 		end,
 	},
 

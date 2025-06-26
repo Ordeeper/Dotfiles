@@ -199,6 +199,11 @@ function M.plugins()
 		keymap("n", "<leader>a", "<cmd> Twilight <CR>", { silent = true }) -- Toggle NvimTree
 	end
 
+	--------- Conform ---------
+	function plugins.conform()
+		keymap("n", "<leader>t", require("conform").format, { silent = true })
+	end
+
 	--------- Ufo ---------
 	function plugins.ufo()
 		keymap("n", "zR", require("ufo").openAllFolds, { silent = true })
@@ -285,9 +290,9 @@ function M.plugins()
 				keymap("n", "<leader>rx", vim.lsp.buf.rename, opts)
 				keymap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				keymap("n", "gr", vim.lsp.buf.references, opts)
-				keymap("n", "<leader>t", function()
-					vim.lsp.buf.format({ async = true })
-				end, opts)
+				-- keymap("n", "<leader>t", function()
+				-- 	vim.lsp.buf.format({ async = true })
+				-- end, opts)
 			end,
 		})
 	end
