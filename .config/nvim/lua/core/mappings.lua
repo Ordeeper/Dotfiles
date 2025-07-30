@@ -77,6 +77,7 @@ function M.plugins()
 
 		keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
 		keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
+		keymap("n", "<leader>H", "<cmd> Telescope find_files <CR>", { noremap = true })
 		keymap("n", "<leader>j", "<cmd> Telescope buffers <CR>", { noremap = true })
 		keymap("n", "gd", "<cmd> Telescope lsp_definitions <CR>", { noremap = true })
 
