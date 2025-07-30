@@ -339,6 +339,18 @@ local default_plugins = {
 		end,
 	},
 
+	{
+		"akinsho/flutter-tools.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim",
+		},
+		config = function(_)
+			require("flutter-tools").setup({})
+		end,
+		lazy = false,
+	},
+
 	-- {
 	-- 	"sunjon/shade.nvim",
 	-- 	init = function()

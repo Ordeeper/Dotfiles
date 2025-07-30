@@ -3,6 +3,7 @@ return {
 		lua = { "stylua" },
 		sh = { "beautysh" },
 		php = { "pretty-php" },
+		dart = { "dcm" },
 		["_"] = { "prettierd" },
 	},
 	default_format_opts = {
