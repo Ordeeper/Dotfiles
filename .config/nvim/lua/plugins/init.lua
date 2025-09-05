@@ -3,7 +3,7 @@
 local default_plugins = {
 	"nvim-lua/plenary.nvim",
 
-	-- Colorschemes
+	-- Colorschemes {
 	{
 		"folke/tokyonight.nvim",
 		dependencies = "AlphaTechnolog/pywal.nvim",
