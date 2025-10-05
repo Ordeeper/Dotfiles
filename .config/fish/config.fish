@@ -5,8 +5,10 @@ if status is-interactive
     cat ~/.cache/wal/sequences &
 
     # Add components to $fish_user_paths
-    fish_add_path -g $HOME/.local/bin $HOME/.cargo/bin $HOME/.bun/bin $HOME/.config/composer/vendor/bin
+    fish_add_path -g $HOME/.local/bin $HOME/.cargo/bin $HOME/.bun/bin $HOME/.config/composer/vendor/bin /opt/android-sdk/cmdline-tools/latest/bin
 
+	set -x ANDROID_HOME $HOME/Android/Sdk
+	set -x PATH $ANDROID_HOME/emulator $ANDROID_HOME/tools $ANDROID_HOME/tools/bin $ANDROID_HOME/platform-tools $PATH
 
     # Hide the fish greeting
     set -g fish_greeting
