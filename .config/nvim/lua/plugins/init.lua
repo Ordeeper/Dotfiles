@@ -171,7 +171,6 @@ local default_plugins = {
 			local telescope = require("telescope")
 			telescope.setup(opts)
 			telescope.load_extension("fzf")
-			telescope.load_extension("file_browser")
 		end,
 	},
 
@@ -347,6 +346,23 @@ local default_plugins = {
 		},
 		config = function(_)
 			require("flutter-tools").setup({})
+		end,
+		lazy = false,
+	},
+
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = function()
+			return require("plugins.configs.neo_tree_conf")
+		end,
+		config = function(_, opts)
+			require("neo-tree").setup(opts)
 		end,
 		lazy = false,
 	},

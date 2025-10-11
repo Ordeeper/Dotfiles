@@ -32,9 +32,6 @@ function M.normal()
 	keymap("n", "<ESC>", "<cmd> noh <CR>", { silent = true }) -- Clear Highlights
 
 	--------- Miscellaneous ---------
-	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
-	keymap("n", "<C-x>", "<cmd> x <CR>", { noremap = true, silent = true }) -- Save and Exit
-	keymap("n", "<C-q>", "<cmd> q! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 	keymap("n", "<leader>n", "<cmd> set nu! <CR>", { noremap = true, silent = true }) -- Toggle Line Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
@@ -50,10 +47,13 @@ function M.normal()
 	keymap("n", "<tab>", "<cmd> bn <CR>", { noremap = true, silent = true }) -- Next Buffer
 	keymap("n", "<S-tab>", "<cmd> bp <CR>", { noremap = true, silent = true }) -- Preview Buffer
 	keymap("n", "<leader>ch", "<cmd> enew <CR>", { noremap = true, silent = true }) -- New Buffer
+	keymap("n", "<C-b>", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
+	keymap("n", "<C-n>", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
 	keymap("n", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
 	keymap("n", "<C-c>", "<cmd> w | bd <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
-	keymap("n", "<C-b>", "<cmd> vsplit <CR>", { noremap = true, silent = true })
-	keymap("n", "<C-n>", "<cmd> split <CR>", { noremap = true, silent = true })
+	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
+	keymap("n", "<C-x>", "<cmd> xall <CR>", { noremap = true, silent = true }) -- Save all and Exit
+	keymap("n", "<C-q>", "<cmd> qall! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 end
 
 function M.visual()
@@ -70,13 +70,11 @@ function M.plugins()
 	--------- Telescope ---------
 	function plugins.telescope()
 		local actions = require("telescope.actions")
-		local fb_actions = require("telescope").extensions.file_browser.actions
 		local get_status = require("telescope.state").get_status
 		local select_one_or_multi = require("core.utils").select_one_or_multi
 		local focus_preview = require("core.utils").focus_preview
 
 		keymap("n", "<leader>f", "<cmd> Telescope live_grep <CR>", { noremap = true })
-		keymap("n", "<leader>h", "<cmd> Telescope file_browser <CR>", { noremap = true })
 		keymap("n", "<leader>H", "<cmd> Telescope find_files <CR>", { noremap = true })
 		keymap("n", "<leader>j", "<cmd> Telescope buffers <CR>", { noremap = true })
 		keymap("n", "gd", "<cmd> Telescope lsp_definitions <CR>", { noremap = true })
@@ -153,45 +151,12 @@ function M.plugins()
 				["e"] = false,
 				["w"] = false,
 			},
-		}, {
-			-- Mapping Telescope File Browser
-			i = {
-				["<C-c>"] = fb_actions.create,
-				["<C-x>"] = fb_actions.remove,
-				["<C-r>"] = fb_actions.rename,
-				["<C-m>"] = fb_actions.move,
-				["<C-y>"] = fb_actions.copy,
-				["<C-s>"] = fb_actions.toggle_all,
-				["<C-e>"] = fb_actions.goto_home_dir,
-				["<C-w>"] = fb_actions.goto_cwd,
-				["<C-q>"] = fb_actions.change_cwd,
-				["<C-a>"] = fb_actions.toggle_hidden,
-				["<C-o>"] = fb_actions.open,
-			},
-			n = {
-				["<C-c>"] = fb_actions.create,
-				["<C-x>"] = fb_actions.remove,
-				["<C-r>"] = fb_actions.rename,
-				["<C-m>"] = fb_actions.move,
-				["<C-y>"] = fb_actions.copy,
-				["<C-s>"] = fb_actions.toggle_all,
-				["<C-e>"] = fb_actions.goto_home_dir,
-				["<C-w>"] = fb_actions.goto_cwd,
-				["<C-q>"] = fb_actions.change_cwd,
-				["<C-h>"] = fb_actions.toggle_hidden,
-				["<C-o>"] = fb_actions.open,
-				["<C-b>"] = actions.select_vertical,
-				["<C-n>"] = actions.select_horizontal,
-			},
-		}, {
-			-- Mapping Buffers
-			i = {
-				["<C-x>"] = actions.delete_buffer,
-			},
-			n = {
-				["x"] = actions.delete_buffer,
-			},
 		}
+	end
+
+	--------- Neo Tree ---------
+	function plugins.neo_tree()
+		keymap("n", "<leader>h", "<cmd> Neotree toggle <CR>", { silent = true }) -- Toggle ZenMode
 	end
 
 	--------- Zen Mode ---------

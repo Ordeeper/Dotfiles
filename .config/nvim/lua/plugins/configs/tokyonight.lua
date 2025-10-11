@@ -5,6 +5,12 @@ return {
 		colors.bg = colors_pywal.background
 		colors.bg_float = colors_pywal.background
 		colors.bg_statusline = colors_pywal.background
+		colors.NeoTreeNormal = { bg = colors_pywal.background }
+		colors.NeoTreeNormalNC = { bg = colors_pywal.background }
+	end,
+	on_highlights = function(highlights)
+		highlights.NeoTreeNormal = { bg = colors_pywal.background }
+		highlights.NeoTreeNormalNC = { bg = colors_pywal.background }
 	end,
 	styles = {
 		keywords = { italic = true },
