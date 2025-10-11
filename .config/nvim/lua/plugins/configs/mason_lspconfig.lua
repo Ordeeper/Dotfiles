@@ -41,9 +41,6 @@ require("mason-lspconfig").setup({
 	ensure_installed = M.ensure_installed,
 })
 
--- Setup Lsp
-local lspconfig = require("lspconfig")
-
 local border = {
 	{ "┌", "FloatBorder" },
 	{ "─", "FloatBorder" },
@@ -69,8 +66,11 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+-- Setup Lsp
+local lspconfig = vim.lsp.config
+
 --------- LSP ---------
-lspconfig.lua_ls.setup({
+lspconfig("lua_ls", {
 	settings = {
 		Lua = {
 			runtime = {
@@ -92,7 +92,7 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
-lspconfig.pylsp.setup({
+lspconfig("pylsp", {
 	settings = {
 		pylsp = {
 			plugins = {
@@ -104,12 +104,12 @@ lspconfig.pylsp.setup({
 		},
 	},
 })
-lspconfig.bashls.setup({})
-lspconfig.phpactor.setup({})
-lspconfig.yamlls.setup({})
-lspconfig.tailwindcss.setup({})
-lspconfig.cssls.setup({})
-lspconfig.html.setup({})
+lspconfig("bashls", {})
+lspconfig("phpactor", {})
+lspconfig("yamlls", {})
+lspconfig("tailwindcss", {})
+lspconfig("cssls", {})
+lspconfig("html", {})
 
 -- vim.lsp.set_log_level("DEBUG")
 
