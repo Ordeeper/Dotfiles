@@ -4,6 +4,7 @@ return {
 	window = {
 		mappings = {
 			["t"] = "open",
+			["<CR>"] = "open",
 		},
 	},
 	filesystem = {
