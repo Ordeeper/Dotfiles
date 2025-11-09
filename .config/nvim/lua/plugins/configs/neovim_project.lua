@@ -11,5 +11,6 @@ return {
 		type = "telescope",
 	},
 	last_session_on_startup = false,
+	dashboard_mode = true,
 	forget_project_keys = mapping_neovim_project,
 }
