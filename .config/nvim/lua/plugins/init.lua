@@ -237,6 +237,18 @@ local default_plugins = {
 		end,
 	},
 
+    {
+        "barrett-ruth/live-server.nvim",
+        init = function()
+            require("core.utils").lazy_load "live-server.nvim"
+        end,
+        opts = function()
+            return require "plugins.configs.live_server"
+        end,
+        cmd = { "LiveServerStart", "LiveServerStop" },
+        config = true
+    },
+
 	{
 		"kevinhwang91/nvim-ufo",
 		init = function()

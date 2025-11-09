@@ -35,7 +35,6 @@ function M.normal()
 	keymap("n", "<leader>n", "<cmd> set nu! <CR>", { noremap = true, silent = true }) -- Toggle Line Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
-	keymap("n", "<C-v>", "<C-b>", { noremap = true, silent = true })
 
 	--------- Switch Between Windows ---------
 	keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true }) -- Window Left
@@ -153,6 +152,12 @@ function M.plugins()
 			},
 		}
 	end
+
+    --------- Live Server ---------
+    function plugins.live_server()
+        keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true })
+        keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true })
+    end
 
 	--------- Neo Tree ---------
 	function plugins.neo_tree()
