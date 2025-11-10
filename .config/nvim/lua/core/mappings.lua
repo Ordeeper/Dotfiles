@@ -51,8 +51,9 @@ function M.normal()
 	keymap("n", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
 	keymap("n", "<C-c>", "<cmd> w | bd <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
 	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
-	keymap("n", "<C-x>", "<cmd> xall <CR>", { noremap = true, silent = true }) -- Save all and Exit
+	keymap("n", "<C-x>", "<cmd> xall! <CR>", { noremap = true, silent = true }) -- Save all and Exit
 	keymap("n", "<C-q>", "<cmd> q! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
+	keymap("n", "<C-Q>", "<cmd> qall! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 end
 
 function M.visual()
@@ -60,7 +61,9 @@ function M.visual()
 end
 
 function M.terminal()
-	keymap("t", "<C-d>", "<cmd> q! <CR>", { noremap = true, silent = true })
+	--------- Buffers  ---------
+	keymap("t", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
+	keymap("t", "<C-q>", "<cmd> q! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 end
 
 function M.plugins()
@@ -153,11 +156,11 @@ function M.plugins()
 		}
 	end
 
-    --------- Live Server ---------
-    function plugins.live_server()
-        keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true })
-        keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true })
-    end
+	--------- Live Server ---------
+	function plugins.live_server()
+		keymap("n", "<leader>bs", "<cmd> LiveServerStart <CR>", { silent = true })
+		keymap("n", "<leader>bc", "<cmd> LiveServerStop <CR>", { silent = true })
+	end
 
 	--------- Neo Tree ---------
 	function plugins.neo_tree()
