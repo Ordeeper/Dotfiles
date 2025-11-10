@@ -379,15 +379,13 @@ local default_plugins = {
 		event = "VimEnter",
 	},
 
-	-- {
-	-- 	"sunjon/shade.nvim",
-	-- 	init = function()
-	-- 		require("core.utils").lazy_load("shade.nvim")
-	-- 	end,
-	-- 	config = function()
-	-- 		require("shade").setup()
-	-- 	end,
-	-- },
+	{
+		"ordeeper/shade.nvim",
+		config = function()
+			require("shade").setup()
+		end,
+		event = "UIEnter",
+	},
 }
 
 local lazy_nvim = require("plugins.configs.lazy_nvim")
