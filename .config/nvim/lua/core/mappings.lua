@@ -48,11 +48,11 @@ function M.normal()
 	keymap("n", "<leader>ch", "<cmd> enew <CR>", { noremap = true, silent = true }) -- New Buffer
 	keymap("n", "<C-b>", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
 	keymap("n", "<C-n>", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
-	keymap("n", "<C-d>", "<cmd> bp | bd! # <CR>", { noremap = true, silent = true }) -- Kill Buffer
-	keymap("n", "<C-c>", "<cmd> w | bp | bd # <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
+	keymap("n", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
+	keymap("n", "<C-c>", "<cmd> w | bd <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
 	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
 	keymap("n", "<C-x>", "<cmd> xall <CR>", { noremap = true, silent = true }) -- Save all and Exit
-	keymap("n", "<C-q>", "<cmd> qall! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
+	keymap("n", "<C-q>", "<cmd> q! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 end
 
 function M.visual()
