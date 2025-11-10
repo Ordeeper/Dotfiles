@@ -125,6 +125,7 @@ lspconfig("ts_ls", {
 				name = "@vue/typescript-plugin",
 				location = vue_language_server_path,
 				configNamespace = "typescript",
+				languages = { "vue" },
 			},
 		},
 	},
