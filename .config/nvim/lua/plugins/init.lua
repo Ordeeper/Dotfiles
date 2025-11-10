@@ -237,17 +237,17 @@ local default_plugins = {
 		end,
 	},
 
-    {
-        "barrett-ruth/live-server.nvim",
-        init = function()
-            require("core.utils").lazy_load "live-server.nvim"
-        end,
-        opts = function()
-            return require "plugins.configs.live_server"
-        end,
-        cmd = { "LiveServerStart", "LiveServerStop" },
-        config = true
-    },
+	{
+		"barrett-ruth/live-server.nvim",
+		init = function()
+			require("core.utils").lazy_load("live-server.nvim")
+		end,
+		opts = function()
+			return require("plugins.configs.live_server")
+		end,
+		cmd = { "LiveServerStart", "LiveServerStop" },
+		config = true,
+	},
 
 	{
 		"kevinhwang91/nvim-ufo",
@@ -379,15 +379,27 @@ local default_plugins = {
 		lazy = false,
 	},
 
-	-- {
-	-- 	"sunjon/shade.nvim",
-	-- 	init = function()
-	-- 		require("core.utils").lazy_load("shade.nvim")
-	-- 	end,
-	-- 	config = function()
-	-- 		require("shade").setup()
-	-- 	end,
-	-- },
+	{
+		"nvim-focus/focus.nvim",
+		version = "*",
+		opts = function()
+			return require("plugins.configs.focus")
+		end,
+		config = function(_, opts)
+			require("focus").setup(opts)
+		end,
+		lazy = false,
+	},
+
+	{
+		"sunjon/shade.nvim",
+		init = function()
+			require("core.utils").lazy_load("shade.nvim")
+		end,
+		config = function()
+			require("shade").setup()
+		end,
+	},
 }
 
 local lazy_nvim = require("plugins.configs.lazy_nvim")

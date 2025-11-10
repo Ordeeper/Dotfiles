@@ -46,8 +46,8 @@ function M.normal()
 	keymap("n", "<tab>", "<cmd> bn <CR>", { noremap = true, silent = true }) -- Next Buffer
 	keymap("n", "<S-tab>", "<cmd> bp <CR>", { noremap = true, silent = true }) -- Preview Buffer
 	keymap("n", "<leader>ch", "<cmd> enew <CR>", { noremap = true, silent = true }) -- New Buffer
-	keymap("n", "<C-b>", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
-	keymap("n", "<C-n>", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
+	keymap("n", "<C-n>", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
+	keymap("n", "<C-m>", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
 	keymap("n", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
 	keymap("n", "<C-c>", "<cmd> w | bd <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
 	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
@@ -153,6 +153,10 @@ function M.plugins()
 				["w"] = false,
 			},
 		}
+	end
+
+	--------- Focus ---------
+	function plugins.focus()
 	end
 
 	--------- Live Server ---------
