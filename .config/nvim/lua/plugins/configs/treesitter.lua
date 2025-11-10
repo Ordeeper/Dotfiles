@@ -8,7 +8,7 @@ return {
 		"tsx",
 		"php",
 		"bash",
-		"jsonc",
+		"json",
 		"http",
 		"toml",
 		"sql",
