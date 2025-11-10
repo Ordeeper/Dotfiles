@@ -19,8 +19,6 @@ function M.global()
 end
 
 function M.insert()
-	--------- Miscellaneous ---------
-
 	--------- Navigate Within Insert Mode ---------
 	keymap("i", "<C-h>", "<Left>", { noremap = true }) -- Move Left
 	keymap("i", "<C-l>", "<Right>", { noremap = true }) -- Move Right
@@ -32,7 +30,7 @@ function M.normal()
 	keymap("n", "<ESC>", "<cmd> noh <CR>", { silent = true }) -- Clear Highlights
 
 	--------- Miscellaneous ---------
-	keymap("n", "<leader>n", "<cmd> set nu! <CR>", { noremap = true, silent = true }) -- Toggle Line Number
+	keymap("n", "<leader>N", "<cmd> set nu! <CR>", { noremap = true, silent = true }) -- Toggle Line Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
 	keymap("n", "<leader>rn", "<cmd> set rnu! <CR>", { noremap = true, silent = true }) -- Toggle Relative Number
 
@@ -46,8 +44,8 @@ function M.normal()
 	keymap("n", "<tab>", "<cmd> bn <CR>", { noremap = true, silent = true }) -- Next Buffer
 	keymap("n", "<S-tab>", "<cmd> bp <CR>", { noremap = true, silent = true }) -- Preview Buffer
 	keymap("n", "<leader>ch", "<cmd> enew <CR>", { noremap = true, silent = true }) -- New Buffer
-	keymap("n", "<C-n>", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
-	keymap("n", "<C-m>", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
+	keymap("n", "<leader>n", "<cmd> vsplit <CR>", { noremap = true, silent = true }) -- Vertical Split
+	keymap("n", "<leader>m", "<cmd> split <CR>", { noremap = true, silent = true }) -- Horizontal Split
 	keymap("n", "<C-d>", "<cmd> bd! <CR>", { noremap = true, silent = true }) -- Kill Buffer
 	keymap("n", "<C-c>", "<cmd> w | bd <CR>", { noremap = true, silent = true }) -- Save and Kill Buffer
 	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
