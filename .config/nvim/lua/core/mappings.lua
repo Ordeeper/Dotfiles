@@ -53,7 +53,6 @@ function M.normal()
 	keymap("n", "<C-s>", "<cmd> w <CR>", { noremap = true, silent = true }) -- Save File
 	keymap("n", "<C-x>", "<cmd> xall! <CR>", { noremap = true, silent = true }) -- Save all and Exit
 	keymap("n", "<C-q>", "<cmd> q! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
-	keymap("n", "<C-Q>", "<cmd> qall! <CR>", { noremap = true, silent = true }) -- Don't Save and Exit
 end
 
 function M.visual()
