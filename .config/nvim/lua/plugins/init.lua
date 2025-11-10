@@ -388,7 +388,7 @@ local default_plugins = {
 		config = function(_, opts)
 			require("focus").setup(opts)
 		end,
-		lazy = false,
+		event = "VimEnter",
 	},
 
 	{
