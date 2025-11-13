@@ -381,8 +381,11 @@ local default_plugins = {
 
 	{
 		"ordeeper/shade.nvim",
-		config = function()
-			require("shade").setup()
+		opts = function()
+			return require("plugins.configs.shade")
+		end,
+		config = function(_, opts)
+			require("shade").setup(opts)
 		end,
 		event = "UIEnter",
 	},
