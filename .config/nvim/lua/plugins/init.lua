@@ -79,13 +79,6 @@ local default_plugins = {
 	},
 
 	{
-		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("nvim-web-devicons").setup()
-		end,
-	},
-
-	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		event = "VimEnter",
@@ -356,7 +349,7 @@ local default_plugins = {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons",
+			{ "nvim-mini/mini.icons", version = false },
 		},
 		opts = function()
 			return require("plugins.configs.neo_tree_conf")
@@ -388,6 +381,20 @@ local default_plugins = {
 			require("shade").setup(opts)
 		end,
 		event = "UIEnter",
+	},
+
+	{
+		"echasnovski/mini.icons",
+		lazy = true,
+		specs = {
+			{ "nvim-tree/nvim-web-devicons", enabled = false, optional = true },
+		},
+		init = function()
+			package.preload["nvim-web-devicons"] = function()
+				require("mini.icons").mock_nvim_web_devicons()
+				return package.loaded["nvim-web-devicons"]
+			end
+		end,
 	},
 }
 

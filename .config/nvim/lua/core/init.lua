@@ -14,6 +14,7 @@ opt.timeoutlen = 600
 opt.undofile = true
 opt.scrolloff = 7
 opt.splitkeep = "cursor"
+vim.g.icons_enabled = true
 
 ------ Indenting ------
 opt.foldcolumn = "0"
