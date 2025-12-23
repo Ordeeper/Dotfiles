@@ -66,3 +66,5 @@ if status is-interactive
     end
 
 end
+
+mise activate fish | source
