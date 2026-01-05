@@ -1,9 +1,0 @@
-* {{
-bg: #{background.strip}d4; // Main background color
-bg-light: {color1}; // Secondary background color
-bg-extra: {color2}; // Additional contrasting background color
-text: {color6}; // Main text color
-text-focus: {foreground}; // Color used in the selected text, etc
-accent-primary: {color10}; // Main accent color, used for icons
-accent-active: {color13}; // Mainly used for hovers and highlights
-}}
