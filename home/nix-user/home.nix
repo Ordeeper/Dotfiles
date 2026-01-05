@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.username = "joe";
+  home.username = "nix-user";
   home.homeDirectory = "/home/nix-user";
   home.stateVersion = "24.11";
 
