@@ -1,3 +1,4 @@
+{ ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -28,25 +29,20 @@
       # Fullscreen
       "ALT, F, fullscreen"
 
-      # Focus float / tile
+      # Focus next
       "ALT, TAB, cyclenext"
 
-      # Parent/child (aproximação)
+      # Parent container
       "ALT, A, focusparent"
 
       # Scratchpad (special workspace)
       "ALT SHIFT, MINUS, movetoworkspace, special"
       "ALT, MINUS, togglespecialworkspace"
 
-      # Launcher (rofi → wofi)
+      # Launcher
       "ALT, D, exec, wofi --show drun"
 
-      # Resize mode (aproximação)
-      "ALT, R, exec, hyprctl dispatch resizeactive 20 0"
-    ];
-
-    # Workspaces
-    bind = [
+      # Workspaces
       "ALT, 1, workspace, 1"
       "ALT, 2, workspace, 2"
       "ALT, 3, workspace, 3"
@@ -70,7 +66,6 @@
       "ALT SHIFT, 0, movetoworkspace, 10"
     ];
 
-    # Media / brightness
     bindel = [
       ",XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +10%"
       ",XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -10%"
