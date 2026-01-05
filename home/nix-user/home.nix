@@ -3,9 +3,10 @@
 {
   home.username = "nix-user";
   home.homeDirectory = "/home/nix-user";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
 
   programs.neovim.enable = true;
+  programs.home-manager.enable = true;
   programs.git = {
     enable = true;
     userName = "Ordeeper";
