@@ -10,6 +10,7 @@
 
   imports = [
     ./hyprland.nix
+	./apps/terminals/kitty.nix
   ];
 }
 
