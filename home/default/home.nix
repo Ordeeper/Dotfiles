@@ -13,5 +13,7 @@
     ./programs/fish/config.nix
     ./programs/tmux/tmux.nix
     ./programs/zed/settings.nix
+
+    ./packages.nix
   ];
 }
