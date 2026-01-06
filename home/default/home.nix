@@ -1,4 +1,4 @@
-{ pkgs, username ? "nix-user", ... }:
+{ username ? "nix-user", ... }:
 
 {
   home.username = username;
@@ -10,5 +10,6 @@
     ./programs/hypr/hyprland.nix
     ./programs/kitty/kitty.nix
     ./programs/git/config.nix
+    ./programs/zed/settings.nix
   ];
 }
