@@ -15,9 +15,10 @@
       set -g fish_vi_force_cursor 1
 
       if status is-interactive
-        and not set -q TMUX
-	and command -v tmux >/dev/null
-	  exec tmux
+          and not set -q TMUX
+          and command -v tmux >/dev/null
+          and test -t 1
+              exec tmux
       end
     '';
   };
