@@ -10,6 +10,7 @@
     ./programs/hypr/hyprland.nix
     ./programs/kitty/kitty.nix
     ./programs/git/config.nix
+    ./programs/fish/config.nix
     ./programs/zed/settings.nix
   ];
 }
