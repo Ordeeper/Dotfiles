@@ -11,6 +11,7 @@
     ./programs/kitty/kitty.nix
     ./programs/git/config.nix
     ./programs/fish/config.nix
+    ./programs/tmux/tmux.nix
     ./programs/zed/settings.nix
   ];
 }
