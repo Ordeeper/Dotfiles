@@ -20,7 +20,8 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.nix-user = ./home/nix-user/home.nix;
+	    home-manager.users.nix-user = ./home/default/home.nix;
+            home-manager.extraSpecialArgs = { username = "nix-user"; };
 	  }
         ];
       };
@@ -33,7 +34,8 @@
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.nix-user = ./home/nix-user/home.nix;
+	    home-manager.users.nix-user = ./home/default/home.nix;
+            home-manager.extraSpecialArgs = { username = "nix-user"; };
 	  }
         ];
       };

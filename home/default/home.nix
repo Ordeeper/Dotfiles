@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, username ? "nix-user", ... }:
 
 {
-  home.username = "nix-user";
-  home.homeDirectory = "/home/nix-user";
+  home.username = username;
   home.stateVersion = "25.11";
 
   programs.neovim.enable = true;
-  programs.home-manager.enable = true;
   programs.git = {
     enable = true;
     userName = "Ordeeper";
@@ -17,7 +15,6 @@
   };
 
   imports = [
-    ./hyprland.nix
-	./apps/terminals/kitty.nix
+    ./programs/hypr/hyprland.nix
   ];
 }

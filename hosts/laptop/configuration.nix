@@ -21,10 +21,4 @@
   ];
 
   networking.hostName = "laptop";
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.nix-user = import ../../home/nix-user/home.nix;
-  };
 }
