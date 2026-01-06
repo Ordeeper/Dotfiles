@@ -7,7 +7,7 @@
     enableGitIntegration = true;
 
     font = {
-      name = "Maple Mono";
+      name = "Maple Mono NF";
       package = pkgs.maple-mono.NF;
       size = 12;
     };
