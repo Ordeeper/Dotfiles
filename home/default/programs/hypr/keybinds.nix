@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "ALT";
@@ -40,7 +38,8 @@
       "$mod, MINUS, togglespecialworkspace"
 
       # Launcher
-      "$mod, D, exec, wofi --show drun"
+      "$mod, D, exec, vicinae toggle"
+      "$mod, C, exec, vicinae toggle vicinae://extensions/vicinae/clipboard/history"
 
       # Workspaces
       "$mod, 1, workspace, 1"
@@ -73,5 +72,6 @@
       ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
       ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
     ];
+
   };
 }

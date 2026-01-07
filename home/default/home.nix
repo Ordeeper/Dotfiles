@@ -13,6 +13,7 @@
     ./programs/fish/config.nix
     ./programs/tmux/tmux.nix
     ./programs/zed/settings.nix
+    ./programs/vicinae/settings.nix
 
     ./packages.nix
   ];

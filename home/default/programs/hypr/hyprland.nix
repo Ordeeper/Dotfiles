@@ -11,6 +11,8 @@
       animations = {
         enabled = true;
       };
+      
+      misc.focus_on_activate = true;
     };
   };
 

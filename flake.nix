@@ -5,9 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    vicinae-extensions.url = "github:vicinaehq/extensions";
+    vicinae.url = "github:vicinaehq/vicinae";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vicinae, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -17,12 +19,17 @@
         modules = [
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.nix-user = ./home/default/home.nix;
-            home-manager.extraSpecialArgs = { username = "nix-user"; };
-	  }
+       	  {
+       	    home-manager.useGlobalPkgs = true;
+       	    home-manager.useUserPackages = true;
+            home-manager.users.nix-user = {
+              imports = [
+                ./home/default/home.nix
+                vicinae.homeManagerModules.default
+              ];
+            };
+            home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
+       	  }
         ];
       };
 
@@ -31,12 +38,17 @@
         modules = [
           ./hosts/desktop/configuration.nix
           home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.nix-user = ./home/default/home.nix;
-            home-manager.extraSpecialArgs = { username = "nix-user"; };
-	  }
+       	  {
+       	    home-manager.useGlobalPkgs = true;
+       	    home-manager.useUserPackages = true;
+            home-manager.users.nix-user = {
+              imports = [
+                ./home/default/home.nix
+                vicinae.homeManagerModules.default
+              ];
+            };
+            home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
+       	  }
         ];
       };
     };
