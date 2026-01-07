@@ -7,14 +7,12 @@
   programs.zed-editor = {
     enable = true;
     extensions = [
-      "nix"
       "html"
       "toml"
       "dockerfile"
       "php"
       "sql"
       "vue"
-      "tokyo-night"
       "material-icon-theme"
       "make"
       "scss"
@@ -73,8 +71,7 @@
       };
       theme = {
         mode = "dark";
-        light = "Tokyo Night";
-        dark = "Tokyo Night";
+        dark = "Catppuccin Mocha";
       };
       buffer_font_family = "Maple Mono NF";
       icon_theme = "Material Icon Theme";
@@ -86,6 +83,5 @@
         };
       };
     };
-
   };
 }
