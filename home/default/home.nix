@@ -14,6 +14,7 @@
     ./programs/tmux/tmux.nix
     ./programs/zed/settings.nix
     ./programs/vicinae/settings.nix
+    ./programs/waybar/config.nix
 
     ./packages.nix
   ];
