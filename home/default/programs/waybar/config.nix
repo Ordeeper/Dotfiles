@@ -106,7 +106,7 @@
               default = [ " " " " " " ];
             };
 
-            on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+            on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           };
 
           "custom/power" = {
