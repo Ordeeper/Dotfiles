@@ -9,12 +9,13 @@
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --cmd Hyprland";
+        command = "${pkgs.hyprland}/bin/start-hyprland";
         user = "nix-user";
       };
     };
   };
 
+  services.dbus.enable = true;
   security.pam.services.greetd.enable = true;
 
   programs.hyprland.enable = true;
