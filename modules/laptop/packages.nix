@@ -1,13 +1,6 @@
 { pkgs, ... }:
-
 {
   environment.systemPackages = with pkgs; [
-    git
-    neovim
-    wget
-    curl
-    htop
-    ripgrep
-    fd
+      acpi tlp git
   ];
 }
