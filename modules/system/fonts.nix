@@ -4,8 +4,11 @@
   fonts = {
     fontconfig = {
       enable = true;
-      hinting = "slight";
-      antialiasing = true;
+      hinting = {
+        enable = true;
+        style = "slight";
+      };
+      antialias = true;
 
       defaultFonts = {
         sansSerif = [ "Inter" ];
@@ -17,7 +20,7 @@
     packages = with pkgs; [
       maple-mono.NF
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       inter
     ];
   };
