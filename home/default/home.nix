@@ -13,6 +13,7 @@
     ./programs/zed/settings.nix
     ./programs/vicinae/settings.nix
     ./programs/waybar/config.nix
+    ./programs/xdg/config.nix
 
     ./packages.nix
 
