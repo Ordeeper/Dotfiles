@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  time.timeZone = "America/Sao_Paulo";
-
   services.flatpak.enable = true;
 
   xdg.portal = {
