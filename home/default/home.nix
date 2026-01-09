@@ -4,8 +4,6 @@
   home.username = username;
   home.stateVersion = "25.11";
 
-  programs.neovim.enable = true;
-
   imports = [
     ./programs/hypr/hyprland.nix
     ./programs/kitty/kitty.nix
@@ -17,5 +15,7 @@
     ./programs/waybar/config.nix
 
     ./packages.nix
+
+    ./session.nix
   ];
 }

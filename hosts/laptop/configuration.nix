@@ -16,7 +16,6 @@
     ../../modules/laptop/power.nix
     ../../modules/laptop/input/libinput.nix
 
-    ../../modules/wayland/hyprland.nix
     ../../modules/wayland/greetd.nix
   ];
 

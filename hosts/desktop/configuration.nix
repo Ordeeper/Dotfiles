@@ -11,7 +11,6 @@
     ../../modules/system/nix.nix
     ../../modules/system/input/keyd.nix
 
-    ../../modules/wayland/hyprland.nix
     ../../modules/wayland/greetd.nix
   ];
 
