@@ -13,6 +13,7 @@
     ../../modules/system/fonts.nix
     ../../modules/system/nix.nix
     ../../modules/system/boot.nix
+    ../../modules/system/security.nix
     ../../modules/system/input/keyd.nix
 
     ../../modules/laptop/backlight.nix

@@ -13,6 +13,7 @@
     ../../modules/system/packages.nix
     ../../modules/system/nix.nix
     ../../modules/system/boot.nix
+    ../../modules/system/security.nix
     ../../modules/system/input/keyd.nix
 
     ../../modules/wayland/greetd.nix
