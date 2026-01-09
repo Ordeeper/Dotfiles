@@ -6,16 +6,6 @@
 
   time.timeZone = "America/Sao_Paulo";
 
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    wget
-    curl
-    htop
-    ripgrep
-    fd
-  ];
-
   services.openssh.enable = true;
   services.flatpak.enable = true;
 
