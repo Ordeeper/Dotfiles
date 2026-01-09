@@ -15,11 +15,9 @@
     };
 
     packages = with pkgs; [
-      maple-mono.NF;
-
+      maple-mono.NF
       noto-fonts
       noto-fonts-emoji
-
       inter
     ];
   };
