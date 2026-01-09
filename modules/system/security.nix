@@ -6,6 +6,7 @@
         extraRules = [{
             users = [ "nix-user" ];
             keepEnv = true;
+            persist = true;
         }];
     };
     protectKernelImage = true;
