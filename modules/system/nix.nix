@@ -8,6 +8,7 @@
 
     settings = {
       auto-optimise-store = true;
+      allowed-users = [ "nix-user" ];
       experimental-features = [
         "nix-command"
         "flakes"
