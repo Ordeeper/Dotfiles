@@ -1,9 +1,6 @@
 { pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   time.timeZone = "America/Sao_Paulo";
 
   services.flatpak.enable = true;

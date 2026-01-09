@@ -12,6 +12,7 @@
     ../../modules/system/fonts.nix
     ../../modules/system/packages.nix
     ../../modules/system/nix.nix
+    ../../modules/system/boot.nix
     ../../modules/system/input/keyd.nix
 
     ../../modules/wayland/greetd.nix
