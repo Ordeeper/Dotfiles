@@ -13,5 +13,6 @@
     grim
     satty
     slurp
+    php84Packages.composer
   ];
 }
