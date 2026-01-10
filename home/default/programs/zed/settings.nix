@@ -27,7 +27,7 @@
       vim_mode = true;
       show_edit_predictions = false;
       telemetry = {
-	diagnostics = false;
+       	diagnostics = false;
       	metrics = false;
       };
       ui_font_size = lib.mkForce 18;
@@ -78,7 +78,7 @@
       lsp = {
         nix = {
           binary = {
-            path_lookup = true;
+            path_lookup = "nixd";
           };
         };
       };
