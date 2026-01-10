@@ -3,8 +3,11 @@
     "$mod" = "ALT";
 
     bind = [
-	  # Kill Hyprland
-	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
+  	  # Kill Hyprland
+  	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
+
+      # Screenshot
+      "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | satty --filename -"
 
       # Terminal
       "$mod, SPACE, exec, kitty"

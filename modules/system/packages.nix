@@ -9,5 +9,6 @@
     htop
     ripgrep
     fd
+    tldr
   ];
 }

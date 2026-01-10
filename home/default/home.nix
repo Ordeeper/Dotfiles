@@ -3,6 +3,7 @@
 {
   home.username = username;
   home.stateVersion = "25.11";
+  nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./programs/hypr/hyprland.nix

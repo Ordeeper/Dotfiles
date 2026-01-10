@@ -1,9 +1,17 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
     chromium
     telegram-desktop
     firefox
+    obsidian
+    dropbox
+    hoppscotch
+    mpv
+    nemo
+    grim
+    satty
+    slurp
   ];
 }
