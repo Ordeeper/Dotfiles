@@ -15,6 +15,7 @@
     ./programs/vicinae/settings.nix
     ./programs/waybar/config.nix
     ./programs/xdg/config.nix
+    ./programs/mise/config.nix
 
     ./packages.nix
 
