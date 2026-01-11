@@ -12,6 +12,14 @@
   outputs = inputs@{ nixpkgs, home-manager, vicinae, ... }:
   let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        android_sdk.accept_license = true;
+      };
+    };
+    devEnv = import ./dev-env/dev.nix { inherit pkgs; };
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
@@ -51,6 +59,9 @@
        	  }
         ];
       };
+    };
+    devShells = {
+      x86_64-linux = devEnv.devShells;
     };
   };
 }
