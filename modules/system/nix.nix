@@ -3,7 +3,7 @@
     gc = {
         automatic = true;
         dates = "weekly";
-        options = "--delete-older-than 30d";
+        options = "--delete-older-than 7d";
     };
 
     settings = {
@@ -13,6 +13,10 @@
         "nix-command"
         "flakes"
       ];
+
+      keep-build-log = false;
+      keep-outputs = false;
+      keep-derivations = false;
     };
   };
 }
