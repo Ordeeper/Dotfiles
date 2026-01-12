@@ -6,13 +6,13 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./programs/hypr/hyprland.nix
-    ./programs/kitty/kitty.nix
+    ./programs/hypr/config.nix
+    ./programs/kitty/config.nix
     ./programs/git/config.nix
     ./programs/fish/config.nix
-    ./programs/tmux/tmux.nix
-    ./programs/zed/settings.nix
-    ./programs/vicinae/settings.nix
+    ./programs/tmux/config.nix
+    ./programs/zed/config.nix
+    ./programs/vicinae/config.nix
     ./programs/waybar/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
