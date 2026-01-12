@@ -14,6 +14,7 @@
     satty
     slurp
     php84Packages.composer
+    kdePackages.gwenview
     devenv
   ];
 }
