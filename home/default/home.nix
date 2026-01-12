@@ -18,7 +18,5 @@
     ./programs/mise/config.nix
 
     ./packages.nix
-
-    ./session.nix
   ];
 }

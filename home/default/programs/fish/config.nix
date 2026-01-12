@@ -6,6 +6,10 @@
       # Hide greeting
       set -g fish_greeting
 
+      set -gx EDITOR nvim
+      set -gx TERMINAL kitty
+      set -gx BROWSER "flatpak run io.github.zen_browser.zen"
+
       # Vi mode + cursor shapes
       fish_vi_key_bindings
       set fish_cursor_default block
