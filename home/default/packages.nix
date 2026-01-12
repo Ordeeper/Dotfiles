@@ -16,5 +16,6 @@
     php84Packages.composer
     kdePackages.gwenview
     devenv
+    converseen
   ];
 }
