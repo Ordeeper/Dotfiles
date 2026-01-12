@@ -14,5 +14,6 @@
     satty
     slurp
     php84Packages.composer
+    devenv
   ];
 }
