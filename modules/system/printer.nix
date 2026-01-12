@@ -27,7 +27,7 @@
           MediaType                   = "Saved Thermal Direct";
 
           Resolution                  = "203dpi";
-          Darkness                    = "20";
+          Darkness                    = "5";
 
           zePrintRate                 = "Default";
           zePrintMode                 = "Tear";
