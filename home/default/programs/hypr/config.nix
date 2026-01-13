@@ -15,7 +15,7 @@
       };
 
       exec-once = ''
-        hyprctl setcursor "Vimix-cursors" 24
+        hyprctl setcursor "Vimix-cursors" 32
       '';
     };
   };

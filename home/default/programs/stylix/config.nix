@@ -12,7 +12,7 @@ in
     cursor = {
       package = pkgs.vimix-cursors;
       name = "Vimix-cursors";
-      size = 24;
+      size = 32;
     };
 
     fonts = {
