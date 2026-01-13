@@ -17,5 +17,6 @@
     kdePackages.gwenview
     devenv
     converseen
+    lmstudio
   ];
 }
