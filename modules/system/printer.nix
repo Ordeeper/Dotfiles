@@ -39,5 +39,9 @@
     ensureDefaultPrinter = "Zebra_ZTC_ZD220_203dpi_ZPL";
   };
 
+  environment.systemPackages = with pkgs; [
+    system-config-printer
+  ];
+
   users.users.nix-user.extraGroups = [ "lp" ];
 }
