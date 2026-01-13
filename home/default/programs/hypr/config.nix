@@ -13,13 +13,17 @@
       animations = {
         enabled = true;
       };
+
+      exec-once = ''
+        hyprctl setcursor "Vimix-cursors" 24
+      '';
     };
   };
 
   home.packages = with pkgs; [
     wl-clipboard
-  ]; 
-  
+  ];
+
   imports = [
     ./keybinds.nix
   ];

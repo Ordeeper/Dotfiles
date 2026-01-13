@@ -3,7 +3,7 @@ services.vicinae = {
   enable = true;
   systemd = {
     enable = true;
-    autoStart = true; # default: false
+    autoStart = true;
     environment = {
       USE_LAYER_SHELL = 1;
     };
@@ -14,21 +14,6 @@ services.vicinae = {
     pop_to_root_on_close = true;
     favicon_service = "twenty";
     search_files_in_root = true;
-    font = {
-      normal = {
-        size = 12;
-        normal = "Maple Mono NF";
-      };
-    };
-    theme = {
-      dark = {
-        name = "catppuccin-mocha";
-        icon_theme = "default";
-      };
-    };
-    launcher_window = {
-      opacity = 1;
-    };
   };
   # extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
   #    bluetooth

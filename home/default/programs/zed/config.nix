@@ -69,10 +69,6 @@
         line_height = "comfortable";
         button = true;
       };
-      theme = {
-        mode = "dark";
-        dark = "Catppuccin Mocha";
-      };
       buffer_font_family = "Maple Mono NF";
       icon_theme = "Material Icon Theme";
       lsp = {

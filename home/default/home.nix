@@ -17,6 +17,7 @@
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
     ./programs/direnv/config.nix
+    ./programs/stylix/config.nix
 
     ./packages.nix
   ];

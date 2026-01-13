@@ -3,13 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    vicinae-extensions.url = "github:vicinaehq/extensions";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vicinae.url = "github:vicinaehq/vicinae";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, vicinae, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vicinae, stylix, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -34,6 +43,7 @@
               imports = [
                 ./home/default/home.nix
                 vicinae.homeManagerModules.default
+                stylix.homeModules.stylix
               ];
             };
             home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
@@ -53,6 +63,7 @@
               imports = [
                 ./home/default/home.nix
                 vicinae.homeManagerModules.default
+                stylix.homeModules.stylix
               ];
             };
             home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
