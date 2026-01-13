@@ -18,5 +18,6 @@
     devenv
     converseen
     lmstudio
+    openfortivpn
   ];
 }
