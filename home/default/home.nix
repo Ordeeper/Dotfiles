@@ -16,6 +16,7 @@
     ./programs/waybar/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
+    ./programs/direnv/config.nix
 
     ./packages.nix
   ];
