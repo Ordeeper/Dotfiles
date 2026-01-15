@@ -20,7 +20,10 @@
       "csv"
       "ini"
     ];
-    extraPackages = [ pkgs.nixd ];
+    extraPackages = [
+      pkgs.nixd
+      pkgs.gopls
+    ];
 
     userSettings = {
       auto_install_extensions = true;
