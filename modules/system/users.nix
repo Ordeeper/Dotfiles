@@ -4,7 +4,7 @@
 {
   users.users.nix-user = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "networkmanager" ];
+    extraGroups = [ "wheel" "video" "networkmanager" "docker" ];
     shell = pkgs.fish;
   };
 

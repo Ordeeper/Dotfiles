@@ -2,6 +2,7 @@
 
 {
   services.flatpak.enable = true;
+  virtualisation.docker.enable = true;
 
   system.stateVersion = "26.05";
 

@@ -19,5 +19,6 @@
     converseen
     lmstudio
     openfortivpn
+    docker-compose
   ];
 }

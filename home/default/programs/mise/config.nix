@@ -16,6 +16,7 @@
         "nix:bun" = "1.3.5";
         "nix:python" = "3.11";
         "nix:php" = "8.4.16";
+        "nix:go" = "1.25.5";
       };
 
       settings.experimental = true;
