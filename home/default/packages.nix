@@ -20,5 +20,7 @@
     lmstudio
     openfortivpn
     docker-compose
+    p7zip
+    gcc
   ];
 }
