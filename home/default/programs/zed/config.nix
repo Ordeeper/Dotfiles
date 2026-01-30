@@ -74,6 +74,7 @@
       };
       buffer_font_family = "Maple Mono NF";
       icon_theme = "Material Icon Theme";
+      theme = "Catppuccin Mocha";
       lsp = {
         nix = {
           binary = {

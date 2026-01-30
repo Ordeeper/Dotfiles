@@ -9,6 +9,10 @@ in
     base16Scheme = catppuccinMochaScheme;
     polarity = "dark";
 
+    targets = {
+      zed.enable = false;
+    };
+
     cursor = {
       package = pkgs.vimix-cursors;
       name = "Vimix-cursors";
