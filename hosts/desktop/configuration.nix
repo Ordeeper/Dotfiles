@@ -16,6 +16,7 @@
     ../../modules/system/security.nix
     ../../modules/system/printer.nix
     ../../modules/system/input/keyd.nix
+    ../../modules/system/session-variables.nix
 
     ../../modules/wayland/greetd.nix
   ];

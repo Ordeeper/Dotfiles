@@ -19,6 +19,8 @@
     ./programs/direnv/config.nix
     ./programs/stylix/config.nix
 
+    ./session-variables.nix
+    
     ./packages.nix
   ];
 }

@@ -15,6 +15,7 @@
     ../../modules/system/boot.nix
     ../../modules/system/security.nix
     ../../modules/system/input/keyd.nix
+    ../../modules/system/session-variables.nix
 
     ../../modules/laptop/backlight.nix
     ../../modules/laptop/networking.nix
