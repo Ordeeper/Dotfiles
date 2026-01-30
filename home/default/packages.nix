@@ -22,5 +22,6 @@
     docker-compose
     p7zip
     gcc
+    zotero-beta
   ];
 }
