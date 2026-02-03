@@ -18,7 +18,7 @@
     };
   };
 
-  home.file."~/.config/sunsetr/config.toml".source = ./config.toml;
+  xdg.configFile."sunsetr/sunsetr.toml".source = ./config.toml;
 
   home.packages = with pkgs; [
     sunsetr

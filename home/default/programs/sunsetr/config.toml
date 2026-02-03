@@ -1,14 +1,20 @@
-[general]
-latitude = -23.5475
-longitude = -46.63611
+#[Backend]
+backend = "auto"
+transition_mode = "geo"
+
+#[Smoothing]
+smoothing = true
+startup_duration = 0.5
+shutdown_duration = 0.5
+adaptive_interval = 1
+
+#[Time-based config]
+night_temp = 3900
+day_temp = 6300
+night_gamma = 60
+day_gamma = 80
 update_interval = 60
 
-[day]
-temperature = 6300
-brightness = 0.7
-gamma = 0.8
-
-[night]
-temperature = 3900
-brightness = 0.4
-gamma = 0.6
+#[Geolocation]
+latitude = -23.5475
+longitude = -46.63611
