@@ -1,0 +1,14 @@
+[general]
+latitude = -23.5475
+longitude = -46.63611
+update_interval = 60
+
+[day]
+temperature = 6300
+brightness = 0.7
+gamma = 0.8
+
+[night]
+temperature = 3900
+brightness = 0.4
+gamma = 0.6

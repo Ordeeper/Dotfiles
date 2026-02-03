@@ -18,9 +18,10 @@
     ./programs/mise/config.nix
     ./programs/direnv/config.nix
     ./programs/stylix/config.nix
+    ./programs/sunsetr/config.nix
 
     ./session-variables.nix
-    
+
     ./packages.nix
   ];
 }
