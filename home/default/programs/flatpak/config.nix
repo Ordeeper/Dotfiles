@@ -1,16 +1,20 @@
 { lib, ... }:
 
 {
-  services.flatpak.remotes = lib.mkOptionDefault [{
-    name = "flathub-beta";
-    location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-  }];
-  
-  services.flatpak.update.auto.enable = false;
-  services.flatpak.uninstallUnmanaged = false;
+  services.flatpak = {
+    enable = true;
 
-  services.flatpak.packages = [
-    "com.valvesoftware.Steam"
-    "dev.vencord.Vesktop"
-  ];
+    remotes = lib.mkOptionDefault [{
+      name = "flathub-beta";
+      location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+    }];
+
+    packages = [
+      "com.valvesoftware.Steam"
+      "dev.vencord.Vesktop"
+    ];
+
+    update.auto.enable = false;
+    uninstallUnmanaged = false;
+  };
 }
