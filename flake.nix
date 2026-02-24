@@ -16,9 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vicinae.url = "github:vicinaehq/vicinae";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, vicinae, stylix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vicinae, stylix, nix-flatpak, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -42,6 +43,7 @@
             home-manager.users.nix-user = {
               imports = [
                 ./home/default/home.nix
+                nix-flatpak.homeManagerModules.nix-flatpak
                 vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
               ];
@@ -62,6 +64,7 @@
             home-manager.users.nix-user = {
               imports = [
                 ./home/default/home.nix
+                nix-flatpak.homeManagerModules.nix-flatpak
                 vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
               ];
