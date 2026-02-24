@@ -19,6 +19,7 @@
     ./programs/direnv/config.nix
     ./programs/stylix/config.nix
     ./programs/sunsetr/config.nix
+    ./programs/flatpak/config.nix
 
     ./session-variables.nix
 
