@@ -18,7 +18,7 @@
 
     ../../modules/laptop/backlight.nix
     ../../modules/laptop/networking.nix
-    ../../modules/laptop/power.nix
+    # ../../modules/laptop/power.nix
     ../../modules/laptop/input/libinput.nix
     ../../modules/laptop/packages.nix
 
