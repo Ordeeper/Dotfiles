@@ -10,5 +10,6 @@
     ripgrep
     fd
     tldr
+    gnumake
   ];
 }

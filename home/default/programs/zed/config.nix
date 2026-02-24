@@ -65,10 +65,6 @@
       };
       auto_update = false;
       terminal = {
-        env = {
-          EDITOR = "zed --wait";
-          TERM = "kitty";
-        };
         line_height = "comfortable";
         button = true;
       };
