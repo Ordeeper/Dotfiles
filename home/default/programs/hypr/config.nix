@@ -22,7 +22,7 @@ in
 
       exec-once = [
         "hyprctl setcursor \"Vimix-cursors\" 32"
-        "swww img ${wallpaper} --transition-type fade;"
+        "swww img ${wallpaper} --transition-type fade"
       ];
     };
   };
