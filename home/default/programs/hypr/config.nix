@@ -5,8 +5,6 @@ let
 in
 {
 
-  services.swww.enable = true;
-
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -22,8 +20,7 @@ in
 
       exec-once = [
         "hyprctl setcursor \"Vimix-cursors\" 32"
-        "swww-daemon"
-        "swww img ${wallpaper} --transition-type fade"
+        "waypaper --restore"
       ];
     };
   };

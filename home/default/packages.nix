@@ -23,5 +23,7 @@
     p7zip
     gcc
     zotero-beta
+    waypaper
+    swww
   ];
 }
