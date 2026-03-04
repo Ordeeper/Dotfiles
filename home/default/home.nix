@@ -20,7 +20,6 @@
     ./programs/stylix/config.nix
     ./programs/sunsetr/config.nix
     ./programs/flatpak/config.nix
-    ./programs/hyprpaper/config.nix
 
     ./session-variables.nix
 

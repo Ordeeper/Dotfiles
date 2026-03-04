@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
+let
+  wallpaper = builtins.toString ./assets/who-am-i.png;
+in
 {
+
+  services.swww.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -14,9 +20,10 @@
         enabled = true;
       };
 
-      exec-once = ''
-        hyprctl setcursor "Vimix-cursors" 32
-      '';
+      exec-once = [
+        "hyprctl setcursor \"Vimix-cursors\" 32"
+        "swww img ${wallpaper} --transition-type fade;"
+      ];
     };
   };
 
