@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
-let
-  wallpaper = builtins.toString ./assets/who-am-i.png;
-in
 {
 
   wayland.windowManager.hyprland = {
