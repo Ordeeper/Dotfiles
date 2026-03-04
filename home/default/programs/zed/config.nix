@@ -14,6 +14,7 @@
       "sql"
       "vue"
       "material-icon-theme"
+      "catppuccin"
       "make"
       "scss"
       "dart"
