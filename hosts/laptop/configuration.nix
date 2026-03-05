@@ -17,7 +17,6 @@
     ../../modules/system/input/keyd.nix
 
     ../../modules/laptop/backlight.nix
-    ../../modules/laptop/networking.nix
     ../../modules/laptop/bluetooth.nix
     ../../modules/laptop/input/libinput.nix
     ../../modules/laptop/packages.nix
