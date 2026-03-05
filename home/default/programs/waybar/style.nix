@@ -110,6 +110,28 @@
         color: #a6adc8;
       }
 
+      #battery {
+        color: #a6e3a1;
+      }
+
+      #battery.charging {
+        color: #89b4fa;
+      }
+
+      #battery.plugged {
+        color: #74c7ec;
+      }
+
+      /* Warning (30%) */
+      #battery.warning {
+        color: #f9e2af;
+      }
+
+      /* Critical (15%) */
+      #battery.critical {
+        color: #f38ba8;
+      }
+
       #custom-logo {
         color: #89b4fa;
       }
