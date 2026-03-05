@@ -49,6 +49,7 @@
       #custom-spotify,
       #custom-notification,
       #cpu,
+      #battery,
       #tray,
       #memory,
       #window,
@@ -63,7 +64,7 @@
       #tray {
         color: #fff;
       }
-      
+
       #mpris.playing {
         color: #a6e3a1;
       }

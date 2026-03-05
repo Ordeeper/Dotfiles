@@ -4,7 +4,7 @@
     programs.waybar = {
       enable = true;
       systemd.enable = true;
-      
+
       settings = {
         mainBar = {
           layer = "bottom";
@@ -27,6 +27,7 @@
           modules-right = [
             "cpu"
             "memory"
+            "battery"
             "pulseaudio"
             "clock"
             "clock#simpleclock"
@@ -85,6 +86,22 @@
 
             tooltip-format =
               "<span color='#cdd6f4' font='Maple Mono NF 16'><tt><small>{calendar}</small></tt></span>";
+          };
+
+          battery = {
+            states = {
+              warning = 30;
+              critical = 15;
+            };
+
+            format = "{icon} {capacity}%";
+            format-charging = " {capacity}%";
+            format-plugged = " {capacity}%";
+            format-critical = " {capacity}%";
+
+            format-icons = [ "" "" "" "" "" ];
+
+            interval = 5;
           };
 
           cpu = {
