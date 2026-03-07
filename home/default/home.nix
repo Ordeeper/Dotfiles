@@ -13,7 +13,7 @@
     ./programs/tmux/config.nix
     ./programs/zed/config.nix
     ./programs/vicinae/config.nix
-    ./programs/waybar/config.nix
+    ./programs/nwg/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
     ./programs/direnv/config.nix
