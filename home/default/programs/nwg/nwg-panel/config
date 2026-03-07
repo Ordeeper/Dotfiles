@@ -75,7 +75,7 @@
       "show-brightness": false,
       "show-volume": true,
       "show-battery": false,
-      "output-switcher": false,
+      "output-switcher": true,
       "per-app-volume": false,
       "backlight-controller": "brightnessctl",
       "backlight-device": "",
