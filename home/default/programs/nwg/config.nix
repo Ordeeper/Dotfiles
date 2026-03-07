@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, ... }:
 
+let
+  host = osConfig.networking.hostName;
+  isDesktop = host == "desktop";
+in
 {
     systemd.user.services.nwg-panel = {
       Unit = {
@@ -17,10 +21,15 @@
       };
     };
 
-    xdg.configFile."nwg-panel/config".source = ./nwg-panel/config;
+    xdg.configFile."nwg-panel/config".source =
+    if isDesktop then
+    ./nwg-panel/desktop
+    else
+    ./nwg-panel/config;
 
     home.packages = with pkgs; [
       nwg-panel
       swaynotificationcenter
+      (if isDesktop then ddcutil else brightnessctl)
     ];
 }

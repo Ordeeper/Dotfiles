@@ -21,9 +21,9 @@
       "csv"
       "ini"
     ];
-    extraPackages = [
-      pkgs.nixd
-      pkgs.gopls
+    extraPackages = with pkgs; [
+      nixd
+      gopls
     ];
 
     userSettings = {

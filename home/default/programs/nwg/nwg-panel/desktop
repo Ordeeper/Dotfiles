@@ -72,12 +72,12 @@
           }
         ]
       },
-      "show-brightness": false,
+      "show-brightness": true,
       "show-volume": true,
       "show-battery": false,
       "output-switcher": true,
       "per-app-volume": false,
-      "backlight-controller": "brightnessctl",
+      "backlight-controller": "ddcutil",
       "backlight-device": "",
       "window-width": 0,
       "window-margin-horizontal": 0,
