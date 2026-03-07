@@ -31,7 +31,8 @@
       "components": [
         "brightness",
         "volume",
-        "per-app-volume"
+        "per-app-volume",
+        "battery"
       ],
       "commands": {
         "battery": ""
@@ -74,7 +75,7 @@
       },
       "show-brightness": true,
       "show-volume": true,
-      "show-battery": false,
+      "show-battery": true,
       "output-switcher": true,
       "per-app-volume": false,
       "backlight-controller": "brightnessctl",
