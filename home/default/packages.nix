@@ -10,9 +10,6 @@
     hoppscotch
     mpv
     nemo
-    grim
-    satty
-    slurp
     php84Packages.composer
     kdePackages.gwenview
     devenv

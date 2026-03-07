@@ -7,7 +7,7 @@
   	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
 
       # Screenshot
-      "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | satty --filename -"
+      "$mod SHIFT, S, exec, grimblast --freeze save area - | satty --filename -"
 
       # Terminal
       "$mod, SPACE, exec, kitty"

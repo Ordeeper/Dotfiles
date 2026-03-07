@@ -27,6 +27,7 @@
 
   home.packages = with pkgs; [
     wl-clipboard
+    grimblast
   ];
 
   imports = [
