@@ -142,7 +142,7 @@
       "angle": 0.0
     },
     "clock": {
-      "format": "%a, %d. %b %H:%M:%S",
+      "format": "%a, %d. %H:%M",
       "tooltip-text": "",
       "on-left-click": "",
       "on-middle-click": "",
