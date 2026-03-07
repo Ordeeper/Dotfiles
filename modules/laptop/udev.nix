@@ -7,4 +7,3 @@
     RUN+="${pkgs.coreutils}/bin/chmod g+w $sys$devpath/brightness"
   '';
 }
-

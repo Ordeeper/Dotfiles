@@ -18,6 +18,8 @@
     ../../modules/system/input/keyd.nix
 
     ../../modules/wayland/greetd.nix
+
+    ../../modules/desktop/udev.nix
   ];
 
   networking.hostName = "desktop";
