@@ -25,7 +25,7 @@ in
     if isDesktop then
     ./nwg-panel/desktop
     else
-    ./nwg-panel/config;
+    ./nwg-panel/laptop;
 
     home.packages = with pkgs; [
       nwg-panel
