@@ -23,5 +23,7 @@
     waypaper
     swww
     nwg-displays
+    easyeffects
+    appimage-run
   ];
 }
