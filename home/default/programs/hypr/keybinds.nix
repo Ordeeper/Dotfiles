@@ -15,6 +15,9 @@
       # Kill window
       "$mod SHIFT, Q, killactive"
 
+      # Lock
+      "$mod, apostrophe, exec, hyprlock"
+
       # Focus (hjkl)
       "$mod, H, movefocus, l"
       "$mod, J, movefocus, d"

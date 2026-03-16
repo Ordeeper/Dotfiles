@@ -36,5 +36,6 @@
 
   imports = [
     ./keybinds.nix
+    ./hyprlock/config.nix
   ];
 }
