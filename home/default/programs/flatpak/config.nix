@@ -12,5 +12,6 @@
   services.flatpak.packages = [
     "com.valvesoftware.Steam"
     "dev.vencord.Vesktop"
+    "network.loki.Session"
   ];
 }
