@@ -5,4 +5,9 @@
     EDITOR = "nvim";
     TERMINAL = "kitty";
   };
+
+  home.sessionPath = [
+    "$HOME/go/bin"
+  ];
+
 }
