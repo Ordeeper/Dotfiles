@@ -25,5 +25,6 @@
     nwg-displays
     easyeffects
     appimage-run
+    burpsuite
   ];
 }
