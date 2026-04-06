@@ -20,6 +20,8 @@
     ../../modules/laptop/bluetooth.nix
     ../../modules/laptop/input/libinput.nix
     ../../modules/laptop/packages.nix
+    ../../modules/laptop/graphics.nix
+    ../../modules/laptop/ollama.nix
 
     ../../modules/wayland/greetd.nix
   ];
