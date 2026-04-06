@@ -50,8 +50,8 @@
       };
       git = {
       	inline_blame = {
-	  enabled = false;
-	};
+       	  enabled = false;
+       	};
       };
       indent_guides = {
         enabled = true;
