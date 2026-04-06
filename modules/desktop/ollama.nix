@@ -4,7 +4,7 @@
   services.ollama = {
     enable = true;
 
-   package = pkgs.ollama-vulkan;
+   package = pkgs.ollama-cpu;
 
     environmentVariables = {
       OLLAMA_NUM_THREAD = "4";
@@ -13,7 +13,7 @@
     loadModels = [
       "qwen2.5:3b"
       "phi4:mini"
-      ];
+    ];
 
     host = "127.0.0.1";
     port = 11434;
