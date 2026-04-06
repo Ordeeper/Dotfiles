@@ -13,5 +13,6 @@
     "com.valvesoftware.Steam"
     "dev.vencord.Vesktop"
     "network.loki.Session"
+    "io.dbeaver.DBeaverCommunity"
   ];
 }
