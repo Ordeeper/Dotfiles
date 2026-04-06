@@ -20,6 +20,7 @@
     ../../modules/wayland/greetd.nix
 
     ../../modules/desktop/udev.nix
+    ../../modules/desktop/graphics.nix
   ];
 
   networking.hostName = "desktop";
