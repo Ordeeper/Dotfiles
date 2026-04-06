@@ -21,6 +21,7 @@
 
     ../../modules/desktop/udev.nix
     ../../modules/desktop/graphics.nix
+    ../../modules/desktop/ollama.nix
   ];
 
   networking.hostName = "desktop";

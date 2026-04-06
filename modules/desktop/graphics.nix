@@ -7,7 +7,7 @@
       intel-vaapi-driver
       libvdpau-va-gl
       vulkan-loader
-      mesa.drivers
+      mesa
     ];
   };
 }

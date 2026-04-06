@@ -3,18 +3,24 @@
 {
   services.ollama = {
     enable = true;
-    acceleration = false;
+
+   package = pkgs.ollama-vulkan;
 
     environmentVariables = {
       OLLAMA_NUM_THREAD = "4";
-      OLLAMA_SKIP_CPU_CHECK = "1";
     };
+
+    loadModels = [
+      "qwen2.5:3b"
+      "phi4:mini"
+      ];
 
     host = "127.0.0.1";
     port = 11434;
   };
 
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     ollama
+    aider-chat
   ];
 }
