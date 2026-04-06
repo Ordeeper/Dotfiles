@@ -8,6 +8,7 @@
 
     environmentVariables = {
       OLLAMA_NUM_THREAD = "4";
+      OLLAMA_KEEP_ALIVE = "24h";
     };
 
     loadModels = [
