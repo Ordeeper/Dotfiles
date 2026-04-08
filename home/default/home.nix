@@ -20,6 +20,7 @@
     ./programs/stylix/config.nix
     ./programs/sunsetr/config.nix
     ./programs/flatpak/config.nix
+    ./programs/opencode/config.nix
 
     ./session-variables.nix
 

@@ -13,7 +13,6 @@
 
     loadModels = [
       "qwen2.5:3b"
-      "phi4:mini"
     ];
 
     host = "127.0.0.1";
@@ -22,6 +21,5 @@
 
   environment.systemPackages = with pkgs; [
     ollama
-    aider-chat
   ];
 }
