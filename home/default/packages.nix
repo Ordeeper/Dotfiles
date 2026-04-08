@@ -26,5 +26,6 @@
     easyeffects
     appimage-run
     burpsuite
+    satty
   ];
 }
