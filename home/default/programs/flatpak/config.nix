@@ -14,5 +14,6 @@
     "dev.vencord.Vesktop"
     "network.loki.Session"
     "io.dbeaver.DBeaverCommunity"
+    "com.spotify.Client"
   ];
 }
