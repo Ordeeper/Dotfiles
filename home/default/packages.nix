@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -19,9 +19,9 @@
     docker-compose
     p7zip
     gcc
-    zotero-beta
+    zotero
     waypaper
-    swww
+    awww
     nwg-displays
     easyeffects
     appimage-run
