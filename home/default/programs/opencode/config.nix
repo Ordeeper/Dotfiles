@@ -5,7 +5,9 @@
     enable = true;
 
     settings = {
-      model = "minimax/m2.5-free-opencode-zen";
+      plugin = [
+        "opencode-omniroute-auth"
+      ];
 
       permission = {
         websearch = "allow";

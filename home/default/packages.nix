@@ -21,11 +21,12 @@
     gcc
     zotero
     waypaper
-    awww
+    swww
     nwg-displays
     easyeffects
     appimage-run
     burpsuite
     satty
+    cloudflared
   ];
 }
