@@ -4,6 +4,7 @@
   systemd.user.services.sunsetr = {
     Unit = {
       Description = "Sunsetr Color Temperature Adjuster";
+      PartOf = [ "graphical-session.target" ];
       After = [ "graphical-session.target" ];
     };
 
@@ -14,7 +15,7 @@
     };
 
     Install = {
-      WantedBy = [ "default.target" ];
+      WantedBy = [ "graphical-session.target" ];
     };
   };
 
@@ -23,5 +24,4 @@
   home.packages = with pkgs; [
     sunsetr
   ];
-
 }
