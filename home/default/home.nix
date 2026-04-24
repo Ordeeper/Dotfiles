@@ -2,7 +2,7 @@
 
 {
   home.username = username;
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
   nixpkgs.config.allowUnfree = true;
 
   imports = [

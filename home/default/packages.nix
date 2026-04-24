@@ -11,7 +11,6 @@
     mpv
     nemo
     php84Packages.composer
-    kdePackages.gwenview
     devenv
     converseen
     lmstudio
@@ -21,7 +20,7 @@
     gcc
     zotero
     waypaper
-    swww
+    awww
     nwg-displays
     easyeffects
     appimage-run

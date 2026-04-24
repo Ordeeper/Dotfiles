@@ -13,14 +13,12 @@
       default = [
         "hyprland"
         "gtk"
-        "kde"
       ];
     };
 
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
-      kdePackages.xdg-desktop-portal-kde
     ];
   };
 }

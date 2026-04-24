@@ -5,10 +5,6 @@
     enable = true;
 
     settings = {
-      plugin = [
-        "opencode-omniroute-auth"
-      ];
-
       permission = {
         websearch = "allow";
         webfetch = "allow";
