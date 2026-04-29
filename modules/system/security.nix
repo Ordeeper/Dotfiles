@@ -10,5 +10,6 @@
     #     }];
     # };
     protectKernelImage = true;
+    polkit.enable = true;
   };
 }

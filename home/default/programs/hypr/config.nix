@@ -25,6 +25,7 @@
       exec-once = [
         "hyprctl setcursor \"Vimix-cursors\" 32"
         "waypaper --restore"
+        "nm-applet --indicator"
       ];
     };
   };

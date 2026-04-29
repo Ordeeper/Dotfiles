@@ -13,4 +13,10 @@
     };
     nftables.enable = true;
   };
+
+  programs.nm-applet = {
+   enable = true;
+   indicator =  true;
+  };
+
 }
