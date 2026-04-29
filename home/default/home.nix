@@ -21,6 +21,7 @@
     ./programs/sunsetr/config.nix
     ./programs/flatpak/config.nix
     ./programs/opencode/config.nix
+    ./programs/nvim/config.nix
 
     ./session-variables.nix
 
