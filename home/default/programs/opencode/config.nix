@@ -1,8 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.opencode = {
     enable = true;
+
+    package = pkgs.runCommand "opencode-dummy" {} "mkdir $out";
 
     settings = {
       permission = {
