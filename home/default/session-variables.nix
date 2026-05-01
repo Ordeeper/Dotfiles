@@ -1,3 +1,5 @@
+{ pkgs, ...}:
+
 {
   systemd.user.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
@@ -12,4 +14,7 @@
     "$HOME/go/bin"
   ];
 
+  home.packages = with pkgs; [
+    lxqt.lxqt-openssh-askpass
+  ];
 }
