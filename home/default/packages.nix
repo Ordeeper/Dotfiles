@@ -27,5 +27,6 @@
     burpsuite
     satty
     cloudflared
+    caido-desktop
   ];
 }
