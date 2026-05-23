@@ -23,6 +23,8 @@
     ../../modules/laptop/graphics.nix
     ../../modules/laptop/ollama.nix
 
+    ../../modules/system/printer.nix
+
     ../../modules/wayland/greetd.nix
   ];
 
