@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   catppuccinMochaScheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
@@ -36,7 +36,7 @@ in
         applications = 12;
         desktop = 11;
         popups = 11;
-        terminal = 13;
+        terminal = 11;
       };
     };
 
