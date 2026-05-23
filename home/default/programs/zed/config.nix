@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }:
 {
@@ -34,8 +33,6 @@
        	diagnostics = false;
       	metrics = false;
       };
-      ui_font_size = lib.mkForce 17;
-      buffer_font_size = lib.mkForce 16;
       file_finder = {
         modal_width = "medium";
       };
