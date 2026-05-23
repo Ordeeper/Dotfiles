@@ -10,6 +10,10 @@
     };
 
     settings = {
+      monitor = [
+        ",preferred,auto,1"
+      ];
+
       input = {
         kb_layout = "us";
         kb_variant = "altgr-intl";
