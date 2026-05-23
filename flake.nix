@@ -15,11 +15,15 @@
       url = "github:vicinaehq/extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vicinae.url = "github:vicinaehq/vicinae";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, vicinae, stylix, nix-flatpak, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -46,6 +50,7 @@
                 nix-flatpak.homeManagerModules.nix-flatpak
                 vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
+                dms.homeModules.dank-material-shell
               ];
             };
             home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
@@ -67,6 +72,7 @@
                 nix-flatpak.homeManagerModules.nix-flatpak
                 vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
+               dms.homeModules.dank-material-shell
               ];
             };
             home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };

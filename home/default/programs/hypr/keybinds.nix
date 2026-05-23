@@ -16,7 +16,7 @@
       "$mod SHIFT, Q, killactive"
 
       # Lock
-      "$mod, apostrophe, exec, hyprlock"
+      # "$mod, apostrophe, exec, hyprlock"
 
       # Focus (hjkl)
       "$mod, H, movefocus, l"
