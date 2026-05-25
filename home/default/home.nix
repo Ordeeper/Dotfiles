@@ -13,13 +13,11 @@
     ./programs/tmux/config.nix
     ./programs/zed/config.nix
     ./programs/vicinae/config.nix
-    # ./programs/nwg/config.nix
     ./programs/dms/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
     ./programs/direnv/config.nix
     ./programs/stylix/config.nix
-    ./programs/sunsetr/config.nix
     ./programs/flatpak/config.nix
     ./programs/opencode/config.nix
     ./programs/nvim/config.nix

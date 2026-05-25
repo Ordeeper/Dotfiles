@@ -28,15 +28,13 @@
 
       exec-once = [
         "hyprctl setcursor \"Vimix-cursors\" 32"
-        "waypaper --restore"
-        "nm-applet --indicator"
       ];
     };
   };
 
   home.packages = with pkgs; [
-    wl-clipboard
     grimblast
+    satty
   ];
 
   imports = [

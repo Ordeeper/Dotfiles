@@ -19,13 +19,9 @@
     p7zip
     gcc
     zotero
-    waypaper
-    awww
-    nwg-displays
     easyeffects
     appimage-run
     burpsuite
-    satty
     cloudflared
     caido-desktop
   ];
