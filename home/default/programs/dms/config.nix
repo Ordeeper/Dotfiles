@@ -18,6 +18,8 @@
       currentThemeName = "custom";
       currentThemeCategory = "generic";
 
+      systemTrayIconTintMode = "primary";
+
       use24HourClock = true;
       showSeconds = false;
 
