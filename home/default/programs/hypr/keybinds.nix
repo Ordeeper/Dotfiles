@@ -16,7 +16,7 @@
       "$mod SHIFT, Q, killactive"
 
       # Lock
-      # "$mod, apostrophe, exec, hyprlock"
+      "$mod, apostrophe, exec, dms ipc call lock lock"
 
       # Focus (hjkl)
       "$mod, H, movefocus, l"
@@ -69,14 +69,26 @@
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
       "$mod SHIFT, 0, movetoworkspace, 10"
+
+      "$mod, grave, exec, dms ipc call powermenu toggle"
+
+      ",XF86AudioMute, exec, dms ipc call audio mute"
+
+      "$mod, slash, exec, dms ipc call mpris playPause"
+      "$mod, comma, exec, dms ipc call mpris previous"
+      "$mod, period, exec, dms ipc call mpris next"
+
+      "$mod, semicolon, exec, dms ipc call notepad toggle"
     ];
 
     bindel = [
-      ",XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +10%"
-      ",XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -10%"
-      ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
-      ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
-      ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ",XF86AudioRaiseVolume, exec, dms ipc call audio increment 5"
+      ",XF86AudioLowerVolume, exec, dms ipc call audio decrement 5"
+      ",XF86MonBrightnessUp, exec, dms ipc call brightness increment 5"
+      ",XF86MonBrightnessDown, exec, dms ipc call brightness decrement 5"
+
+      "$mod, bracketleft, exec, dms ipc call audio increment 5"
+      "$mod, bracketright, exec, dms ipc call audio decrement 5"
     ];
 
   };
