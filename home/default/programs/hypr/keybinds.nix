@@ -87,8 +87,8 @@
       ",XF86MonBrightnessUp, exec, dms ipc call brightness increment 5"
       ",XF86MonBrightnessDown, exec, dms ipc call brightness decrement 5"
 
-      "$mod, bracketleft, exec, dms ipc call audio increment 5"
-      "$mod, bracketright, exec, dms ipc call audio decrement 5"
+      "$mod, bracketleft, exec, dms ipc call audio decrement 5"
+      "$mod, bracketright, exec, dms ipc call audio increment 5"
     ];
 
   };
