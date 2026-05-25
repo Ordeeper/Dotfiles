@@ -23,7 +23,7 @@
 
       showWorkspaceIndex = true;
       showWorkspaceApps = true;
-      groupWorkspaceApps = true;
+      groupWorkspaceApps = false;
       maxWorkspaceIcons = 3;
 
       weatherEnabled = true;
