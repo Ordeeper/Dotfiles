@@ -21,6 +21,8 @@
       use24HourClock = true;
       showSeconds = false;
 
+      showWorkspaceIndex = true;
+      showWorkspaceApps = true;
       groupWorkspaceApps = true;
       maxWorkspaceIcons = 3;
 
