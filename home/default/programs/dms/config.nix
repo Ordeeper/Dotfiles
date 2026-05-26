@@ -40,6 +40,8 @@
 
       notificationHistoryEnabled = true;
 
+      lockScreenShowMediaPlayer = false;
+
       barConfigs = [
         {
           id = "default";
@@ -73,6 +75,11 @@
 
           rightWidgets = [
             {
+              id = "privacyIndicator";
+              enabled = true;
+            }
+
+            {
               id = "systemTray";
               enabled = true;
             }
@@ -94,6 +101,11 @@
             }
 
             {
+              id = "colorPicker";
+              enabled = true;
+            }
+
+            {
               id = "notificationButton";
               enabled = true;
             }
@@ -108,6 +120,80 @@
           iconScale = 1.2;
         }
       ];
+
+      controlCenterWidgets = [
+        {
+          id = "volumeSlider";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "brightnessSlider";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "wifi";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "builtin_vpn";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "audioOutput";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "audioInput";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "doNotDisturb";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "bluetooth";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "darkMode";
+          enabled = true;
+          width = 50;
+        }
+
+        {
+          id = "nightMode";
+          enabled = true;
+          width = 50;
+        }
+      ];
+
+      controlCenterShowNetworkIcon = true;
+      controlCenterShowBluetoothIcon = true;
+      controlCenterShowAudioIcon = true;
+      controlCenterShowVpnIcon = true;
+      controlCenterShowScreenSharingIcon = false;
+
+      controlCenterShowBrightnessIcon = false;
+      controlCenterShowMicIcon = false;
+      controlCenterShowBatteryIcon = false;
+      controlCenterShowPrinterIcon = false;
+
     };
   };
 }
