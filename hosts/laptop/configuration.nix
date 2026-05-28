@@ -21,6 +21,7 @@
     ../../modules/laptop/input/libinput.nix
     ../../modules/laptop/packages.nix
     ../../modules/laptop/graphics.nix
+    ../../modules/laptop/power.nix
     ../../modules/laptop/ollama.nix
 
     ../../modules/system/printer.nix

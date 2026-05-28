@@ -12,6 +12,10 @@
         webfetch = "allow";
         lsp = "allow";
       };
+
+      plugin = [
+        "github:kdcokenny/opencode-notify"
+      ];
     };
   };
 
