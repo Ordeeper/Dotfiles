@@ -35,6 +35,7 @@
   home.packages = with pkgs; [
     grimblast
     satty
+    wl-clipboard
   ];
 
   imports = [

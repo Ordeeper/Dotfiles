@@ -1,10 +1,10 @@
 {
   services.logind = {
-    powerKey = "hibernate";
-    lidSwitch = "suspend";
-    lidSwitchExternalPower = "suspend";
     settings = {
       Login = {
+        HandlePowerKey = "hibernate";
+        HandleLidSwitch = "suspend";
+        HandleLidSwitchExternalPower = "suspend";
         IdleAction = "suspend";
         IdleActionSec = "30min";
       };
