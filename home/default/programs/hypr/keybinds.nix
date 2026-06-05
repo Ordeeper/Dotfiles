@@ -45,7 +45,7 @@
 
       # Launcher
       "$mod, D, exec, vicinae toggle"
-      "$mod, C, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
+      "$mod, C, exec, vicinae vicinae://launch/clipboard/history?toggle=true"
 
       # Workspaces
       "$mod, 1, workspace, 1"
