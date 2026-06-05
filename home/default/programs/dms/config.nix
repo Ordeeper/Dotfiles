@@ -33,8 +33,6 @@
 
       soundsEnabled = true;
 
-      lockAtStartup = true;
-
       fadeToLockEnabled = true;
       fadeToDpmsEnabled = true;
 
