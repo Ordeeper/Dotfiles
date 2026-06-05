@@ -1,3 +1,5 @@
+{ username ? "nix-user", ... }:
+
 {
   nix = {
     gc = {
@@ -8,8 +10,8 @@
 
     settings = {
       auto-optimise-store = true;
-      allowed-users = [ "nix-user" ];
-      trusted-users = [ "root" "nix-user" ];
+      allowed-users = [ "${username}" ];
+      trusted-users = [ "root" "${username}" ];
       experimental-features = [
         "nix-command"
         "flakes"

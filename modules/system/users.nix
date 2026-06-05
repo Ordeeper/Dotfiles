@@ -1,8 +1,7 @@
-
-{ pkgs, ... }:
+{ username ? "nix-user", pkgs, ... }:
 
 {
-  users.users.nix-user = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "networkmanager" "docker" ];
     shell = pkgs.fish;

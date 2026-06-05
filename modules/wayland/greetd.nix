@@ -1,19 +1,18 @@
-{ pkgs, ... }:
+{ username ? "nix-user", ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    tuigreet
-  ];
-
-  services.greetd = {
+  services.displayManager.dms-greeter = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.hyprland}/bin/start-hyprland";
-        user = "nix-user";
-      };
+    compositor.name = "hyprland";
+
+    configHome = "/home/${username}";
+
+    logs = {
+      save = true; 
+      path = "/tmp/dms-greeter.log";
     };
   };
+
 
   services.dbus.enable = true;
   security.pam.services.greetd.enable = true;

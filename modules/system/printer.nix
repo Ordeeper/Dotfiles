@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ username ? "nix-user", pkgs, ... }:
 {
   services.printing = {
     enable = true;
@@ -43,5 +43,5 @@
     system-config-printer
   ];
 
-  users.users.nix-user.extraGroups = [ "lp" ];
+  users.users.${username}.extraGroups = [ "lp" ];
 }

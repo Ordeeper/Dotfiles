@@ -26,6 +26,7 @@
   outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, ... }:
   let
     system = "x86_64-linux";
+    username = "nix-user";
     pkgs = import nixpkgs {
       inherit system;
       config = {
@@ -38,13 +39,16 @@
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = {
+          inherit username inputs;
+        };
         modules = [
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
        	  {
        	    home-manager.useGlobalPkgs = false;
        	    home-manager.useUserPackages = true;
-            home-manager.users.nix-user = {
+            home-manager.users.${username} = {
               imports = [
                 ./home/default/home.nix
                 nix-flatpak.homeManagerModules.nix-flatpak
@@ -53,20 +57,25 @@
                 dms.homeModules.dank-material-shell
               ];
             };
-            home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit username inputs;
+            };
        	  }
         ];
       };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = {
+          inherit username inputs;
+        };
         modules = [
           ./hosts/desktop/configuration.nix
           home-manager.nixosModules.home-manager
        	  {
        	    home-manager.useGlobalPkgs = false;
        	    home-manager.useUserPackages = true;
-            home-manager.users.nix-user = {
+            home-manager.users.${username} = {
               imports = [
                 ./home/default/home.nix
                 nix-flatpak.homeManagerModules.nix-flatpak
@@ -75,7 +84,9 @@
                dms.homeModules.dank-material-shell
               ];
             };
-            home-manager.extraSpecialArgs = { username = "nix-user"; inputs = inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit username inputs;
+            };
        	  }
         ];
       };
