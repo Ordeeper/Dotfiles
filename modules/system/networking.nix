@@ -9,7 +9,7 @@
     firewall = {
         enable = true;
         allowPing = false;
-        allowedTCPPorts = [ 8000 ];
+        allowedTCPPorts = [ 8000 9000 24800 ];
     };
     nftables.enable = true;
   };

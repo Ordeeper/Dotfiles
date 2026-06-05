@@ -1,5 +1,11 @@
-{ username ? "nix-user", ... }:
+{ username ? "nix-user", osConfig, lib, ... }:
 
+let
+  host = osConfig.networking.hostName;
+  isDesktop = host == "desktop";
+  isLaptop  = host == "laptop";
+  # isServer  = host == "server";
+in
 {
   home.username = username;
   home.stateVersion = "26.05";
@@ -25,5 +31,13 @@
     ./session-variables.nix
 
     ./packages.nix
+  ]
+
+  ++ lib.optionals isLaptop [
+      ./laptop/waynergy.nix
+  ]
+
+  ++ lib.optionals isDesktop [
+      ./desktop/deskflow.nix
   ];
 }
