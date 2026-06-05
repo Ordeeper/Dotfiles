@@ -9,7 +9,11 @@
     firewall = {
         enable = true;
         allowPing = false;
-        allowedTCPPorts = [ 8000 9000 24800 ];
+        interfaces = {
+          enp2s0 = {
+            allowedTCPPorts = [ 8000 9000 24800 ];
+          };
+        };
     };
     nftables.enable = true;
   };
