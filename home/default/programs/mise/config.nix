@@ -17,7 +17,10 @@
         "nix:opencode" = "latest";
       };
 
-      settings.experimental = true;
+      settings = {
+        experimental = true;
+        all_compile = false;
+      };
     };
   };
 }
