@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -14,6 +14,7 @@
     ../../modules/system/nix.nix
     ../../modules/system/boot.nix
     ../../modules/system/security.nix
+    ../../modules/system/gaming.nix
     ../../modules/system/input/keyd.nix
 
     ../../modules/laptop/udev.nix

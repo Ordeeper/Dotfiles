@@ -3,7 +3,7 @@
 {
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "video" "networkmanager" "docker" "gamemode" ];
     shell = pkgs.fish;
   };
 

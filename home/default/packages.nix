@@ -24,5 +24,6 @@
     burpsuite
     cloudflared
     caido-desktop
+    heroic
   ];
 }

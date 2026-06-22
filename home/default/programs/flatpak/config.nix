@@ -10,7 +10,6 @@
   services.flatpak.uninstallUnmanaged = false;
 
   services.flatpak.packages = [
-    "com.valvesoftware.Steam"
     "dev.vencord.Vesktop"
     "network.loki.Session"
     "io.dbeaver.DBeaverCommunity"
