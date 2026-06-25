@@ -25,5 +25,6 @@
     cloudflared
     caido-desktop
     heroic
+    anki-bin
   ];
 }
