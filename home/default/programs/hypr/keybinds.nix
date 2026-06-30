@@ -18,6 +18,9 @@
       # Lock
       "$mod, apostrophe, exec, dms ipc call lock lock"
 
+      # Workspace Toggle Overview
+      "$mod, W, exec, dms ipc call hypr toggleOverview"
+
       # Focus (hjkl)
       "$mod, H, movefocus, l"
       "$mod, J, movefocus, d"
