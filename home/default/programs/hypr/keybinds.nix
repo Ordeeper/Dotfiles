@@ -82,6 +82,8 @@
       "$mod, period, exec, dms ipc call mpris next"
 
       "$mod, semicolon, exec, dms ipc call notepad toggle"
+
+      "$mod SHIFT, T, exec, toggle-touchpad"
     ];
 
     bindel = [
@@ -93,6 +95,9 @@
       "$mod, bracketleft, exec, dms ipc call audio decrement 5"
       "$mod, bracketright, exec, dms ipc call audio increment 5"
     ];
-
   };
+
+  imports = [
+    ./scripts/touchpad-toggle.nix
+  ];
 }
