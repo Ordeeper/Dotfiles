@@ -51,19 +51,19 @@ in
             text_font = config.stylix.fonts.monospace.name;
             text_height = config.stylix.fonts.sizes.desktop;
             colors = {
-              active = rgba colors.base0D "40";
-              active_border = rgba colors.base0D "ee";
+              active = rgba colors.base02 "ff";
+              active_border = rgba colors.base0D "ff";
               active_text = rgba colors.base05 "ff";
-              inactive = rgba colors.base01 "20";
+              inactive = rgba colors.base01 "ff";
               inactive_border = rgba colors.base03 "aa";
               inactive_text = rgba colors.base05 "ff";
-              focused = rgba colors.base03 "40";
-              focused_border = rgba colors.base03 "ee";
+              focused = rgba colors.base02 "cc";
+              focused_border = rgba colors.base0D "cc";
               focused_text = rgba colors.base05 "ff";
-              urgent = rgba colors.base08 "40";
-              urgent_border = rgba colors.base08 "ee";
+              urgent = rgba colors.base08 "ff";
+              urgent_border = rgba colors.base08 "ff";
               urgent_text = rgba colors.base05 "ff";
-              locked = rgba colors.base0C "40";
+              locked = rgba colors.base0C "cc";
               locked_border = rgba colors.base0C "ee";
               locked_text = rgba colors.base05 "ff";
             };

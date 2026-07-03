@@ -30,6 +30,12 @@
       "$mod, K, hy3:movefocus, u, visible"
       "$mod, L, hy3:movefocus, r, visible"
 
+      # Focus tabs and windows (no visible flag)
+      "$mod CTRL, H, hy3:movefocus, l"
+      "$mod CTRL, J, hy3:movefocus, d"
+      "$mod CTRL, K, hy3:movefocus, u"
+      "$mod CTRL, L, hy3:movefocus, r"
+
       # Focus all windows
       "$mod, A, hy3:changefocus, raise"
 
