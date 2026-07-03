@@ -21,9 +21,16 @@
     };
     vicinae.url = "github:vicinaehq/vicinae";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
+    hyprland = {
+      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.55.1";
+    };
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.55.0";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, hyprland, hy3, ... }:
   let
     system = "x86_64-linux";
     username = "nix-user";
@@ -40,7 +47,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit username inputs;
+          inherit username inputs hyprland hy3;
         };
         modules = [
           ./hosts/laptop/configuration.nix
@@ -58,16 +65,16 @@
               ];
             };
             home-manager.extraSpecialArgs = {
-              inherit username inputs;
+              inherit username inputs hyprland hy3;
             };
-       	  }
+        	  }
         ];
       };
 
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit username inputs;
+          inherit username inputs hyprland hy3;
         };
         modules = [
           ./hosts/desktop/configuration.nix
@@ -85,9 +92,9 @@
               ];
             };
             home-manager.extraSpecialArgs = {
-              inherit username inputs;
+              inherit username inputs hyprland hy3;
             };
-       	  }
+        	  }
         ];
       };
     };

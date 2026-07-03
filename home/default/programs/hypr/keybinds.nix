@@ -19,19 +19,25 @@
       "$mod, apostrophe, exec, dms ipc call lock lock"
 
       # Workspace Toggle Overview
-      "$mod, W, exec, dms ipc call hypr toggleOverview"
+      "$mod, S, exec, dms ipc call hypr toggleOverview"
+      
+      "$mod, W, hy3:changegroup, toggletab"
+      "$mod, E, hy3:changegroup, opposite"
 
       # Focus (hjkl)
-      "$mod, H, movefocus, l"
-      "$mod, J, movefocus, d"
-      "$mod, K, movefocus, u"
-      "$mod, L, movefocus, r"
+      "$mod, H, hy3:movefocus, l"
+      "$mod, J, hy3:movefocus, d"
+      "$mod, K, hy3:movefocus, u"
+      "$mod, L, hy3:movefocus, r"
+
+      "$mod, N, hy3:makegroup, h" # Split horizontal
+      "$mod, M, hy3:makegroup, v" # Split vertical
 
       # Move window
-      "$mod SHIFT, H, movewindow, l"
-      "$mod SHIFT, J, movewindow, d"
-      "$mod SHIFT, K, movewindow, u"
-      "$mod SHIFT, L, movewindow, r"
+      "$mod SHIFT, H, hy3:movewindow, l"
+      "$mod SHIFT, J, hy3:movewindow, d"
+      "$mod SHIFT, K, hy3:movewindow, u"
+      "$mod SHIFT, L, hy3:movewindow, r"
 
       # Floating
       "$mod, RETURN, togglefloating"
