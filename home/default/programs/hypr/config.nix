@@ -2,7 +2,6 @@
 
 let
   colors = config.lib.stylix.colors;
-  rgb = color: "rgb(${color})";
   rgba = color: alpha: "rgba(${color}${alpha})";
 in
 {
@@ -51,21 +50,21 @@ in
             text_font = config.stylix.fonts.monospace.name;
             text_height = config.stylix.fonts.sizes.desktop;
             colors = {
-              active = rgba colors.base02 "ff";
+              active = rgba colors.base01 "ff";
               active_border = rgba colors.base0D "ff";
               active_text = rgba colors.base05 "ff";
               inactive = rgba colors.base01 "ff";
-              inactive_border = rgba colors.base03 "aa";
-              inactive_text = rgba colors.base05 "ff";
-              focused = rgba colors.base02 "cc";
-              focused_border = rgba colors.base0D "cc";
+              inactive_border = rgba colors.base03 "01";
+              inactive_text = rgba colors.base04 "ff";
+              focused = rgba colors.base01 "ff";
+              focused_border = rgba colors.base0E "cc";
               focused_text = rgba colors.base05 "ff";
               urgent = rgba colors.base08 "ff";
               urgent_border = rgba colors.base08 "ff";
-              urgent_text = rgba colors.base05 "ff";
+              urgent_text = rgba colors.base01 "ff";
               locked = rgba colors.base0C "cc";
               locked_border = rgba colors.base0C "ee";
-              locked_text = rgba colors.base05 "ff";
+              locked_text = rgba colors.base01 "ff";
             };
           };
         };
