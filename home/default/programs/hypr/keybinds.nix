@@ -118,6 +118,24 @@
     ];
   };
 
+  wayland.windowManager.hyprland.extraConfig = ''
+    # Resize mode
+    bind = ALT, R, submap, resize
+
+    submap = resize
+    binde = , H, resizeactive, -10 0
+    binde = , J, resizeactive, 0 10
+    binde = , K, resizeactive, 0 -10
+    binde = , L, resizeactive, 10 0
+    binde = , left, resizeactive, -10 0
+    binde = , down, resizeactive, 0 10
+    binde = , up, resizeactive, 0 -10
+    binde = , right, resizeactive, 10 0
+    bind = , escape, submap, reset
+    bind = ALT, R, submap, reset
+    submap = reset
+  '';
+
   imports = [
     ./scripts/touchpad-toggle.nix
   ];
