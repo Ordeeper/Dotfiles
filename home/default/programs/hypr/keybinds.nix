@@ -24,11 +24,11 @@
       "$mod, W, hy3:changegroup, toggletab"
       "$mod, E, hy3:changegroup, opposite"
 
-      # Focus (hjkl)
-      "$mod, H, hy3:movefocus, l"
-      "$mod, J, hy3:movefocus, d"
-      "$mod, K, hy3:movefocus, u"
-      "$mod, L, hy3:movefocus, r"
+      # Focus (hjkl) - skip tabs, go to visible window
+      "$mod, H, hy3:movefocus, l, visible"
+      "$mod, J, hy3:movefocus, d, visible"
+      "$mod, K, hy3:movefocus, u, visible"
+      "$mod, L, hy3:movefocus, r, visible"
 
       # Focus all windows
       "$mod, A, hy3:changefocus, raise"
@@ -48,8 +48,9 @@
       # Fullscreen
       "$mod, F, fullscreen"
 
-      # Focus next
-      "$mod, TAB, cyclenext"
+      # Focus next (hy3 tabs)
+      "$mod, TAB, hy3:focustab, r, wrap"
+      "$mod SHIFT, TAB, hy3:focustab, l, wrap"
 
       # Scratchpad (special workspace)
       "$mod SHIFT, MINUS, movetoworkspace, special"
@@ -71,16 +72,16 @@
       "$mod, 9, workspace, 9"
       "$mod, 0, workspace, 10"
 
-      "$mod SHIFT, 1, movetoworkspace, 1"
-      "$mod SHIFT, 2, movetoworkspace, 2"
-      "$mod SHIFT, 3, movetoworkspace, 3"
-      "$mod SHIFT, 4, movetoworkspace, 4"
-      "$mod SHIFT, 5, movetoworkspace, 5"
-      "$mod SHIFT, 6, movetoworkspace, 6"
-      "$mod SHIFT, 7, movetoworkspace, 7"
-      "$mod SHIFT, 8, movetoworkspace, 8"
-      "$mod SHIFT, 9, movetoworkspace, 9"
-      "$mod SHIFT, 0, movetoworkspace, 10"
+      "$mod SHIFT, 1, hy3:movetoworkspace, 1"
+      "$mod SHIFT, 2, hy3:movetoworkspace, 2"
+      "$mod SHIFT, 3, hy3:movetoworkspace, 3"
+      "$mod SHIFT, 4, hy3:movetoworkspace, 4"
+      "$mod SHIFT, 5, hy3:movetoworkspace, 5"
+      "$mod SHIFT, 6, hy3:movetoworkspace, 6"
+      "$mod SHIFT, 7, hy3:movetoworkspace, 7"
+      "$mod SHIFT, 8, hy3:movetoworkspace, 8"
+      "$mod SHIFT, 9, hy3:movetoworkspace, 9"
+      "$mod SHIFT, 0, hy3:movetoworkspace, 10"
 
       "$mod, grave, exec, dms ipc call powermenu toggle"
 
