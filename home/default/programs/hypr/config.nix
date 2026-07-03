@@ -43,6 +43,7 @@ in
 
       plugin = {
         hy3 = {
+          node_collapse_policy = 0;
           tabs = {
             from_top = true;
             border_width = 1;

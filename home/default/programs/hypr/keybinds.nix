@@ -13,7 +13,7 @@
       "$mod, SPACE, exec, kitty"
 
       # Kill window
-      "$mod SHIFT, Q, killactive"
+      "$mod SHIFT, Q, hy3:killactive"
 
       # Lock
       "$mod, apostrophe, exec, dms ipc call lock lock"
@@ -29,6 +29,9 @@
       "$mod, J, hy3:movefocus, d"
       "$mod, K, hy3:movefocus, u"
       "$mod, L, hy3:movefocus, r"
+
+      # Focus all windows
+      "$mod, A, hy3:changefocus, raise"
 
       "$mod, N, hy3:makegroup, h" # Split horizontal
       "$mod, M, hy3:makegroup, v" # Split vertical
