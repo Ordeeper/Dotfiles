@@ -104,6 +104,11 @@
       "$mod, bracketleft, exec, dms ipc call audio decrement 5"
       "$mod, bracketright, exec, dms ipc call audio increment 5"
     ];
+
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+    ];
   };
 
   imports = [
