@@ -21,6 +21,8 @@ in
       general.layout = "hy3";
 
       monitor = [
+        "eDP-1,1920x1080@120,0x0,1"
+        "HDMI-A-1,1366x768@60,277x-768,1"
         ",preferred,auto,1"
       ];
 
