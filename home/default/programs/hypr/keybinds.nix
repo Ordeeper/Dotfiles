@@ -20,21 +20,21 @@
 
       # Workspace Toggle Overview
       "$mod, S, exec, dms ipc call hypr toggleOverview"
-      
+
       "$mod, W, hy3:changegroup, toggletab"
       "$mod, E, hy3:changegroup, opposite"
 
-      # Focus (hjkl) - skip tabs, go to visible window
-      "$mod, H, hy3:movefocus, l, visible"
-      "$mod, J, hy3:movefocus, d, visible"
-      "$mod, K, hy3:movefocus, u, visible"
-      "$mod, L, hy3:movefocus, r, visible"
-
       # Focus tabs and windows (no visible flag)
-      "$mod CTRL, H, hy3:movefocus, l"
-      "$mod CTRL, J, hy3:movefocus, d"
-      "$mod CTRL, K, hy3:movefocus, u"
-      "$mod CTRL, L, hy3:movefocus, r"
+      "$mod, H, hy3:movefocus, l"
+      "$mod, J, hy3:movefocus, d"
+      "$mod, K, hy3:movefocus, u"
+      "$mod, L, hy3:movefocus, r"
+
+      # Focus (hjkl) - skip tabs, go to visible window
+      "$mod CTRL, H, hy3:movefocus, l, visible"
+      "$mod CTRL, J, hy3:movefocus, d, visible"
+      "$mod CTRL, K, hy3:movefocus, u, visible"
+      "$mod CTRL, L, hy3:movefocus, r, visible"
 
       # Focus all windows
       "$mod, A, hy3:changefocus, raise"
