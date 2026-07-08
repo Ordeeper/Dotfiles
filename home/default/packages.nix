@@ -26,5 +26,6 @@
     caido-desktop
     heroic
     anki-bin
+    claude-code
   ];
 }

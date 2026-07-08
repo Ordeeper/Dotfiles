@@ -39,8 +39,11 @@
       # Focus all windows
       "$mod, A, hy3:changefocus, raise"
 
-      "$mod, N, hy3:makegroup, h" # Split horizontal
-      "$mod, M, hy3:makegroup, v" # Split vertical
+      # Split horizontal
+      "$mod, N, hy3:makegroup, h"
+
+      # Split vertical
+      "$mod, M, hy3:makegroup, v"
 
       # Move window
       "$mod SHIFT, H, hy3:movewindow, l"

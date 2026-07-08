@@ -13,9 +13,9 @@
         lsp = "allow";
       };
 
-      plugin = [
-        "github:kdcokenny/opencode-notify"
-      ];
+      # plugin = [
+      #   "github:kdcokenny/opencode-notify"
+      # ];
     };
   };
 

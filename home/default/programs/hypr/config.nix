@@ -20,9 +20,13 @@ in
     settings = {
       general.layout = "hy3";
 
+      
+      # "eDP-1,1920x1080@120,0x0,1"
+      # "HDMI-A-1,1366x768@60,277x-768,1"
+      
       monitor = [
-        "eDP-1,1920x1080@120,0x0,1"
-        "HDMI-A-1,1366x768@60,277x-768,1"
+        "desc:AOC 966W,1366x768@60,277x0,1"
+        "desc:Chimei Innolux Corporation 0x1522,1920x1080@120,0x768,1"
         ",preferred,auto,1"
       ];
 
