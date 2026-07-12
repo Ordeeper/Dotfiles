@@ -27,5 +27,6 @@
     heroic
     anki-bin
     claude-code
+    apktool
   ];
 }

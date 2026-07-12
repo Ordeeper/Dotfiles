@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./frida.nix
+  ];
+
   systemd.user.services.waydroid-session = {
     Unit = {
       Description = "Waydroid User Session";
