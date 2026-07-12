@@ -26,6 +26,8 @@
     ../../modules/laptop/ollama.nix
 
     ../../modules/system/printer.nix
+    ../../modules/system/waydroid.nix
+    ../../modules/laptop/waydroid-intel.nix
 
     ../../modules/wayland/greetd.nix
   ];

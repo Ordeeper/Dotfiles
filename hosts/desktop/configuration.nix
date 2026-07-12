@@ -17,6 +17,7 @@
     ../../modules/system/printer.nix
     ../../modules/system/gaming.nix
     ../../modules/system/input/keyd.nix
+    ../../modules/system/waydroid.nix
 
     ../../modules/wayland/greetd.nix
 
