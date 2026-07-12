@@ -27,6 +27,7 @@ in
     ./programs/flatpak/config.nix
     ./programs/opencode/config.nix
     ./programs/nvim/config.nix
+    ./programs/waydroid/config.nix
 
     ./session-variables.nix
 
