@@ -47,7 +47,7 @@ let
       }
 
       frida_pid() {
-        adb shell "pidof frida-server" 2>/dev/null | tr -d '\r\n'
+        adb exec-out pidof frida-server 2>/dev/null || true
       }
 
       cmd_setup() {
