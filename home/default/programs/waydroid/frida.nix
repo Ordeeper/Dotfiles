@@ -1,12 +1,12 @@
 { pkgs, ... }:
 
 let
-  version = "16.7.19";
+  version = "17.5.1";
   arch = "android-x86_64";
 
   frida-server-archive = pkgs.fetchurl {
     url = "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-${arch}.xz";
-    hash = "sha256-S8k42yfL4f7IWeKPa9NNJpmVpxneLxDpfijBvc2UFsc=";
+    hash = "sha256-Gaia11w0Gr/7CJufaOLMDDQLItIFA/Wg+cFzf1gDRN8=";
   };
 
   frida-server = pkgs.runCommand "frida-server-${version}" {
