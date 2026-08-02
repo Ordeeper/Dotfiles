@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -26,7 +26,8 @@
     caido-desktop
     heroic
     anki-bin
-    claude-code
     apktool
+    claude-code
+    inputs.kimi-code.packages.${pkgs.system}.default
   ];
 }

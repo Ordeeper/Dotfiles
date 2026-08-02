@@ -28,6 +28,9 @@
       url = "github:outfoxxed/hy3?ref=hl0.55.0";
       inputs.hyprland.follows = "hyprland";
     };
+    kimi-code = {
+      url = "github:MoonshotAI/kimi-code";
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, hyprland, hy3, ... }:
