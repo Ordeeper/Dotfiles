@@ -12,6 +12,7 @@
 
   home.sessionPath = [
     "$HOME/go/bin"
+    "$HOME/.local/bin"
   ];
 
   home.packages = with pkgs; [
