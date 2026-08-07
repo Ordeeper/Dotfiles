@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, username ? "nix-user", ... }:
 
 let
   adbTcpPort = 5555;
@@ -14,7 +14,18 @@ in
     "net.ipv6.conf.all.forwarding" = 1;
   };
 
+  security.sudo.extraRules = [
+    {
+      users = [ username ];
+      commands = [
+        { command = "${pkgs.systemd}/bin/systemctl start waydroid-container"; options = [ "NOPASSWD" ]; }
+        { command = "${pkgs.systemd}/bin/systemctl stop waydroid-container"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
+
   systemd.services.waydroid-container = {
+    wantedBy = lib.mkForce [];
     serviceConfig = {
       Delegate = true;
       CPUAccounting = true;
@@ -27,7 +38,6 @@ in
     description = "Enforce adb-over-TCP port inside Waydroid";
     after = [ "waydroid-container.service" ];
     bindsTo = [ "waydroid-container.service" ];
-    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
