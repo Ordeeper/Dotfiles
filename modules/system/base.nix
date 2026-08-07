@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  programs.nix-ld.enable = true;
+
   virtualisation.docker.enable = true;
   services.flatpak.enable = true;
 
