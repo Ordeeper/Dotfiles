@@ -5,6 +5,7 @@
 
   virtualisation.docker.enable = true;
   services.flatpak.enable = true;
+  services.udisks2.enable = true;
 
   system.stateVersion = "26.05";
 
