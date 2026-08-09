@@ -27,7 +27,6 @@
     heroic
     anki-bin
     apktool
-    claude-code
     osu-lazer
     inputs.kimi-code.packages.${pkgs.system}.default
   ];

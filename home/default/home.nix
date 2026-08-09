@@ -26,6 +26,7 @@ in
     ./programs/stylix/config.nix
     ./programs/flatpak/config.nix
     ./programs/opencode/config.nix
+    ./programs/claude-code/config.nix
     ./programs/nvim/config.nix
     ./programs/waydroid/config.nix
 
