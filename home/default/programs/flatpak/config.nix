@@ -1,10 +1,16 @@
 { lib, ... }:
 
 {
-  services.flatpak.remotes = lib.mkOptionDefault [{
-    name = "flathub-beta";
-    location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
-  }];
+  services.flatpak.remotes = lib.mkOptionDefault [
+    {
+      name = "flathub";
+      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }
+    {
+      name = "flathub-beta";
+      location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+    }
+  ];
 
   services.flatpak.update.auto.enable = false;
   services.flatpak.uninstallUnmanaged = false;
@@ -15,5 +21,6 @@
     "io.dbeaver.DBeaverCommunity"
     "com.spotify.Client"
     "org.prismlauncher.PrismLauncher"
+    "sh.ppy.osu"
   ];
 }

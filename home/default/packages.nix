@@ -27,7 +27,6 @@
     heroic
     anki-bin
     apktool
-    osu-lazer
     inputs.kimi-code.packages.${pkgs.system}.default
   ];
 }
