@@ -13,6 +13,9 @@
     ../../modules/system/packages.nix
     ../../modules/system/nix.nix
     ../../modules/system/boot.nix
+    ../../modules/system/zram.nix
+    ../../modules/system/memory.nix
+    ../../modules/system/journald.nix
     ../../modules/system/security.nix
     ../../modules/system/printer.nix
     ../../modules/system/gaming.nix
@@ -24,6 +27,7 @@
     ../../modules/desktop/udev.nix
     ../../modules/desktop/graphics.nix
     ../../modules/desktop/ollama.nix
+    ../../modules/desktop/performance.nix
   ];
 
   networking.hostName = "desktop";

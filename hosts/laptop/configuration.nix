@@ -13,6 +13,9 @@
     ../../modules/system/fonts.nix
     ../../modules/system/nix.nix
     ../../modules/system/boot.nix
+    ../../modules/system/zram.nix
+    ../../modules/system/memory.nix
+    ../../modules/system/journald.nix
     ../../modules/system/security.nix
     ../../modules/system/gaming.nix
     ../../modules/system/input/keyd.nix
@@ -23,6 +26,7 @@
     ../../modules/laptop/packages.nix
     ../../modules/laptop/graphics.nix
     ../../modules/laptop/power.nix
+    ../../modules/laptop/performance.nix
     ../../modules/laptop/ollama.nix
 
     ../../modules/system/printer.nix

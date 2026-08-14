@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   services.ollama = {
@@ -8,17 +8,15 @@
 
     environmentVariables = {
       OLLAMA_INTEL_GPU = "1";
-      OLLAMA_KEEP_ALIVE = "24h";
+      OLLAMA_KEEP_ALIVE = "5m";
       OLLAMA_NUM_THREAD = "8";
     };
-
-    loadModels = [
-      "qwen2.5:3b"
-    ];
 
     host = "127.0.0.1";
     port = 11434;
   };
+
+  systemd.services.ollama.wantedBy = lib.mkForce [ ];
 
   environment.systemPackages = with pkgs; [
     ollama

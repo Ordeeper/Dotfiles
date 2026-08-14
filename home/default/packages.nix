@@ -18,6 +18,7 @@
     docker-compose
     p7zip
     gcc
+    libva-utils
     zotero
     easyeffects
     appimage-run

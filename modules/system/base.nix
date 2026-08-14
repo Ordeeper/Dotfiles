@@ -7,6 +7,8 @@
   services.flatpak.enable = true;
   services.udisks2.enable = true;
 
+  services.fstrim.interval = "Thu 03:00";
+
   system.stateVersion = "26.05";
 
   xdg.portal = {

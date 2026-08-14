@@ -2,7 +2,8 @@
   services.logind = {
     settings = {
       Login = {
-        HandlePowerKey = "hibernate";
+        # Not "hibernate": security.protectKernelImage injects `nohibernate`.
+        HandlePowerKey = "suspend";
         HandleLidSwitch = "suspend";
         HandleLidSwitchExternalPower = "suspend";
         IdleAction = "suspend";
