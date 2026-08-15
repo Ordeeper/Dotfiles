@@ -2,6 +2,7 @@
 
 let
   certSetup = pkgs.writeShellScript "waynergy-tls-setup" ''
+    umask 077
     cert="$HOME/.config/waynergy/tls/cert"
     if [ ! -f "$cert" ]; then
       ${pkgs.coreutils}/bin/mkdir -p "$(${pkgs.coreutils}/bin/dirname "$cert")"
