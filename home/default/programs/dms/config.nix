@@ -42,6 +42,7 @@ in
       launcherUseOverlayLayer = true;
       dankLauncherV2IncludeFilesInAll = true;
       notepadSlideoutSide = "left";
+      notepadShowLineNumbers = true;
 
       systemTrayIconTintMode = "primary";
 
