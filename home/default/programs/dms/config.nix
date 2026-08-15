@@ -6,12 +6,6 @@ let
     hash = "sha256-reELIdD8N+19CXo4RK8TSq0Yp/iXjblZO83M2GRVoRs=";
   };
 
-  quickCaptureSrc = pkgs.fetchFromGitHub {
-    owner = "hthienloc";
-    repo = "dms-quick-capture";
-    rev = "d9a1a2141e2727c33c598bd06fdab5031655e965";
-    hash = "sha256-8TszuxwVgBd17QmOhFD3SZ+Rccbz4x3cPVercYxZzo0=";
-  };
 in
 {
   xdg.configFile."DankMaterialShell/themes/catppuccin/theme.json".source = catppuccinThemeFile;
@@ -30,13 +24,6 @@ in
     enableAudioWavelength = true;
     enableCalendarEvents = false;
     enableClipboardPaste = false;
-
-    managePluginSettings = true;
-
-    plugins.quickCapture = {
-      enable = true;
-      src = quickCaptureSrc;
-    };
 
     session = {
       wallpaperTransition = "pixelate";

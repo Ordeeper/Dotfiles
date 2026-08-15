@@ -28,10 +28,6 @@
     heroic
     anki-bin
     apktool
-    imagemagick
-    img2pdf
-    tesseract
-    zbar
     inputs.kimi-code.packages.${pkgs.system}.default
   ];
 }
