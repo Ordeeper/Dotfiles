@@ -8,6 +8,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/avahi.nix
+    ../../modules/system/lan.nix
     ../../modules/system/users.nix
     ../../modules/system/sound.nix
     ../../modules/system/fonts.nix
@@ -32,4 +33,5 @@
   ];
 
   networking.hostName = "desktop";
+  myLan.wifiInterface = "wlan0";
 }

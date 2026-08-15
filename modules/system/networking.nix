@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   networking = {
     networkmanager = {
@@ -10,12 +12,11 @@
         enable = true;
         allowPing = false;
         interfaces = {
-          enp2s0 = {
+          ${config.myLan.wiredInterface} = {
             allowedTCPPorts = [ 8000 9000 ];
           };
-          # deskflow serves from the laptop, which reaches the LAN over wifi.
-          wlan0 = {
-            allowedTCPPorts = [ 24800 ];
+          ${config.myLan.wifiInterface} = {
+            allowedTCPPorts = [ config.myLan.deskflowPort ];
           };
         };
     };

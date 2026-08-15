@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, ... }:
 
 {
   home.packages = [ pkgs.waynergy ];
@@ -10,7 +10,7 @@
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.waynergy}/bin/waynergy -c laptop.local -p 24800 -N desktop -e -t";
+      ExecStart = "${pkgs.waynergy}/bin/waynergy -c laptop.local -p ${toString osConfig.myLan.deskflowPort} -N desktop -e -t";
       Restart = "always";
       RestartSec = 2;
     };
