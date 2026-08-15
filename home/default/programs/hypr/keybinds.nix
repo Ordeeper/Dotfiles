@@ -67,7 +67,7 @@
 
       # Launcher
       "$mod, D, exec, dms ipc call spotlight toggle"
-      "$mod, C, exec, dms ipc call spotlight toggleWith clipboard"
+      "$mod, C, exec, dms ipc call spotlight toggleQuery cb"
 
       # Workspaces
       "$mod, 1, workspace, 1"
