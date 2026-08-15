@@ -14,9 +14,19 @@ let
       ${pkgs.coreutils}/bin/chmod 600 "$cert"
     fi
   '';
+
+  fingerprintCmd = pkgs.writeShellScriptBin "waynergy-fingerprint" ''
+    cert="$HOME/.config/waynergy/tls/cert"
+    if [ ! -f "$cert" ]; then
+      echo "no cert yet at $cert -- start/restart the waynergy service first" >&2
+      exit 1
+    fi
+    ${pkgs.openssl}/bin/openssl x509 -in "$cert" -noout -fingerprint -sha256 \
+      | sed 's/.*=//; s/://g' | tr 'A-F' 'a-f'
+  '';
 in
 {
-  home.packages = [ pkgs.waynergy ];
+  home.packages = [ pkgs.waynergy fingerprintCmd ];
 
   systemd.user.services.waynergy = {
     Unit = {
