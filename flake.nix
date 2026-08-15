@@ -22,10 +22,10 @@
     vicinae.url = "github:vicinaehq/vicinae";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     hyprland = {
-      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.55.1";
+      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";
     };
     hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.55.0";
+      url = "github:outfoxxed/hy3?ref=hl0.56.0";
       inputs.hyprland.follows = "hyprland";
     };
     kimi-code = {
