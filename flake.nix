@@ -11,15 +11,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vicinae-extensions = {
-      url = "github:vicinaehq/extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vicinae.url = "github:vicinaehq/vicinae";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";
@@ -33,7 +28,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, vicinae, dms, stylix, nix-flatpak, hyprland, hy3, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, dms, stylix, nix-flatpak, hyprland, hy3, ... }:
   let
     system = "x86_64-linux";
     username = "nix-user";
@@ -62,7 +57,6 @@
               imports = [
                 ./home/default/home.nix
                 nix-flatpak.homeManagerModules.nix-flatpak
-                vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
                 dms.homeModules.dank-material-shell
               ];
@@ -89,7 +83,6 @@
               imports = [
                 ./home/default/home.nix
                 nix-flatpak.homeManagerModules.nix-flatpak
-                vicinae.homeManagerModules.default
                 stylix.homeModules.stylix
                dms.homeModules.dank-material-shell
               ];
