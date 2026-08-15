@@ -28,7 +28,10 @@
     heroic
     anki-bin
     apktool
-    (callPackage ./openscreen.nix { })
+    imagemagick
+    img2pdf
+    tesseract
+    zbar
     inputs.kimi-code.packages.${pkgs.system}.default
   ];
 }

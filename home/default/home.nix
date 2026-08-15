@@ -18,7 +18,6 @@ in
     ./programs/fish/config.nix
     ./programs/tmux/config.nix
     ./programs/zed/config.nix
-    ./programs/vicinae/config.nix
     ./programs/dms/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix

@@ -11,6 +11,7 @@ in
 
     targets = {
       zed.enable = false;
+      dank-material-shell.enable = false;
     };
 
     cursor = {

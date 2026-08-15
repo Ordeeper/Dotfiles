@@ -1,4 +1,21 @@
+{ config, pkgs, ... }:
+
+let
+  catppuccinThemeFile = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/AvengeMedia/dms-plugin-registry/0abd7c822dd6e42367e9c15f44112ed779d72bf6/themes/catppuccin/theme.json";
+    hash = "sha256-reELIdD8N+19CXo4RK8TSq0Yp/iXjblZO83M2GRVoRs=";
+  };
+
+  quickCaptureSrc = pkgs.fetchFromGitHub {
+    owner = "hthienloc";
+    repo = "dms-quick-capture";
+    rev = "d9a1a2141e2727c33c598bd06fdab5031655e965";
+    hash = "sha256-8TszuxwVgBd17QmOhFD3SZ+Rccbz4x3cPVercYxZzo0=";
+  };
+in
 {
+  xdg.configFile."DankMaterialShell/themes/catppuccin/theme.json".source = catppuccinThemeFile;
+
   programs.dank-material-shell = {
     enable = true;
 
@@ -14,9 +31,20 @@
     enableCalendarEvents = false;
     enableClipboardPaste = false;
 
+    managePluginSettings = true;
+
+    plugins.quickCapture = {
+      enable = true;
+      src = quickCaptureSrc;
+    };
+
     settings = {
       currentThemeName = "custom";
-      currentThemeCategory = "generic";
+      currentThemeCategory = "registry";
+      customThemeFile = "${config.xdg.configHome}/DankMaterialShell/themes/catppuccin/theme.json";
+
+      launcherStyle = "spotlight";
+      notepadSlideoutSide = "left";
 
       systemTrayIconTintMode = "primary";
 

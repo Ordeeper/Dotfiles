@@ -7,7 +7,7 @@
   	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
 
       # Screenshot
-      "$mod SHIFT, S, exec, grimblast --freeze save area /tmp/screenshot.png && satty --filename /tmp/screenshot.png"
+      "$mod SHIFT, S, exec, dms ipc call quickCapture screenshot region edit"
 
       # Terminal
       "$mod, SPACE, exec, kitty"
@@ -66,8 +66,8 @@
       "$mod, MINUS, togglespecialworkspace"
 
       # Launcher
-      "$mod, D, exec, vicinae toggle"
-      "$mod, C, exec, vicinae vicinae://launch/clipboard/history?toggle=true"
+      "$mod, D, exec, dms ipc call spotlight toggle"
+      "$mod, C, exec, dms ipc call spotlight toggleWith clipboard"
 
       # Workspaces
       "$mod, 1, workspace, 1"
