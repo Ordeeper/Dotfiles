@@ -1,8 +1,10 @@
 { pkgs, ... }:
-{
-  home.packages = [ pkgs.deskflow ];
 
-  home.file.".config/deskflow/deskflow.conf".text = ''
+let
+  # Old synergy/barrier text format. deskflow-core only reads this via
+  # server/externalConfigFile, never writes to it, so a plain Nix store path
+  # is fine here.
+  topology = pkgs.writeText "deskflow-server.conf" ''
     section: screens
         desktop:
         laptop:
@@ -22,6 +24,29 @@
     end
   '';
 
+  # deskflow-core rewrites its settings file in place (state like
+  # core/startedBefore), so it can't be a home.file symlink into the Nix
+  # store. ExecStartPre reseeds it from this template on every start; the TLS
+  # trust database lives in a separate tls/ directory next to it and survives
+  # the reseed. tlsEnabled/checkPeerFingerprints already default to true, but
+  # are set explicitly here since they're the whole point of this file.
+  settingsTemplate = pkgs.writeText "deskflow-settings.ini" ''
+    [core]
+    screenName=laptop
+    port=24800
+
+    [security]
+    tlsEnabled=true
+    checkPeerFingerprints=true
+
+    [server]
+    externalConfig=true
+    externalConfigFile=${topology}
+  '';
+in
+{
+  home.packages = [ pkgs.deskflow ];
+
   systemd.user.services.deskflow = {
     Unit = {
       Description = "Deskflow Server Daemon";
@@ -29,7 +54,11 @@
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.deskflow}/bin/deskflow --server --address 0.0.0.0:24800 --config %h/.config/deskflow/deskflow.conf";
+      ExecStartPre = "${pkgs.coreutils}/bin/install -Dm600 ${settingsTemplate} %h/.config/deskflow-nix/settings.ini";
+      # deskflow-core (not the deskflow GUI binary) is the headless daemon.
+      # -s points at the settings ini above, not the screen topology, which
+      # is set inside that ini via server/externalConfigFile.
+      ExecStart = "${pkgs.deskflow}/bin/deskflow-core server -s %h/.config/deskflow-nix/settings.ini";
       Restart = "on-failure";
       RestartSec = 3;
     };
