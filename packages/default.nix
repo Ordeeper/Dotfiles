@@ -28,6 +28,7 @@
     heroic
     anki-bin
     apktool
+    (callPackage ./openscreen.nix { })
     inputs.kimi-code.packages.${pkgs.system}.default
   ];
 }

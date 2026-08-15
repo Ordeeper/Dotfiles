@@ -32,7 +32,7 @@ in
 
     ./session-variables.nix
 
-    ./packages.nix
+    ../../packages
   ];
 
   # ++ lib.optionals isLaptop [
