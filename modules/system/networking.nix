@@ -13,6 +13,10 @@
           enp2s0 = {
             allowedTCPPorts = [ 8000 9000 24800 ];
           };
+          # deskflow now serves from the laptop, which reaches the LAN over wifi.
+          wlan0 = {
+            allowedTCPPorts = [ 24800 ];
+          };
         };
     };
     nftables.enable = true;
