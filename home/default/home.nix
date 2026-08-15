@@ -33,13 +33,11 @@ in
     ./session-variables.nix
 
     ../../packages
+  ]
+  ++ lib.optionals isLaptop [
+    ./laptop/deskflow.nix
+  ]
+  ++ lib.optionals isDesktop [
+    ./desktop/waynergy.nix
   ];
-
-  # ++ lib.optionals isLaptop [
-  #     ./laptop/waynergy.nix
-  # ]
-
-  # ++ lib.optionals isDesktop [
-  #     ./desktop/deskflow.nix
-  # ];
 }

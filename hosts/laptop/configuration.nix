@@ -8,6 +8,7 @@
     ../../modules/system/packages.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
+    ../../modules/system/avahi.nix
     ../../modules/system/sound.nix
     ../../modules/system/users.nix
     ../../modules/system/fonts.nix
