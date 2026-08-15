@@ -28,8 +28,16 @@ let
   # core/startedBefore), so it can't be a home.file symlink into the Nix
   # store. ExecStartPre reseeds it from this template on every start; the TLS
   # trust database lives in a separate tls/ directory next to it and survives
-  # the reseed. tlsEnabled/checkPeerFingerprints already default to true, but
-  # are set explicitly here since they're the whole point of this file.
+  # the reseed.
+  #
+  # checkPeerFingerprints is deliberately off, not just left at its default:
+  # turning it on sets the server's SecurityLevel to PeerAuth, which rejects
+  # any client whose cert isn't already in tls/trustedClients -- and nothing
+  # ever adds to that file outside the GUI (SecureSocket::verifyCertFingerprint
+  # only reads it). Headless, that means every connection is refused forever.
+  # waynergy's own TOFU (-t) already covers this link's actual threat model:
+  # it pins and verifies the server's cert on first connect, so a spoofed
+  # laptop.local answer can't complete a handshake after that point.
   settingsTemplate = pkgs.writeText "deskflow-settings.ini" ''
     [core]
     screenName=laptop
@@ -37,7 +45,7 @@ let
 
     [security]
     tlsEnabled=true
-    checkPeerFingerprints=true
+    checkPeerFingerprints=false
 
     [server]
     externalConfig=true

@@ -11,9 +11,9 @@
         allowPing = false;
         interfaces = {
           enp2s0 = {
-            allowedTCPPorts = [ 8000 9000 24800 ];
+            allowedTCPPorts = [ 8000 9000 ];
           };
-          # deskflow now serves from the laptop, which reaches the LAN over wifi.
+          # deskflow serves from the laptop, which reaches the LAN over wifi.
           wlan0 = {
             allowedTCPPorts = [ 24800 ];
           };
