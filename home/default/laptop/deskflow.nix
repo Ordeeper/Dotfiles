@@ -1,4 +1,4 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, lib, osConfig, ... }:
 
 let
   topology = pkgs.writeText "deskflow-server.conf" ''
@@ -28,12 +28,18 @@ let
 
     [security]
     tlsEnabled=true
-    checkPeerFingerprints=false
+    checkPeerFingerprints=true
 
     [server]
     externalConfig=true
     externalConfigFile=${topology}
   '';
+
+  trustedClientFingerprints = [ ];
+
+  trustedClientsFile = pkgs.writeText "deskflow-trusted-clients" (
+    lib.concatMapStringsSep "\n" (fp: "v2:sha256:${fp}") trustedClientFingerprints
+  );
 in
 {
   home.packages = [ pkgs.deskflow ];
@@ -45,7 +51,10 @@ in
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStartPre = "${pkgs.coreutils}/bin/install -Dm600 ${settingsTemplate} %h/.config/deskflow-nix/settings.ini";
+      ExecStartPre = [
+        "${pkgs.coreutils}/bin/install -Dm600 ${settingsTemplate} %h/.config/deskflow-nix/settings.ini"
+        "${pkgs.coreutils}/bin/install -Dm600 ${trustedClientsFile} %h/.config/deskflow-nix/tls/trusted-clients"
+      ];
       ExecStart = "${pkgs.deskflow}/bin/deskflow-core server -s %h/.config/deskflow-nix/settings.ini";
       Restart = "on-failure";
       RestartSec = 3;
