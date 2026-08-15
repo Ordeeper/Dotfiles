@@ -38,12 +38,22 @@ in
       src = quickCaptureSrc;
     };
 
+    session = {
+      wallpaperTransition = "pixelate";
+    };
+
     settings = {
       currentThemeName = "custom";
       currentThemeCategory = "registry";
       customThemeFile = "${config.xdg.configHome}/DankMaterialShell/themes/catppuccin/theme.json";
+      registryThemeVariants.catppuccin.dark = {
+        flavor = "mocha";
+        accent = "lavender";
+      };
 
       launcherStyle = "spotlight";
+      launcherUseOverlayLayer = true;
+      dankLauncherV2IncludeFilesInAll = true;
       notepadSlideoutSide = "left";
 
       systemTrayIconTintMode = "primary";

@@ -19,6 +19,7 @@ in
     ./programs/tmux/config.nix
     ./programs/zed/config.nix
     ./programs/dms/config.nix
+    ./programs/dsearch/config.nix
     ./programs/xdg/config.nix
     ./programs/mise/config.nix
     ./programs/direnv/config.nix

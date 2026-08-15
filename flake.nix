@@ -15,6 +15,10 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    danksearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";
@@ -28,7 +32,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, dms, stylix, nix-flatpak, hyprland, hy3, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, dms, danksearch, stylix, nix-flatpak, hyprland, hy3, ... }:
   let
     system = "x86_64-linux";
     username = "nix-user";
@@ -59,6 +63,7 @@
                 nix-flatpak.homeManagerModules.nix-flatpak
                 stylix.homeModules.stylix
                 dms.homeModules.dank-material-shell
+                danksearch.homeModules.dsearch
               ];
             };
             home-manager.extraSpecialArgs = {
@@ -85,6 +90,7 @@
                 nix-flatpak.homeManagerModules.nix-flatpak
                 stylix.homeModules.stylix
                dms.homeModules.dank-material-shell
+                danksearch.homeModules.dsearch
               ];
             };
             home-manager.extraSpecialArgs = {

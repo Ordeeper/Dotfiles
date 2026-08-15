@@ -9,6 +9,10 @@ in
     base16Scheme = catppuccinMochaScheme;
     polarity = "dark";
 
+    override = {
+      base0D = "b4befe";
+    };
+
     targets = {
       zed.enable = false;
       dank-material-shell.enable = false;
