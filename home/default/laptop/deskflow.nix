@@ -45,10 +45,10 @@ let
     set -euo pipefail
     umask 077
     cert="$HOME/.config/deskflow-nix/tls/deskflow.pem"
+    dir="$(${pkgs.coreutils}/bin/dirname "$cert")"
+    ${pkgs.coreutils}/bin/mkdir -p "$dir"
+    ${pkgs.coreutils}/bin/chmod 700 "$dir"
     if [ ! -s "$cert" ]; then
-      dir="$(${pkgs.coreutils}/bin/dirname "$cert")"
-      ${pkgs.coreutils}/bin/mkdir -p "$dir"
-      ${pkgs.coreutils}/bin/chmod 700 "$dir"
       key=$(${pkgs.coreutils}/bin/mktemp -p "$dir")
       crt=$(${pkgs.coreutils}/bin/mktemp -p "$dir")
       tmp=$(${pkgs.coreutils}/bin/mktemp -p "$dir")

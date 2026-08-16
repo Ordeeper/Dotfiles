@@ -40,8 +40,8 @@ in
         enabled = true;
 
         bezier = [
-          "dmsStandard, 0.215, 0.61, 0.355, 1"
-          "dmsEmphasized, 0.165, 0.84, 0.44, 1"
+          "dmsStandard, 0.333, 1, 0.667, 1"
+          "dmsEmphasized, 0.24, 0.97, 0.48, 1"
         ];
 
         animation = [
@@ -52,13 +52,15 @@ in
           "fadeOut, 1, 0.75, dmsStandard"
           "fadeSwitch, 1, 1.5, dmsStandard"
           "border, 1, 1.5, dmsStandard"
+          "layers, 1, 1.5, dmsStandard"
+          "fadeLayers, 1, 0.75, dmsStandard"
           "workspaces, 1, 2.5, dmsEmphasized"
           "specialWorkspace, 1, 2.5, dmsEmphasized"
         ];
       };
 
       layerrule = [
-        "match:namespace ^(dms:.*)$, no_anim 1"
+        "match:namespace ^(dms:.*|quickshell)$, no_anim 1"
       ];
 
       exec-once = [
