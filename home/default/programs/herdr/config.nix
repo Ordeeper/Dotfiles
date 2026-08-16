@@ -4,6 +4,8 @@
   home.packages = [ inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 
   xdg.configFile."herdr/config.toml".text = ''
+    onboarding = false
+
     [theme]
     name = "catppuccin"
 
