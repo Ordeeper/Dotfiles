@@ -38,7 +38,28 @@ in
 
       animations = {
         enabled = true;
+
+        bezier = [
+          "dmsStandard, 0.215, 0.61, 0.355, 1"
+          "dmsEmphasized, 0.165, 0.84, 0.44, 1"
+        ];
+
+        animation = [
+          "windowsIn, 1, 1.5, dmsEmphasized, popin 80%"
+          "windowsOut, 1, 1.5, dmsEmphasized, popin 80%"
+          "windowsMove, 1, 1.5, dmsStandard"
+          "fadeIn, 1, 0.75, dmsStandard"
+          "fadeOut, 1, 0.75, dmsStandard"
+          "fadeSwitch, 1, 1.5, dmsStandard"
+          "border, 1, 1.5, dmsStandard"
+          "workspaces, 1, 2.5, dmsEmphasized"
+          "specialWorkspace, 1, 2.5, dmsEmphasized"
+        ];
       };
+
+      layerrule = [
+        "match:namespace ^(dms:.*)$, no_anim 1"
+      ];
 
       exec-once = [
         "hyprctl setcursor \"Vimix-cursors\" 32"
