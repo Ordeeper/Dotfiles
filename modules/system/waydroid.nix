@@ -38,6 +38,7 @@ in
     description = "Enforce adb-over-TCP port inside Waydroid";
     after = [ "waydroid-container.service" ];
     bindsTo = [ "waydroid-container.service" ];
+    wantedBy = [ "waydroid-container.service" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;

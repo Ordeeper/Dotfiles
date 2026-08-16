@@ -1,8 +1,9 @@
-{ username ? "nix-user", hyprland, pkgs, ... }:
+{ username ? "nix-user", inputs, hyprland, pkgs, ... }:
 
 {
   services.displayManager.dms-greeter = {
     enable = true;
+    package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.dms-shell;
     compositor.name = "hyprland";
 
     configHome = "/home/${username}";

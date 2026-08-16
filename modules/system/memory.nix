@@ -63,6 +63,7 @@ in
     "flatpak-session-helper.service" = oomPreference "Service" "omit";
     "flatpak-managed-install.service" = oomPreference "Service" "omit";
     "dconf.service" = oomPreference "Service" "omit";
+    "dsearch.service" = oomPreference "Service" "omit";
     "speech-dispatcher.service" = oomPreference "Service" "omit";
 
     # avoid, not omit: everything launched from dms inherits its cgroup, so

@@ -36,6 +36,7 @@ in
     description = "Enforce Intel GPU for Waydroid (Post-Start Backup)";
     after = [ "waydroid-container.service" ];
     bindsTo = [ "waydroid-container.service" ];
+    wantedBy = [ "waydroid-container.service" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
