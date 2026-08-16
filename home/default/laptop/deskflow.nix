@@ -9,9 +9,9 @@ let
 
     section: links
       laptop:
-        right = desktop
+        up = desktop
       desktop:
-        left = laptop
+        down = laptop
     end
 
     section: options
