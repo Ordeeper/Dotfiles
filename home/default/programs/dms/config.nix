@@ -44,6 +44,7 @@ in
       };
 
       launcherStyle = "spotlight";
+      rememberLastMode = false;
       launcherUseOverlayLayer = true;
       dankLauncherV2IncludeFilesInAll = true;
       notepadSlideoutSide = "left";

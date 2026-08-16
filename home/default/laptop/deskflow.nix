@@ -42,30 +42,36 @@ let
   );
 
   certSetup = pkgs.writeShellScript "deskflow-tls-setup" ''
+    set -euo pipefail
     umask 077
     cert="$HOME/.config/deskflow-nix/tls/deskflow.pem"
-    if [ ! -f "$cert" ]; then
+    if [ ! -s "$cert" ]; then
       dir="$(${pkgs.coreutils}/bin/dirname "$cert")"
       ${pkgs.coreutils}/bin/mkdir -p "$dir"
       ${pkgs.coreutils}/bin/chmod 700 "$dir"
       key=$(${pkgs.coreutils}/bin/mktemp -p "$dir")
       crt=$(${pkgs.coreutils}/bin/mktemp -p "$dir")
+      tmp=$(${pkgs.coreutils}/bin/mktemp -p "$dir")
+      trap '${pkgs.coreutils}/bin/rm -f "$key" "$crt" "$tmp"' EXIT
       ${pkgs.openssl}/bin/openssl req -x509 -newkey rsa:2048 -nodes -days 3650 \
         -subj "/CN=Deskflow" -keyout "$key" -out "$crt"
-      ${pkgs.coreutils}/bin/cat "$key" "$crt" > "$cert"
-      ${pkgs.coreutils}/bin/rm -f "$key" "$crt"
-      ${pkgs.coreutils}/bin/chmod 600 "$cert"
+      ${pkgs.coreutils}/bin/cat "$key" "$crt" > "$tmp"
+      ${pkgs.openssl}/bin/openssl x509 -in "$tmp" -noout
+      ${pkgs.openssl}/bin/openssl pkey -in "$tmp" -noout
+      ${pkgs.coreutils}/bin/chmod 600 "$tmp"
+      ${pkgs.coreutils}/bin/mv -f "$tmp" "$cert"
     fi
   '';
 
   fingerprintCmd = pkgs.writeShellScriptBin "deskflow-fingerprint" ''
+    set -euo pipefail
     cert="$HOME/.config/deskflow-nix/tls/deskflow.pem"
-    if [ ! -f "$cert" ]; then
+    if [ ! -s "$cert" ]; then
       echo "no cert yet at $cert -- start/restart the deskflow service first" >&2
       exit 1
     fi
     ${pkgs.openssl}/bin/openssl x509 -in "$cert" -noout -fingerprint -sha256 \
-      | sed 's/.*=//; s/://g' | tr 'A-F' 'a-f'
+      | ${pkgs.gnused}/bin/sed 's/.*=//; s/://g' | ${pkgs.coreutils}/bin/tr 'A-F' 'a-f'
   '';
 in
 {
