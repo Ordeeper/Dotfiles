@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, hyprland, ... }:
 
 let
   toggle-touchpad = pkgs.writeShellApplication {
     name = "toggle-touchpad";
-    runtimeInputs = with pkgs; [ jq hyprland coreutils libnotify ];
+    runtimeInputs = [
+      hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+    ] ++ (with pkgs; [ jq coreutils libnotify ]);
     text = ''
       STATE_FILE="''${XDG_RUNTIME_DIR:-/tmp}/touchpad-toggle-state"
 

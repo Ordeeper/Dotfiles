@@ -10,10 +10,17 @@
     [theme.custom]
     accent = "#b4befe"
 
+    [ui]
+    prompt_new_tab_name = false
+
     [keys]
     prefix = "ctrl+space"
     detach = "prefix+d"
     new_tab = "prefix+space"
+    next_tab = "prefix+tab"
+    previous_tab = "prefix+shift+tab"
+    cycle_pane_next = "prefix+p"
+    cycle_pane_previous = "prefix+shift+p"
     close_tab = "prefix+shift+q"
     close_pane = "prefix+q"
     zoom = "prefix+f"

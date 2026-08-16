@@ -1,4 +1,4 @@
-{ pkgs, config, hy3, ... }:
+{ pkgs, config, hyprland, hy3, ... }:
 
 let
   colors = config.lib.stylix.colors;
@@ -8,6 +8,8 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     plugins = [
       hy3.packages.${pkgs.stdenv.hostPlatform.system}.hy3
