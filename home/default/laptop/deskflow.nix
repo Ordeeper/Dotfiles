@@ -94,6 +94,7 @@ in
       ExecStart = "${pkgs.deskflow}/bin/deskflow-core server -s %h/.config/deskflow-nix/settings.ini";
       Restart = "on-failure";
       RestartSec = 3;
+      LimitNOFILE = 65536;
     };
     Install = {
       WantedBy = [ "graphical-session.target" ];
