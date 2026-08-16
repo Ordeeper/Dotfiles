@@ -1,6 +1,10 @@
 { pkgs, lib, osConfig, ... }:
 
 let
+  builtinWidth = 1920;
+  sideWidth = 1920;
+  builtinEnd = builtinWidth * 100 / (builtinWidth + sideWidth);
+
   topology = pkgs.writeText "deskflow-server.conf" ''
     section: screens
         desktop:
@@ -9,9 +13,9 @@ let
 
     section: links
       laptop:
-        up = desktop
+        up(0,${toString builtinEnd}) = desktop
       desktop:
-        down = laptop
+        down = laptop(0,${toString builtinEnd})
     end
 
     section: options
