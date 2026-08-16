@@ -56,7 +56,7 @@
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager
        	  {
-       	    home-manager.useGlobalPkgs = false;
+       	    home-manager.useGlobalPkgs = true;
        	    home-manager.useUserPackages = true;
             home-manager.users.${username} = {
               imports = [
@@ -83,7 +83,7 @@
           ./hosts/desktop/configuration.nix
           home-manager.nixosModules.home-manager
        	  {
-       	    home-manager.useGlobalPkgs = false;
+       	    home-manager.useGlobalPkgs = true;
        	    home-manager.useUserPackages = true;
             home-manager.users.${username} = {
               imports = [
