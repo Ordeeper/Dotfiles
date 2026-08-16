@@ -1,6 +1,10 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, lib, osConfig, ... }:
 
 let
+  trustedServerFingerprint = "";
+
+  serverHashFile = pkgs.writeText "waynergy-server-hash" "SHA256:${trustedServerFingerprint}";
+
   certSetup = pkgs.writeShellScript "waynergy-tls-setup" ''
     umask 077
     cert="$HOME/.config/waynergy/tls/cert"
@@ -36,8 +40,9 @@ in
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStartPre = "${certSetup}";
-      ExecStart = "${pkgs.waynergy}/bin/waynergy -c laptop.local -p ${toString osConfig.myLan.deskflowPort} -N desktop -e -t";
+      ExecStartPre = [ "${certSetup}" ] ++ lib.optional (trustedServerFingerprint != "")
+        "${pkgs.coreutils}/bin/install -Dm600 ${serverHashFile} %h/.config/waynergy/tls/hash/laptop.local";
+      ExecStart = "${pkgs.waynergy}/bin/waynergy -c laptop.local -p ${toString osConfig.myLan.deskflowPort} -N desktop -e";
       Restart = "always";
       RestartSec = 2;
     };
