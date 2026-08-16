@@ -16,12 +16,10 @@
             ".git"
             ".cargo"
             ".rustup"
-            ".local/share/Trash"
+            "Trash"
           ];
         }
       ];
-      auto_reindex = true;
-      reindex_interval_hours = 24;
     };
   };
 }

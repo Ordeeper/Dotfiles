@@ -27,6 +27,8 @@ in
 
     session = {
       wallpaperTransition = "pixelate";
+      doNotDisturb = true;
+      nightModeEnabled = true;
     };
 
     settings = {
@@ -114,6 +116,11 @@ in
             }
 
             {
+              id = "cpuTemp";
+              enabled = true;
+            }
+
+            {
               id = "memUsage";
               enabled = true;
               minimumWidth = true;
@@ -122,6 +129,8 @@ in
             {
               id = "battery";
               enabled = true;
+              showBatteryTime = true;
+              showBatteryTimeOnlyOnBattery = true;
             }
 
             {
@@ -136,6 +145,11 @@ in
 
             {
               id = "controlCenterButton";
+              enabled = true;
+            }
+
+            {
+              id = "powerMenuButton";
               enabled = true;
             }
           ];

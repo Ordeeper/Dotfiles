@@ -40,7 +40,7 @@ in
       "^(\\.Hyprland-wrapp|start-hyprland|Xwayland|greetd|systemd|dbus-broker(-lau)?|pipewire(-pulse)?|wireplumber)$"
 
       "--avoid"
-      "^(\\.quickshell-wra|\\.dms-wrapped|\\.xdg-desktop-po|\\.xdg-document-p|\\.xdg-permission)$"
+      "^(\\.quickshell-wra|\\.dms-wrapped|\\.xdg-desktop-po|\\.xdg-document-p|\\.xdg-permission|\\.kitty-wrapped|herdr)$"
 
       "--prefer"
       "^(\\.firefox-wrappe|Isolated Web Co|Isolated Servic|Web Content|WebExtensions|Privileged Cont|RDD Process|Socket Process|Utility Process|electron|spotify|java)$"

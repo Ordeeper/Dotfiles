@@ -7,7 +7,7 @@
   	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
 
       # Screenshot
-      "$mod SHIFT, S, exec, grimblast --freeze save area /tmp/screenshot.png && satty --filename /tmp/screenshot.png"
+      "$mod SHIFT, S, exec, f=$(mktemp --suffix=.png -p $XDG_RUNTIME_DIR) && grimblast --freeze save area $f && satty --filename $f; rm -f $f"
 
       # Terminal
       "$mod, SPACE, exec, kitty"
@@ -67,7 +67,7 @@
 
       # Launcher
       "$mod, D, exec, dms ipc call spotlight toggle"
-      "$mod, C, exec, dms ipc call spotlight toggleQuery cb"
+      "$mod, C, exec, dms ipc call clipboard toggle"
 
       # Workspaces
       "$mod, 1, workspace, 1"
