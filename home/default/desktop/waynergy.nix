@@ -1,7 +1,7 @@
 { pkgs, lib, osConfig, ... }:
 
 let
-  trustedServerFingerprint = "";
+  trustedServerFingerprint = "4b3748af9e2288aca0f7c33f3aebd9e3f4cc65dd171f0b4043603adc0d3df1c8";
 
   serverHashFile = pkgs.writeText "waynergy-server-hash" "SHA256:${trustedServerFingerprint}";
 

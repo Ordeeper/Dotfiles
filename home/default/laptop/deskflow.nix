@@ -35,7 +35,9 @@ let
     externalConfigFile=${topology}
   '';
 
-  trustedClientFingerprints = [ ];
+  trustedClientFingerprints = [
+    "efde2f8a5b2b07a2038892f514423349cbaea4ce6dbb7f75d89536c20abfa6fb"
+  ];
 
   trustedClientsFile = pkgs.writeText "deskflow-trusted-clients" (
     lib.concatMapStringsSep "\n" (fp: "v2:sha256:${fp}") trustedClientFingerprints
