@@ -47,7 +47,7 @@ in
       rememberLastMode = false;
       launcherUseOverlayLayer = true;
       dankLauncherV2IncludeFilesInAll = true;
-      notepadSlideoutSide = "left";
+      notepadSlideoutSide = "right";
       notepadShowLineNumbers = true;
 
       systemTrayIconTintMode = "primary";
