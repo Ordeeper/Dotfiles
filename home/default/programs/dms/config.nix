@@ -33,6 +33,8 @@ in
     };
 
     settings = {
+      configVersion = 13;
+
       currentThemeName = "custom";
       currentThemeCategory = "registry";
       customThemeFile = "${config.xdg.configHome}/DankMaterialShell/themes/catppuccin/theme.json";
