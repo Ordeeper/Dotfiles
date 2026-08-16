@@ -13,7 +13,10 @@
   };
 
   services.thermald.enable = true;
-  services.upower.enable = true;
+  services.upower = {
+    enable = true;
+    criticalPowerAction = "PowerOff";
+  };
 
   services.power-profiles-daemon.enable = false;
 

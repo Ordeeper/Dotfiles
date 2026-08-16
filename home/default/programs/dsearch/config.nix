@@ -1,6 +1,9 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
+  systemd.user.services.dsearch.Service.ExecStart = lib.mkForce
+    "${lib.getExe config.programs.dsearch.package} serve --socket";
+
   programs.dsearch = {
     enable = true;
 

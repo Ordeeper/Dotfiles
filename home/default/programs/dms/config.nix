@@ -26,6 +26,7 @@ in
     enableClipboardPaste = false;
 
     session = {
+      wallpaperPath = "${config.home.homeDirectory}/Pictures/who-am-i.png";
       wallpaperTransition = "pixelate";
       doNotDisturb = true;
       nightModeEnabled = true;
