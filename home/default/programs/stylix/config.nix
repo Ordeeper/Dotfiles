@@ -13,6 +13,8 @@ in
       base0D = "b4befe";
     };
 
+    overlays.enable = false;
+
     targets = {
       zed.enable = false;
       dank-material-shell.enable = false;
