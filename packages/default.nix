@@ -28,6 +28,6 @@
     heroic
     anki-bin
     apktool
-    inputs.kimi-code.packages.${pkgs.system}.default
+    inputs.kimi-code.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
