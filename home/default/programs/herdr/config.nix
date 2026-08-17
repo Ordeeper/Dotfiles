@@ -1,7 +1,15 @@
 { pkgs, inputs, ... }:
 
+let
+  balance = pkgs.writeShellScriptBin "herdr-balance" ''
+    exec ${pkgs.python3}/bin/python3 ${./balance.py} "$@"
+  '';
+in
 {
-  home.packages = [ inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+  home.packages = [
+    inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
+    balance
+  ];
 
   xdg.configFile."herdr/config.toml".text = ''
     onboarding = false
@@ -25,8 +33,14 @@
     close_tab = "prefix+shift+q"
     close_pane = "prefix+q"
     zoom = "prefix+f"
-    toggle_sidebar = "prefix+o"
+    toggle_sidebar = "prefix+b"
     split_vertical = "prefix+n"
     split_horizontal = "prefix+m"
+
+    [[keys.command]]
+    key = "prefix+z"
+    type = "shell"
+    description = "Even out pane sizes"
+    command = "${balance}/bin/herdr-balance"
   '';
 }
