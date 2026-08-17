@@ -43,7 +43,7 @@ in
       "^(\\.quickshell-wra|\\.dms-wrapped|\\.xdg-desktop-po|\\.xdg-document-p|\\.xdg-permission|\\.kitty-wrapped|herdr)$"
 
       "--prefer"
-      "^(\\.firefox-wrappe|Isolated Web Co|Isolated Servic|Web Content|WebExtensions|Privileged Cont|RDD Process|Socket Process|Utility Process|electron|spotify|java)$"
+      "^(\\.firefox-wrappe|chromium|Isolated Web Co|Isolated Servic|Web Content|WebExtensions|Privileged Cont|RDD Process|Socket Process|Utility Process|electron|spotify|java)$"
     ];
   };
 
