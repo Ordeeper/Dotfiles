@@ -15,7 +15,6 @@ in
     ./programs/kitty/config.nix
     ./programs/git/config.nix
     ./programs/fish/config.nix
-    ./programs/tmux/config.nix
     ./programs/herdr/config.nix
     ./programs/zed/config.nix
     ./programs/dms/config.nix

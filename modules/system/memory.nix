@@ -71,9 +71,6 @@ in
     # leave oomd with almost nothing to act on in app.slice.
     "dms.service" = oomPreference "Service" "avoid";
 
-    # On app.slice rather than user@.service: tmux panes run in transient
-    # tmux-spawn-*.scope units that are siblings of app.slice, so scoping the
-    # policy here keeps them out of oomd's reach entirely.
     "app.slice" = {
       overrideStrategy = "asDropin";
       text = ''
