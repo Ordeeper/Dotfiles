@@ -32,7 +32,6 @@
           zePrintRate                 = "Default";
           zePrintMode                 = "Tear";
 
-          # zeLabelTop = "200";       # ajuste do gap superior, se quiser
         };
       }
     ];

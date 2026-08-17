@@ -4,7 +4,6 @@ let
   host = osConfig.networking.hostName;
   isDesktop = host == "desktop";
   isLaptop  = host == "laptop";
-  # isServer  = host == "server";
 in
 {
   home.username = username;

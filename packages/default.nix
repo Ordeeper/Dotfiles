@@ -15,11 +15,8 @@
     converseen
     lmstudio
     openfortivpn
-    openfortivpn-webview
     btop
     tree
-    libinput
-    vscodium
     docker-compose
     p7zip
     gcc

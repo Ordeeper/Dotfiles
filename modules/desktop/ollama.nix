@@ -4,10 +4,9 @@
   services.ollama = {
     enable = true;
 
-    package = pkgs.ollama-cpu;
+    package = pkgs.ollama;
 
     environmentVariables = {
-      OLLAMA_NUM_THREAD = "4";
       OLLAMA_KEEP_ALIVE = "5m";
     };
 
