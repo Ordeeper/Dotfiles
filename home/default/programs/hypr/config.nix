@@ -91,10 +91,10 @@ in
               focused_text = rgba colors.base04 "ff";
               urgent = rgba colors.base08 "ff";
               urgent_border = rgba colors.base08 "ff";
-              urgent_text = rgba colors.base01 "ff";
+              urgent_text = rgba colors.base00 "ff";
               locked = rgba colors.base09 "cc";
               locked_border = rgba colors.base09 "ee";
-              locked_text = rgba colors.base01 "ff";
+              locked_text = rgba colors.base00 "ff";
             };
           };
         };
