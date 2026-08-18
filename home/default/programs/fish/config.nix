@@ -15,8 +15,8 @@
           set fish_cursor_visual block
           set -g fish_vi_force_cursor 1
 
-          if not set -q HERDR_ENV; and command -v herdr >/dev/null; and test -t 1
-              exec herdr
+          if not set -q HERDR_ENV; and command -v herdr-session-loop >/dev/null; and test -t 1
+              exec herdr-session-loop
           end
       end
     '';

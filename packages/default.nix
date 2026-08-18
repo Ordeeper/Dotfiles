@@ -16,6 +16,7 @@
     lmstudio
     openfortivpn
     btop
+    fzf
     tree
     docker-compose
     p7zip
