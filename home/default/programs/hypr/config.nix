@@ -81,7 +81,7 @@ in
               active_border = rgba colors.base0D "ff";
               active_text = rgba colors.base05 "ff";
               active_alt_monitor = rgba colors.base01 "ff";
-              active_alt_monitor_border = rgba colors.base0D "66";
+              active_alt_monitor_border = rgba colors.base0D "55";
               active_alt_monitor_text = rgba colors.base04 "ff";
               inactive = rgba colors.base01 "ff";
               inactive_border = rgba colors.base03 "01";
@@ -92,8 +92,8 @@ in
               urgent = rgba colors.base08 "ff";
               urgent_border = rgba colors.base08 "ff";
               urgent_text = rgba colors.base01 "ff";
-              locked = rgba colors.base0C "cc";
-              locked_border = rgba colors.base0C "ee";
+              locked = rgba colors.base09 "cc";
+              locked_border = rgba colors.base09 "ee";
               locked_text = rgba colors.base01 "ff";
             };
           };
