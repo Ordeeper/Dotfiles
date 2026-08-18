@@ -7,7 +7,7 @@
   	  "$mod SHIFT, E, exec, hyprctl dispatch exit"
 
       # Screenshot
-      "$mod SHIFT, S, exec, f=$(mktemp --suffix=.png -p $XDG_RUNTIME_DIR) && grimblast --freeze save area $f && satty --filename $f --output-filename '~/Pictures/Screenshots/%Y%m%d-%H%M%S.png'; rm -f $f"
+      "$mod SHIFT, S, exec, screenshot-area"
 
       # Terminal
       "$mod, SPACE, exec, kitty"
