@@ -29,6 +29,7 @@ let
     [core]
     screenName=laptop
     port=${toString osConfig.myLan.deskflowPort}
+    wlClipboard=true
 
     [security]
     tlsEnabled=true
