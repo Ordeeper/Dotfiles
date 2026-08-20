@@ -1,4 +1,3 @@
-set +o errexit
 set -uo pipefail
 
 file=$(mktemp --suffix=.png -p "${XDG_RUNTIME_DIR:-/tmp}")

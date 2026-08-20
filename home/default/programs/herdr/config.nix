@@ -3,13 +3,14 @@
 let
   herdr = inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
-  balance = pkgs.writeShellScriptBin "herdr-balance" ''
-    exec ${pkgs.python3}/bin/python3 ${./balance.py} "$@"
-  '';
+  balance = pkgs.writers.writePython3Bin "herdr-balance" { flakeIgnore = [ "E501" ]; } (
+    builtins.readFile ./balance.py
+  );
 
   sessionPicker = pkgs.writeShellApplication {
     name = "herdr-session-picker";
-    runtimeInputs = [ herdr pkgs.fzf pkgs.python3 pkgs.gawk pkgs.gnugrep pkgs.gnused pkgs.coreutils ];
+    runtimeInputs = [ herdr pkgs.fzf pkgs.python3 pkgs.coreutils ];
+    runtimeEnv.SESSION_PICKER_BACKEND = ./session-picker.py;
     text = builtins.readFile ./session-picker.sh;
   };
 

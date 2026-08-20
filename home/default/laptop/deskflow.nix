@@ -82,7 +82,7 @@ let
   '';
 in
 {
-  home.packages = [ pkgs.deskflow fingerprintCmd ];
+  home.packages = [ pkgs.deskflow pkgs.wl-clipboard fingerprintCmd ];
 
   systemd.user.services.deskflow = {
     Unit = {

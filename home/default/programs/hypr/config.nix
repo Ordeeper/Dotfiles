@@ -1,12 +1,6 @@
 { pkgs, config, hyprland, hy3, ... }:
 
 let
-  screenshotArea = pkgs.writeShellApplication {
-    name = "screenshot-area";
-    runtimeInputs = [ pkgs.grimblast pkgs.satty pkgs.wl-clipboard pkgs.coreutils ];
-    text = builtins.readFile ./screenshot-area.sh;
-  };
-
   colors = config.lib.stylix.colors;
   rgba = color: alpha: "rgba(${color}${alpha})";
 in
@@ -112,7 +106,6 @@ in
     grimblast
     satty
     wl-clipboard
-    screenshotArea
   ];
 
   imports = [

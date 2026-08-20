@@ -141,5 +141,6 @@
 
   imports = [
     ./scripts/touchpad-toggle.nix
+    ./scripts/screenshot-area.nix
   ];
 }

@@ -1,4 +1,3 @@
-set +o errexit
 set -uo pipefail
 
 fail_picker() {
@@ -15,10 +14,6 @@ if [ -n "${HERDR_ENV-}" ]; then
 fi
 
 target="${1-default}"
-
-if [ "$target" = "--pick" ]; then
-    target=$(herdr-session-picker) || fail_picker
-fi
 
 while [ -n "$target" ]; do
     if ! herdr --session "$target"; then
