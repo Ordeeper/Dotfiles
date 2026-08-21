@@ -20,6 +20,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     herdr.url = "github:herdrdev/herdr";
+    dank-calculator = {
+      url = "github:rochacbruno/DankCalculator/1db5865419a40a33171a475855a59e0b8bf7187f";
+      flake = false;
+    };
+    dank-translate = {
+      url = "github:alcxyz/DankTranslate/10d88fc770ec54e27da1d7d112bed0b33ce806d7";
+      flake = false;
+    };
+    dank-web-search = {
+      url = "github:devnullvoid/dms-web-search/821f5b437ea96739ce1cbc85ce324fb55e8884bb";
+      flake = false;
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.7.0";
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.56.0";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   catppuccinThemeFile = pkgs.fetchurl {
@@ -8,10 +8,23 @@ let
 
 in
 {
+  home.packages = [ pkgs.translate-shell ];
+
   xdg.configFile."DankMaterialShell/themes/catppuccin/theme.json".source = catppuccinThemeFile;
 
   programs.dank-material-shell = {
     enable = true;
+
+    plugins = {
+      calculator.src = inputs.dank-calculator;
+
+      dankTranslate = {
+        src = inputs.dank-translate;
+        settings.defaultLang = "en+pt";
+      };
+
+      webSearch.src = inputs.dank-web-search;
+    };
 
     systemd = {
       enable = true;

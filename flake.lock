@@ -101,6 +101,57 @@
         "type": "github"
       }
     },
+    "dank-calculator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782146268,
+        "narHash": "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=",
+        "owner": "rochacbruno",
+        "repo": "DankCalculator",
+        "rev": "1db5865419a40a33171a475855a59e0b8bf7187f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rochacbruno",
+        "repo": "DankCalculator",
+        "rev": "1db5865419a40a33171a475855a59e0b8bf7187f",
+        "type": "github"
+      }
+    },
+    "dank-translate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1780582640,
+        "narHash": "sha256-CRiQV6RC9Ir827vqKuKCFlmAUG9w/F9B1egDTJdbpQw=",
+        "owner": "alcxyz",
+        "repo": "DankTranslate",
+        "rev": "10d88fc770ec54e27da1d7d112bed0b33ce806d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alcxyz",
+        "repo": "DankTranslate",
+        "rev": "10d88fc770ec54e27da1d7d112bed0b33ce806d7",
+        "type": "github"
+      }
+    },
+    "dank-web-search": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783139331,
+        "narHash": "sha256-UqFgAjW2A75dtlvOZkq4Vv/v/DROoc/ouCXBaVlksPI=",
+        "owner": "devnullvoid",
+        "repo": "dms-web-search",
+        "rev": "821f5b437ea96739ce1cbc85ce324fb55e8884bb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "devnullvoid",
+        "repo": "dms-web-search",
+        "rev": "821f5b437ea96739ce1cbc85ce324fb55e8884bb",
+        "type": "github"
+      }
+    },
     "danksearch": {
       "inputs": {
         "nixpkgs": [
@@ -772,6 +823,9 @@
     },
     "root": {
       "inputs": {
+        "dank-calculator": "dank-calculator",
+        "dank-translate": "dank-translate",
+        "dank-web-search": "dank-web-search",
         "danksearch": "danksearch",
         "dms": "dms",
         "herdr": "herdr",
