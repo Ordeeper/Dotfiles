@@ -26,7 +26,7 @@
     settings = {
       TLP_AUTO_SWITCH = 0;
       TLP_DEFAULT_MODE = "PRF";
-      PLATFORM_PROFILE_ON_AC = "cool";
+      PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "balanced";
       PLATFORM_PROFILE_ON_SAV = "quiet";
       CPU_BOOST_ON_AC = 1;
