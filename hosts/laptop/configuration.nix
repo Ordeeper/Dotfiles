@@ -29,7 +29,7 @@
     ../../modules/laptop/graphics.nix
     ../../modules/laptop/power.nix
     ../../modules/laptop/performance.nix
-    ../../modules/laptop/ollama.nix
+    ../../modules/system/ollama.nix
 
     ../../modules/system/printer.nix
     ../../modules/system/waydroid.nix

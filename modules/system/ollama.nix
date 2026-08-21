@@ -1,10 +1,8 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   services.ollama = {
     enable = true;
-
-    package = pkgs.ollama;
 
     environmentVariables = {
       OLLAMA_KEEP_ALIVE = "5m";
@@ -15,8 +13,4 @@
   };
 
   systemd.services.ollama.wantedBy = lib.mkForce [ ];
-
-  environment.systemPackages = with pkgs; [
-    ollama
-  ];
 }

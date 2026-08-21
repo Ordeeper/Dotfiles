@@ -24,8 +24,6 @@
         "flakes"
       ];
 
-      max-jobs = lib.mkDefault 2;
-
       extra-substituters = [
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"

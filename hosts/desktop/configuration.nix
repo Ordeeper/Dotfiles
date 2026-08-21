@@ -28,7 +28,7 @@
 
     ../../modules/desktop/udev.nix
     ../../modules/desktop/graphics.nix
-    ../../modules/desktop/ollama.nix
+    ../../modules/system/ollama.nix
     ../../modules/desktop/performance.nix
   ];
 

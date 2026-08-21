@@ -2,7 +2,6 @@
 
 with pkgs;
 {
-  nixpkgs.config.allowUnfree = true;
   devShells = {
     flutter = import ./environments/flutter.nix { inherit pkgs; };
     python = mkShell {
