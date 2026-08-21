@@ -56,7 +56,7 @@ in
         accent = "lavender";
       };
 
-      acProfileName = "1";
+      acProfileName = "2";
       batteryProfileName = "0";
       launcherStyle = "spotlight";
       rememberLastMode = false;

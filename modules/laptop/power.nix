@@ -25,8 +25,12 @@
     pd.enable = true;
     settings = {
       TLP_AUTO_SWITCH = 0;
-      TLP_DEFAULT_MODE = "BAL";
+      TLP_DEFAULT_MODE = "PRF";
+      PLATFORM_PROFILE_ON_AC = "balanced";
       PLATFORM_PROFILE_ON_SAV = "quiet";
+      CPU_BOOST_ON_SAV = 0;
+      START_CHARGE_THRESH_BAT0 = 75;
+      STOP_CHARGE_THRESH_BAT0 = 80;
     };
   };
 
